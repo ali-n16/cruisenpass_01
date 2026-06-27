@@ -4,40 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driving Lessons in Manchester | Cruise'N'Pass</title>
-    <meta name="description" content="DVSA-approved driving instructor in Manchester. Manual &amp; automatic lessons from £32/hr. 89% first-time pass rate. Book your first lesson today.">
-    <meta name="theme-color" content="#0f172a">
+    <title>Cruise'N'Pass — Driving Lessons in Manchester</title>
+    <meta name="description" content="DVSA-approved driving instructor in Manchester. Manual &amp; automatic lessons. 89% first-time pass rate. Calm, structured, patient teaching.">
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Cruise'N'Pass — Driving Lessons in Manchester">
-    <meta property="og:description" content="DVSA-approved driving instructor. 89% first-time pass rate. Book your first lesson today.">
+    <meta property="og:description" content="DVSA-approved driving instructor. 89% first-time pass rate. Calm, patient teaching.">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #0f172a;
-            --bg-soft: #1e293b;
-            --surface: #ffffff;
-            --surface-alt: #f8fafc;
-            --border: #e2e8f0;
-            --text: #0f172a;
-            --text-soft: #475569;
-            --text-muted: #64748b;
-            --brand: #f59e0b;
-            --brand-dark: #d97706;
-            --brand-soft: #fef3c7;
-            --accent: #0ea5e9;
-            --success: #10b981;
-            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
-            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
-            --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-            --radius: 14px;
-            --radius-lg: 22px;
+            --bg: #ffffff;
+            --bg-soft: #fafaf9;
+            --bg-warm: #f5f4f1;
+            --ink: #0a0a0a;
+            --ink-soft: #404040;
+            --ink-muted: #737373;
+            --line: #e7e5e0;
+            --line-strong: #d6d3cd;
+            --accent: #d97706;
+            --accent-soft: #fef3c7;
+            --success: #15803d;
         }
 
         * { box-sizing: border-box; }
@@ -47,85 +38,97 @@
         body {
             margin: 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text);
-            background: var(--surface);
-            line-height: 1.6;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'cv11', 'ss01';
         }
 
         h1, h2, h3, h4, h5 {
-            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
             font-weight: 700;
-            line-height: 1.2;
-            color: var(--text);
-            margin: 0 0 0.5em;
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+            color: var(--ink);
+            margin: 0;
         }
+
+        h1 { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; letter-spacing: -0.05em; }
+        h2 { font-size: clamp(2.25rem, 5.5vw, 4.5rem); letter-spacing: -0.04em; }
+        h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); letter-spacing: -0.025em; }
+        h4 { font-size: 1.25rem; }
 
         a { color: inherit; text-decoration: none; }
+        p { color: var(--ink-soft); }
 
         .container {
-            max-width: 1180px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
-        /* Skip link for accessibility */
+        .container-narrow {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Skip link */
         .skip-link {
             position: absolute;
             top: -100px;
             left: 0;
-            background: var(--bg);
+            background: var(--ink);
             color: white;
             padding: 12px 20px;
             z-index: 1000;
-            border-radius: 0 0 8px 0;
         }
         .skip-link:focus { top: 0; }
 
-        /* Buttons */
+        /* Buttons — minimal, no rounded pills */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 14px 26px;
-            border-radius: 999px;
+            padding: 16px 28px;
+            border-radius: 0;
             font-weight: 600;
             font-size: 15px;
             cursor: pointer;
             border: none;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
             font-family: inherit;
-            white-space: nowrap;
+            letter-spacing: -0.01em;
         }
         .btn-primary {
-            background: var(--brand);
-            color: #1a1a1a;
-            box-shadow: var(--shadow-md);
+            background: var(--ink);
+            color: white;
         }
         .btn-primary:hover {
-            background: var(--brand-dark);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-lg);
+            background: var(--accent);
         }
         .btn-secondary {
-            background: white;
-            color: var(--text);
-            border: 1.5px solid var(--border);
+            background: transparent;
+            color: var(--ink);
+            border: 1.5px solid var(--ink);
         }
         .btn-secondary:hover {
-            background: var(--surface-alt);
-            border-color: var(--text-soft);
-        }
-        .btn-ghost {
-            background: transparent;
+            background: var(--ink);
             color: white;
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
-        .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
+        .btn-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 4px 0;
+            border-bottom: 1.5px solid currentColor;
+            transition: gap 0.2s;
         }
+        .btn-text:hover { gap: 12px; }
 
         /* Navbar */
         .navbar {
@@ -133,52 +136,60 @@
             top: 0;
             z-index: 100;
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: saturate(180%) blur(12px);
-            -webkit-backdrop-filter: saturate(180%) blur(12px);
-            border-bottom: 1px solid var(--border);
+            backdrop-filter: saturate(180%) blur(16px);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+            border-bottom: 1px solid var(--line);
         }
         .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            height: 76px;
         }
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 800;
-            font-size: 19px;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 17px;
             letter-spacing: -0.02em;
         }
         .logo-mark {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-            border-radius: 10px;
+            width: 32px;
+            height: 32px;
+            background: var(--ink);
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--bg);
-            font-weight: 800;
-            font-size: 17px;
+            font-weight: 700;
+            font-size: 16px;
         }
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
             margin: 0;
             padding: 0;
         }
         .nav-links a {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
-            color: var(--text-soft);
-            transition: color 0.2s;
+            color: var(--ink-soft);
+            transition: color 0.15s;
+            letter-spacing: -0.005em;
         }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta { display: flex; align-items: center; gap: 12px; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-phone {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+        }
 
         .nav-toggle {
             display: none;
@@ -190,865 +201,336 @@
         .nav-toggle span {
             display: block;
             width: 24px;
-            height: 2px;
-            background: var(--text);
-            margin: 5px 0;
-            transition: 0.2s;
+            height: 1.5px;
+            background: var(--ink);
+            margin: 6px 0;
         }
 
         /* Hero */
         .hero {
+            padding: 120px 0 80px;
             position: relative;
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            background:
-                linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.6) 100%),
-                url('https://images.unsplash.com/photo-1449965408869-ebd3fee7710d?w=1920&q=80') center/cover no-repeat;
             overflow: hidden;
         }
-        .hero-inner {
-            padding: 80px 0;
-            max-width: 720px;
-        }
-        .eyebrow {
-            display: inline-flex;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
             align-items: center;
-            gap: 8px;
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--brand);
-            padding: 8px 16px;
-            border-radius: 999px;
+        }
+        .hero-eyebrow {
+            display: inline-block;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 32px;
         }
-        .eyebrow::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--brand);
-            border-radius: 50%;
+        .hero-eyebrow span {
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: var(--ink);
+            vertical-align: middle;
+            margin-right: 12px;
         }
         .hero h1 {
-            font-size: clamp(2.25rem, 5.5vw, 4rem);
-            color: white;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+        }
+        .hero h1 em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
         }
         .hero p.lead {
-            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 36px;
-            max-width: 560px;
+            font-size: 19px;
+            line-height: 1.5;
+            color: var(--ink-soft);
+            max-width: 480px;
+            margin: 0 0 40px;
         }
         .hero-actions {
             display: flex;
-            gap: 12px;
+            gap: 16px;
+            align-items: center;
             flex-wrap: wrap;
         }
         .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 80px;
+            padding-top: 48px;
+            border-top: 1px solid var(--line);
         }
         .stat-num {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--brand);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
             line-height: 1;
+            margin-bottom: 8px;
         }
         .stat-label {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 6px;
+            color: var(--ink-muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Hero image */
+        .hero-image {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: var(--bg-warm);
+            background-image: url('https://images.unsplash.com/photo-1449965408869-ebd3fee7710d?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            right: -24px;
+            bottom: -24px;
+            border: 1px solid var(--ink);
+            z-index: -1;
+        }
+        .hero-image-caption {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            background: white;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .hero-image-caption strong {
+            display: block;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 600;
         }
 
         /* Sections */
-        section { padding: 96px 0; }
-        section.alt { background: var(--surface-alt); }
-        .section-head {
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 60px;
-        }
-        .section-eyebrow {
-            color: var(--brand-dark);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-        }
-        .section-head h2 {
-            font-size: clamp(1.875rem, 3.5vw, 2.5rem);
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-        .section-head p {
-            color: var(--text-soft);
-            font-size: 17px;
-        }
+        section { padding: 120px 0; }
 
-        /* Pricing cards */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-        .price-card {
-            background: var(--surface);
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 32px 28px;
-            transition: all 0.25s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        .price-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--text-soft);
-        }
-        .price-card.featured {
-            border-color: var(--brand);
-            border-width: 2px;
-            box-shadow: 0 0 0 4px var(--brand-soft);
-        }
-        .price-card .badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--brand);
-            color: var(--bg);
-            padding: 4px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-        .price-card h3 {
-            font-size: 19px;
-            margin-bottom: 4px;
-        }
-        .price-card .price {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--text);
-            margin: 8px 0 4px;
-            letter-spacing: -0.02em;
-        }
-        .price-card .price small {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-        .price-card .hours {
-            color: var(--text-soft);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .price-card .per-hour {
+        .section-eyebrow {
             display: inline-block;
-            background: var(--surface-alt);
-            color: var(--text-soft);
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 999px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
             margin-bottom: 20px;
         }
-        .price-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 24px;
-            flex: 1;
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 80px;
         }
-        .price-card li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--text-soft);
-            margin-bottom: 10px;
+        .section-head h2 { margin-bottom: 20px; }
+        .section-head p {
+            font-size: 19px;
+            color: var(--ink-soft);
+            max-width: 560px;
+        }
+        .section-head.center { margin: 0 auto 80px; text-align: center; }
+        .section-head.center p { margin: 0 auto; }
+
+        /* Pricing — editorial table style */
+        .pricing-list {
+            border-top: 1px solid var(--ink);
+        }
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 80px 2fr 1fr 1.2fr auto;
+            gap: 32px;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--line);
+            align-items: center;
+            transition: background 0.2s, padding 0.2s;
+        }
+        .pricing-row:hover {
+            background: var(--bg-warm);
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .pricing-row.featured {
+            background: var(--ink);
+            color: white;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .pricing-row.featured:hover { background: var(--ink); }
+        .pricing-row.featured .row-desc,
+        .pricing-row.featured .row-features,
+        .pricing-row.featured .row-num { color: rgba(255, 255, 255, 0.7); }
+        .pricing-row.featured .row-name { color: white; }
+        .pricing-row.featured .row-price { color: white; }
+        .pricing-row.featured .row-badge { background: var(--accent); color: var(--ink); }
+
+        .row-num {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--ink-muted);
+        }
+        .pricing-row.featured .row-num { color: var(--accent); }
+
+        .row-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        .row-name small {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-muted);
+            margin-top: 4px;
+            letter-spacing: 0;
+        }
+        .row-desc {
+            color: var(--ink-soft);
+            font-size: 15px;
             line-height: 1.5;
         }
-        .price-card li::before {
-            content: '✓';
-            color: var(--success);
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 1px;
+        .row-features {
+            font-size: 13px;
+            color: var(--ink-muted);
+            line-height: 1.7;
         }
-        .price-card .btn { width: 100%; }
+        .row-price {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .row-price small {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-muted);
+        }
+        .row-badge {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-left: 8px;
+        }
 
-        /* About */
+        /* About — editorial split */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 100px;
+            align-items: flex-start;
         }
-        .about-img {
-            aspect-ratio: 4/5;
-            background:
-                linear-gradient(135deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80') center/cover no-repeat;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
+        .about-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 32px;
         }
-        .about h2 {
-            font-size: clamp(1.875rem, 3.5vw, 2.5rem);
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
+        .about h2 { margin-bottom: 40px; }
         .about p {
-            color: var(--text-soft);
-            font-size: 17px;
-            margin-bottom: 16px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: var(--ink-soft);
+        }
+        .about-image {
+            aspect-ratio: 4/5;
+            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 32px;
         }
         .credentials {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 32px;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--line);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
         .credential {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: white;
+            padding: 24px 0;
         }
-        .credential-icon {
-            width: 38px;
-            height: 38px;
-            background: var(--brand-soft);
-            color: var(--brand-dark);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 18px;
+        .credential-num {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
         }
         .credential-text {
-            font-size: 13px;
-            line-height: 1.3;
+            font-size: 14px;
+            line-height: 1.4;
         }
         .credential-text strong {
             display: block;
-            color: var(--text);
-            font-size: 14px;
+            color: var(--ink);
+            font-weight: 600;
+            font-size: 15px;
         }
-        .credential-text span { color: var(--text-muted); }
+        .credential-text span { color: var(--ink-muted); }
 
-        /* Testimonials */
+        /* Testimonials — large pull-quote style */
         .testimonials {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
         .testimonial {
-            background: var(--surface);
-            padding: 32px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
+            background: white;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
         }
-        .stars {
-            color: var(--brand);
+        .testimonial-quote {
+            font-size: 22px;
+            line-height: 1.4;
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            margin: 0 0 40px;
+            flex: 1;
+            font-weight: 500;
+        }
+        .testimonial-quote::before {
+            content: '"';
+            font-family: 'Instrument Serif', serif;
+            font-size: 60px;
+            color: var(--accent);
+            line-height: 0.5;
+            display: block;
             margin-bottom: 16px;
-            font-size: 16px;
-            letter-spacing: 2px;
         }
-        .testimonial blockquote {
-            margin: 0 0 24px;
-            color: var(--text);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .testimonial cite {
+        .testimonial-author {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-style: normal;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
         }
-        .avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-            color: var(--bg);
+        .testimonial-author .avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--ink);
+            color: var(--accent);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .testimonial .name { font-weight: 600; color: var(--text); display: block; }
-        .testimonial .meta { font-size: 13px; color: var(--text-muted); }
-
-        /* Areas */
-        .areas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        .area-pill {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-soft);
-            padding: 10px 20px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        .area-pill:hover {
-            background: var(--brand);
-            color: var(--bg);
-            border-color: var(--brand);
-            transform: translateY(-1px);
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
-        }
-        .contact-info {
-            background: var(--bg);
-            color: white;
-            padding: 44px;
-            border-radius: var(--radius-lg);
-        }
-        .contact-info h3 { color: white; font-size: 22px; margin-bottom: 8px; }
-        .contact-info > p { color: rgba(255, 255, 255, 0.7); margin-bottom: 32px; }
-        .contact-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        .contact-item .icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--brand);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .contact-item .label {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 2px;
-        }
-        .contact-item .value {
-            font-size: 16px;
-            font-weight: 600;
-            color: white;
-        }
-        .contact-item a:hover { color: var(--brand); }
-
-        .socials {
-            display: flex;
-            gap: 10px;
-            margin-top: 32px;
-        }
-        .social-link {
-            width: 42px;
-            height: 42px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.2s;
-        }
-        .social-link:hover {
-            background: var(--brand);
-            color: var(--bg);
-            transform: translateY(-2px);
-        }
-
-        .contact-form {
-            background: var(--surface);
-            padding: 44px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .form-group { margin-bottom: 18px; }
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 13px 16px;
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: inherit;
-            color: var(--text);
-            transition: border-color 0.2s;
-            background: white;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--brand);
-            box-shadow: 0 0 0 3px var(--brand-soft);
-        }
-        .form-group textarea { resize: vertical; min-height: 110px; }
-
-        /* Map */
-        .map-wrap {
-            margin-top: 48px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            height: 400px;
-        }
-        .map-wrap iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg);
-            color: rgba(255, 255, 255, 0.6);
-            padding: 40px 0;
-            text-align: center;
-            font-size: 14px;
-        }
-        footer strong { color: white; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .nav-cta .btn { display: none; }
-            .nav-toggle { display: block; }
-            section { padding: 64px 0; }
-            .hero { min-height: 80vh; }
-            .hero-stats { gap: 24px; flex-wrap: wrap; }
-            .stat-num { font-size: 1.5rem; }
-            .about-grid { grid-template-columns: 1fr; gap: 32px; }
-            .about-img { aspect-ratio: 16/11; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-info, .contact-form { padding: 32px 24px; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Navbar -->
-<header class="navbar">
-    <div class="container nav-inner">
-        <a href="#" class="logo" aria-label="Cruise'N'Pass home">
-            <span class="logo-mark">C</span>
-            <span>Cruise'N'Pass</span>
-        </a>
-        <nav aria-label="Main">
-            <ul class="nav-links">
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#areas">Areas</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="nav-cta">
-            <a href="tel:07916155054" class="btn btn-primary" aria-label="Call Cruise'N'Pass">
-                <span aria-hidden="true">📞</span> 07916 155054
-            </a>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-<main id="main">
-
-<!-- Hero -->
-<section class="hero" aria-labelledby="hero-heading">
-    <div class="container hero-inner">
-        <span class="eyebrow">DVSA Approved Instructor</span>
-        <h1 id="hero-heading">Pass first time, with confidence.</h1>
-        <p class="lead">Patient, structured driving lessons across Manchester. Manual and automatic. From complete beginner to test-ready — at your pace.</p>
-        <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Book your first lesson</a>
-            <a href="#pricing" class="btn btn-ghost">View pricing</a>
-        </div>
-        <div class="hero-stats" role="list">
-            <div role="listitem">
-                <div class="stat-num">89%</div>
-                <div class="stat-label">First-time pass rate</div>
-            </div>
-            <div role="listitem">
-                <div class="stat-num">8+</div>
-                <div class="stat-label">Years experience</div>
-            </div>
-            <div role="listitem">
-                <div class="stat-num">500+</div>
-                <div class="stat-label">Students passed</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing -->
-<section id="pricing" class="alt" aria-labelledby="pricing-heading">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-eyebrow">Pricing</div>
-            <h2 id="pricing-heading">Choose the package that fits you</h2>
-            <p>No hidden fees. Pay as you go, or save with a block booking. All packages include pickup and drop-off.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Starter</h3>
-                <div class="price">£320<small> total</small></div>
-                <div class="hours">10 hours</div>
-                <span class="per-hour">£32 / hour</span>
-                <ul>
-                    <li>For complete beginners or refresher learners</li>
-                    <li>Pickup &amp; drop-off included</li>
-                    <li>Free progress tracker</li>
-                </ul>
-                <a href="#contact" class="btn btn-secondary">Get started</a>
-            </div>
-            <div class="price-card">
-                <h3>Standard</h3>
-                <div class="price">£495<small> total</small></div>
-                <div class="hours">15 hours</div>
-                <span class="per-hour">£33 / hour</span>
-                <ul>
-                    <li>Ideal for new learners building core skills</li>
-                    <li>One mock driving test included</li>
-                    <li>Flexible scheduling</li>
-                </ul>
-                <a href="#contact" class="btn btn-secondary">Get started</a>
-            </div>
-            <div class="price-card featured">
-                <span class="badge">Most popular</span>
-                <h3>Test Ready</h3>
-                <div class="price">£660<small> total</small></div>
-                <div class="hours">20 hours</div>
-                <span class="per-hour">£33 / hour</span>
-                <ul>
-                    <li>Build confidence on busier roads</li>
-                    <li>Master key manoeuvres</li>
-                    <li>Two mock tests included</li>
-                    <li>Theory test support</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary">Get started</a>
-            </div>
-            <div class="price-card">
-                <h3>Intensive</h3>
-                <div class="price">£990<small> total</small></div>
-                <div class="hours">30 hours</div>
-                <span class="per-hour">£33 / hour</span>
-                <ul>
-                    <li>For serious first-attempt success</li>
-                    <li>Weekly progress reviews</li>
-                    <li>Three mock tests included</li>
-                    <li>Motorway lesson included</li>
-                </ul>
-                <a href="#contact" class="btn btn-secondary">Get started</a>
-            </div>
-            <div class="price-card">
-                <h3>Full Licence</h3>
-                <div class="price">£1,320<small> total</small></div>
-                <div class="hours">40 hours</div>
-                <span class="per-hour">£33 / hour</span>
-                <ul>
-                    <li>Comprehensive start-to-test programme</li>
-                    <li>Unlimited mock tests</li>
-                    <li>Weekend availability</li>
-                    <li>Lifetime refresher lesson discount</li>
-                </ul>
-                <a href="#contact" class="btn btn-secondary">Get started</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About -->
-<section id="about" class="about" aria-labelledby="about-heading">
-    <div class="container about-grid">
-        <div class="about-img" role="img" aria-label="Cruise'N'Pass driving instructor with student"></div>
-        <div>
-            <div class="section-eyebrow">About your instructor</div>
-            <h2 id="about-heading">Calm, patient, and focused on you.</h2>
-            <p>Hi, I'm the instructor behind Cruise'N'Pass. I became a driving instructor because I remember exactly how stressful learning felt — and I wanted to make it easier for the next person.</p>
-            <p>Every lesson is structured around your goals, your pace, and the test routes near you. No shouting, no pressure — just clear feedback that gets you test-ready faster.</p>
-            <div class="credentials">
-                <div class="credential">
-                    <div class="credential-icon" aria-hidden="true">🏅</div>
-                    <div class="credential-text">
-                        <strong>DVSA Approved</strong>
-                        <span>Fully qualified ADI</span>
-                    </div>
-                </div>
-                <div class="credential">
-                    <div class="credential-icon" aria-hidden="true">⭐</div>
-                    <div class="credential-text">
-                        <strong>Grade A Instructor</strong>
-                        <span>Top DVSA grade</span>
-                    </div>
-                </div>
-                <div class="credential">
-                    <div class="credential-icon" aria-hidden="true">🚗</div>
-                    <div class="credential-text">
-                        <strong>Dual-controlled car</strong>
-                        <span>Manual &amp; automatic</span>
-                    </div>
-                </div>
-                <div class="credential">
-                    <div class="credential-icon" aria-hidden="true">🛡️</div>
-                    <div class="credential-text">
-                        <strong>Fully insured</strong>
-                        <span>All lessons covered</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials -->
-<section id="reviews" class="alt" aria-labelledby="reviews-heading">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-eyebrow">Reviews</div>
-            <h2 id="reviews-heading">What learners say</h2>
-            <p>Real students. Real passes. Real stories.</p>
-        </div>
-        <div class="testimonials">
-            <article class="testimonial">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>"I'd failed twice with another instructor. After 25 hours with Cruise'N'Pass I passed first time. The difference was the structure — every lesson had a clear goal."</blockquote>
-                <cite>
-                    <div class="avatar" aria-hidden="true">A</div>
-                    <div>
-                        <span class="name">Aisha M.</span>
-                        <span class="meta">Passed at Cheetham Hill</span>
-                    </div>
-                </cite>
-            </article>
-            <article class="testimonial">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>"Patient, never made me feel stupid for asking the same question twice. Loved that the instructor picked me up from home and from work when I had late lessons."</blockquote>
-                <cite>
-                    <div class="avatar" aria-hidden="true">J</div>
-                    <div>
-                        <span class="name">James T.</span>
-                        <span class="meta">Passed at Hyde</span>
-                    </div>
-                </cite>
-            </article>
-            <article class="testimonial">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>"Booked the 30-hour intensive before my theory test. The mock tests were almost identical to the real thing. Couldn't recommend more."</blockquote>
-                <cite>
-                    <div class="avatar" aria-hidden="true">S</div>
-                    <div>
-                        <span class="name">Sophie L.</span>
-                        <span class="meta">Passed at Salford</span>
-                    </div>
-                </cite>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- Areas -->
-<section id="areas" aria-labelledby="areas-heading">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-eyebrow">Coverage</div>
-            <h2 id="areas-heading">Lessons across Greater Manchester</h2>
-            <p>Pickup from home, work, or college. Test route familiarisation included.</p>
-        </div>
-        <div class="areas">
-            <span class="area-pill">Manchester</span>
-            <span class="area-pill">Salford</span>
-            <span class="area-pill">Stockport</span>
-            <span class="area-pill">Altrincham</span>
-            <span class="area-pill">Sale</span>
-            <span class="area-pill">Trafford</span>
-            <span class="area-pill">Cheetham Hill</span>
-            <span class="area-pill">Hyde</span>
-            <span class="area-pill">Denton</span>
-            <span class="area-pill">Stretford</span>
-            <span class="area-pill">Eccles</span>
-            <span class="area-pill">Swinton</span>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="alt" aria-labelledby="contact-heading">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-eyebrow">Get in touch</div>
-            <h2 id="contact-heading">Ready to start? Let's chat.</h2>
-            <p>Drop a message, call, or text. I usually reply within a few hours.</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Contact details</h3>
-                <p>Fastest way to reach me is a text or WhatsApp.</p>
-
-                <div class="contact-item">
-                    <div class="icon" aria-hidden="true">📞</div>
-                    <div>
-                        <div class="label">Phone &amp; WhatsApp</div>
-                        <a href="tel:07916155054" class="value">07916 155054</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon" aria-hidden="true">✉️</div>
-                    <div>
-                        <div class="label">Email</div>
-                        <a href="mailto:cruisenpass@gmail.com" class="value">cruisenpass@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon" aria-hidden="true">📍</div>
-                    <div>
-                        <div class="label">Based in</div>
-                        <span class="value">Manchester, UK</span>
-                    </div>
-                </div>
-
-                <div class="socials">
-                    <a href="https://www.facebook.com/CruiseNPass/" class="social-link" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.2c0-1 .3-1.2 1.2-1.2H18V1h-2.8C12.1 1 11 2.8 11 5.4V8z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/cruisenpass/" class="social-link" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2M12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4S.9 3.4.6 4.2C.3 5 .1 5.8.1 7.1.1 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.6C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.3-.8-.7-1.5-1.4-2.2C20.5 1.3 19.8.9 19 .6 18.2.3 17.4.1 16.1.1 14.9 0 14.5 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.8c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/></svg>
-                    </a>
-                    <a href="https://www.youtube.com/@cruisenpass" class="social-link" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2-1.8-.5-9-.5-9-.5s-7.2 0-9 .5c-1 .2-1.7 1-2 2C1 8 1 12 1 12s0 4 .5 5.8c.3 1 1 1.8 2 2 1.8.5 9 .5 9 .5s7.2 0 9-.5c1-.2 1.7-1 2-2 .5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" aria-label="Contact form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full name</label>
-                        <input type="text" id="name" name="name" required autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required autocomplete="tel">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                </div>
-                <div class="form-group">
-                    <label for="experience">Your experience level</label>
-                    <select id="experience" name="experience">
-                        <option value="beginner">Complete beginner</option>
-                        <option value="some">Some experience</option>
-                        <option value="refresher">Refresher lessons</option>
-                        <option value="test-prep">Test preparation</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell me a bit about what you need and your preferred lesson times..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send enquiry</button>
-            </form>
-        </div>
-
-        <div class="map-wrap">
-            <iframe
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB7QWkvlxV39ZsyKvhZRjPGVqlJFvxxNkw&q=Manchester"
-                title="Map showing Cruise'N'Pass service area in Manchester"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
-
-</main>
-
-<footer>
-    <div class="container">
-        <p><strong>Cruise'N'Pass</strong> &middot; DVSA Approved Driving Instructor &middot; Manchester, UK</p>
-        <p style="margin-top: 8px; font-size: 13px;">&copy; <span id="year"></span> Cruise'N'Pass. All rights reserved.</p>
-    </div>
-</footer>
-
-<script>
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-            const expanded = toggle.getAttribute('aria-expanded') === 'true';
-            toggle.setAttribute('aria-expanded', !expanded);
-            navLinks.style.display = expanded ? 'none' : 'flex';
-            if (!expanded) {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '72px';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.padding = '20px 24px';
-                navLinks.style.borderBottom = '1px solid var(--border)';
-                navLinks.style.gap = '16px';
-            }
-        });
-    }
-</script>
-
-</body>
-</html>
