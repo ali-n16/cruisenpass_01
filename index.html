@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruise'N'Pass — Driving Lessons in Manchester</title>
-    <meta name="description" content="DVSA-approved driving instructor in Manchester. Manual &amp; automatic lessons. 89% first-time pass rate. Calm, structured, patient teaching.">
+    <title>CruiseNPass - Driving Lessons in Manchester</title>
+    <meta name="description" content="DVSA-approved driving instructor in Manchester. Manual and automatic lessons. 89 percent first-time pass rate. Calm, structured, patient teaching.">
     <meta name="theme-color" content="#ffffff">
-
-    <meta property="og:title" content="Cruise'N'Pass — Driving Lessons in Manchester">
-    <meta property="og:description" content="DVSA-approved driving instructor. 89% first-time pass rate. Calm, patient teaching.">
-    <meta property="og:type" content="website">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg: #ffffff;
@@ -25,512 +19,516 @@
             --ink-soft: #404040;
             --ink-muted: #737373;
             --line: #e7e5e0;
-            --line-strong: #d6d3cd;
             --accent: #d97706;
             --accent-soft: #fef3c7;
-            --success: #15803d;
         }
-
         * { box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: var(--ink);
             background: var(--bg);
             line-height: 1.55;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: 'cv11', 'ss01';
         }
-
-        h1, h2, h3, h4, h5 {
+        h1, h2, h3, h4 {
             font-weight: 700;
             line-height: 1.05;
             letter-spacing: -0.035em;
             color: var(--ink);
             margin: 0;
         }
-
-        h1 { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; letter-spacing: -0.05em; }
-        h2 { font-size: clamp(2.25rem, 5.5vw, 4.5rem); letter-spacing: -0.04em; }
-        h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); letter-spacing: -0.025em; }
-        h4 { font-size: 1.25rem; }
-
+        h1 { font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 700; letter-spacing: -0.045em; }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.035em; }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); letter-spacing: -0.02em; }
         a { color: inherit; text-decoration: none; }
-        p { color: var(--ink-soft); }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .container-narrow {
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        /* Skip link */
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background: var(--ink);
-            color: white;
-            padding: 12px 20px;
-            z-index: 1000;
-        }
+        p { color: var(--ink-soft); margin: 0 0 1em; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--ink); color: white; padding: 12px 20px; z-index: 1000; }
         .skip-link:focus { top: 0; }
-
-        /* Buttons — minimal, no rounded pills */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 16px 28px;
-            border-radius: 0;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.15s ease;
-            font-family: inherit;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 16px 28px; border-radius: 0; font-weight: 600; font-size: 15px;
+            cursor: pointer; border: none; transition: all 0.15s ease; font-family: inherit;
             letter-spacing: -0.01em;
         }
-        .btn-primary {
-            background: var(--ink);
-            color: white;
-        }
-        .btn-primary:hover {
-            background: var(--accent);
-        }
-        .btn-secondary {
-            background: transparent;
-            color: var(--ink);
-            border: 1.5px solid var(--ink);
-        }
-        .btn-secondary:hover {
-            background: var(--ink);
-            color: white;
-        }
-        .btn-text {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 4px 0;
-            border-bottom: 1.5px solid currentColor;
-            transition: gap 0.2s;
-        }
-        .btn-text:hover { gap: 12px; }
-
-        /* Navbar */
+        .btn-primary { background: var(--ink); color: white; }
+        .btn-primary:hover { background: var(--accent); }
+        .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+        .btn-secondary:hover { background: var(--ink); color: white; }
+        .btn-text { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; padding: 4px 0; border-bottom: 1.5px solid currentColor; transition: gap 0.2s; }
+        .btn-text:hover { gap: 14px; }
         .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: saturate(180%) blur(16px);
             -webkit-backdrop-filter: saturate(180%) blur(16px);
             border-bottom: 1px solid var(--line);
         }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 76px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            font-size: 17px;
-            letter-spacing: -0.02em;
-        }
-        .logo-mark {
-            width: 32px;
-            height: 32px;
-            background: var(--ink);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--ink-soft);
-            transition: color 0.15s;
-            letter-spacing: -0.005em;
-        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 17px; letter-spacing: -0.02em; }
+        .logo-mark { width: 32px; height: 32px; background: var(--ink); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .nav-links { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-soft); transition: color 0.15s; }
         .nav-links a:hover { color: var(--ink); }
-        .nav-cta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .nav-phone {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--ink);
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-        }
-        .nav-toggle span {
-            display: block;
-            width: 24px;
-            height: 1.5px;
-            background: var(--ink);
-            margin: 6px 0;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 120px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .hero-eyebrow {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--ink-soft);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 32px;
-        }
-        .hero-eyebrow span {
-            display: inline-block;
-            width: 24px;
-            height: 1px;
-            background: var(--ink);
-            vertical-align: middle;
-            margin-right: 12px;
-        }
-        .hero h1 {
-            margin-bottom: 32px;
-        }
-        .hero h1 em {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-weight: 400;
-            color: var(--accent);
-        }
-        .hero p.lead {
-            font-size: 19px;
-            line-height: 1.5;
-            color: var(--ink-soft);
-            max-width: 480px;
-            margin: 0 0 40px;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 80px;
-            padding-top: 48px;
-            border-top: 1px solid var(--line);
-        }
-        .stat-num {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-        .stat-label {
-            font-size: 13px;
-            color: var(--ink-muted);
-            letter-spacing: 0.02em;
-        }
-
-        /* Hero image */
-        .hero-image {
-            position: relative;
-            aspect-ratio: 4/5;
-            background: var(--bg-warm);
-            background-image: url('https://images.unsplash.com/photo-1449965408869-ebd3fee7710d?w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 24px;
-            right: -24px;
-            bottom: -24px;
-            border: 1px solid var(--ink);
-            z-index: -1;
-        }
-        .hero-image-caption {
-            position: absolute;
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
-            background: white;
-            padding: 16px 20px;
-            font-size: 13px;
-            color: var(--ink-soft);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .hero-image-caption strong {
-            display: block;
-            color: var(--ink);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* Sections */
+        .nav-cta { display: flex; align-items: center; gap: 20px; }
+        .nav-phone { font-size: 14px; font-weight: 500; color: var(--ink); }
+        .nav-toggle { display: none; background: none; border: none; padding: 8px; cursor: pointer; }
+        .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 6px 0; }
+        .hero { padding: 100px 0 80px; }
+        .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: center; }
+        .hero-eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 32px; }
+        .hero-eyebrow span { display: inline-block; width: 24px; height: 1px; background: var(--ink); vertical-align: middle; margin-right: 12px; }
+        .hero h1 { margin-bottom: 32px; }
+        .hero h1 em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--accent); }
+        .hero p.lead { font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 480px; margin: 0 0 40px; }
+        .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+        .stat-num { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 13px; color: var(--ink-muted); letter-spacing: 0.02em; }
+        .hero-image { position: relative; aspect-ratio: 4/5; background: var(--bg-warm); background-image: url("https://images.unsplash.com/photo-1449965408869-ebd3fee7710d?w=1200&q=80"); background-size: cover; background-position: center; }
+        .hero-image::after { content: ""; position: absolute; top: 24px; left: 24px; right: -24px; bottom: -24px; border: 1px solid var(--ink); z-index: -1; }
+        .hero-image-caption { position: absolute; bottom: 24px; left: 24px; right: 24px; background: white; padding: 16px 20px; font-size: 13px; color: var(--ink-soft); }
+        .hero-image-caption strong { display: block; color: var(--ink); font-size: 14px; font-weight: 600; }
         section { padding: 120px 0; }
-
-        .section-eyebrow {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 20px;
-        }
-        .section-head {
-            max-width: 760px;
-            margin-bottom: 80px;
-        }
+        .section-eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px; }
+        .section-head { max-width: 760px; margin-bottom: 80px; }
         .section-head h2 { margin-bottom: 20px; }
-        .section-head p {
-            font-size: 19px;
-            color: var(--ink-soft);
-            max-width: 560px;
-        }
+        .section-head p { font-size: 19px; color: var(--ink-soft); max-width: 560px; }
         .section-head.center { margin: 0 auto 80px; text-align: center; }
         .section-head.center p { margin: 0 auto; }
-
-        /* Pricing — editorial table style */
-        .pricing-list {
-            border-top: 1px solid var(--ink);
-        }
-        .pricing-row {
-            display: grid;
-            grid-template-columns: 80px 2fr 1fr 1.2fr auto;
-            gap: 32px;
-            padding: 32px 0;
-            border-bottom: 1px solid var(--line);
-            align-items: center;
-            transition: background 0.2s, padding 0.2s;
-        }
-        .pricing-row:hover {
-            background: var(--bg-warm);
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .pricing-row.featured {
-            background: var(--ink);
-            color: white;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .pricing-row.featured:hover { background: var(--ink); }
-        .pricing-row.featured .row-desc,
-        .pricing-row.featured .row-features,
-        .pricing-row.featured .row-num { color: rgba(255, 255, 255, 0.7); }
-        .pricing-row.featured .row-name { color: white; }
-        .pricing-row.featured .row-price { color: white; }
-        .pricing-row.featured .row-badge { background: var(--accent); color: var(--ink); }
-
-        .row-num {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: 32px;
-            color: var(--ink-muted);
-        }
+        .pricing-list { border-top: 1px solid var(--ink); }
+        .pricing-row { display: grid; grid-template-columns: 60px 1.5fr 1fr 1fr auto; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: center; transition: background 0.2s, padding 0.2s; }
+        .pricing-row:hover { background: var(--bg-warm); padding-left: 24px; padding-right: 24px; }
+        .pricing-row.featured { background: var(--ink); color: white; padding-left: 24px; padding-right: 24px; }
+        .pricing-row.featured .row-desc, .pricing-row.featured .row-features, .pricing-row.featured .row-num { color: rgba(255,255,255,0.7); }
+        .pricing-row.featured .row-name, .pricing-row.featured .row-price { color: white; }
+        .row-num { font-family: "Instrument Serif", serif; font-style: italic; font-size: 28px; color: var(--ink-muted); }
         .pricing-row.featured .row-num { color: var(--accent); }
-
-        .row-name {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-        .row-name small {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--ink-muted);
-            margin-top: 4px;
-            letter-spacing: 0;
-        }
-        .row-desc {
-            color: var(--ink-soft);
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .row-features {
-            font-size: 13px;
-            color: var(--ink-muted);
-            line-height: 1.7;
-        }
-        .row-price {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .row-price small {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--ink-muted);
-        }
-        .row-badge {
-            display: inline-block;
-            background: var(--accent-soft);
-            color: var(--accent);
-            padding: 4px 10px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-left: 8px;
-        }
-
-        /* About — editorial split */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 100px;
-            align-items: flex-start;
-        }
-        .about-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--ink-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 32px;
-        }
+        .row-name { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+        .row-name small { display: block; font-size: 13px; font-weight: 500; color: var(--ink-muted); margin-top: 4px; letter-spacing: 0; }
+        .row-desc { color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+        .row-features { font-size: 13px; color: var(--ink-muted); line-height: 1.7; }
+        .row-price { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+        .row-price small { font-size: 13px; font-weight: 500; color: var(--ink-muted); }
+        .row-badge { display: inline-block; background: var(--accent); color: var(--ink); padding: 4px 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-left: 8px; vertical-align: middle; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 100px; align-items: flex-start; }
+        .about-label { font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 32px; }
         .about h2 { margin-bottom: 40px; }
-        .about p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            color: var(--ink-soft);
-        }
-        .about-image {
-            aspect-ratio: 4/5;
-            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 32px;
-        }
-        .credentials {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--line);
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-        .credential {
-            background: white;
-            padding: 24px 0;
-        }
-        .credential-num {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: 32px;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-        .credential-text {
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        .credential-text strong {
-            display: block;
-            color: var(--ink);
-            font-weight: 600;
-            font-size: 15px;
-        }
+        .about p { font-size: 18px; line-height: 1.6; margin-bottom: 24px; color: var(--ink-soft); }
+        .about-image { aspect-ratio: 4/5; background-image: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&q=80"); background-size: cover; background-position: center; margin-bottom: 32px; }
+        .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .credential { background: white; padding: 24px; }
+        .credential-num { font-family: "Instrument Serif", serif; font-style: italic; font-size: 28px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+        .credential-text { font-size: 14px; line-height: 1.4; }
+        .credential-text strong { display: block; color: var(--ink); font-weight: 600; font-size: 15px; }
         .credential-text span { color: var(--ink-muted); }
-
-        /* Testimonials — large pull-quote style */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--line);
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
+        .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .testimonial { background: white; padding: 48px 32px; display: flex; flex-direction: column; }
+        .testimonial-quote { font-size: 19px; line-height: 1.5; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 40px; flex: 1; font-weight: 500; }
+        .testimonial-quote::before { content: "\201C"; font-family: "Instrument Serif", serif; font-size: 56px; color: var(--accent); line-height: 0.5; display: block; margin-bottom: 16px; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+        .testimonial-author .avatar { width: 40px; height: 40px; background: var(--ink); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .testimonial-author .name { font-weight: 600; font-size: 14px; color: var(--ink); display: block; }
+        .testimonial-author .meta { font-size: 13px; color: var(--ink-muted); }
+        .areas { display: flex; flex-wrap: wrap; gap: 12px; }
+        .area-pill { background: white; border: 1px solid var(--line); color: var(--ink-soft); padding: 14px 22px; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+        .area-pill:hover { background: var(--ink); color: white; border-color: var(--ink); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+        .contact-info h2 { margin-bottom: 24px; }
+        .contact-info > p { font-size: 18px; margin-bottom: 48px; }
+        .contact-item { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .contact-item:first-of-type { border-top: 1px solid var(--line); }
+        .contact-item .label { font-size: 12px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+        .contact-item .value { font-size: 20px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+        .contact-item a:hover { color: var(--accent); }
+        .socials { display: flex; gap: 12px; margin-top: 32px; }
+        .social-link { width: 44px; height: 44px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .social-link:hover { background: var(--ink); color: white; border-color: var(--ink); }
+        .contact-form { background: var(--bg-soft); padding: 48px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.01em; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 0; border: none; border-bottom: 1.5px solid var(--line); font-size: 16px; font-family: inherit; color: var(--ink); transition: border-color 0.2s; background: transparent; border-radius: 0; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--ink); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .map-wrap { margin-top: 80px; aspect-ratio: 21/9; border: 1px solid var(--line); }
+        .map-wrap iframe { width: 100%; height: 100%; border: 0; }
+        footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 60px 0 40px; }
+        footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        footer h4 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 20px; letter-spacing: 0; }
+        footer ul { list-style: none; padding: 0; margin: 0; }
+        footer li { margin-bottom: 12px; font-size: 14px; }
+        footer a:hover { color: var(--accent); }
+        .footer-bottom { padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 13px; }
+        @media (max-width: 900px) {
+            .nav-links, .nav-phone { display: none; }
+            .nav-toggle { display: block; }
+            .hero { padding: 60px 0; }
+            .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+            .hero-stats { grid-template-columns: 1fr; gap: 20px; text-align: left; }
+            .pricing-row { grid-template-columns: 1fr; gap: 12px; }
+            .pricing-row:hover { padding-left: 0; padding-right: 0; }
+            .row-num { font-size: 20px; }
+            .row-features { display: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 60px; }
+            .testimonials { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+            .contact-form { padding: 32px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+            section { padding: 80px 0; }
         }
-        .testimonial {
-            background: white;
-            padding: 48px 32px;
-            display: flex;
-            flex-direction: column;
-        }
-        .testimonial-quote {
-            font-size: 22px;
-            line-height: 1.4;
-            letter-spacing: -0.015em;
-            color: var(--ink);
-            margin: 0 0 40px;
-            flex: 1;
-            font-weight: 500;
-        }
-        .testimonial-quote::before {
-            content: '"';
-            font-family: 'Instrument Serif', serif;
-            font-size: 60px;
-            color: var(--accent);
-            line-height: 0.5;
-            display: block;
-            margin-bottom: 16px;
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding-top: 24px;
-            border-top: 1px solid var(--line);
-        }
-        .testimonial-author .avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--ink);
-            color: var(--accent);
-            display: flex;
+    </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="navbar">
+    <div class="container nav-inner">
+        <a href="#" class="logo">
+            <span class="logo-mark">C</span>
+            <span>CruiseNPass</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-links">
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-cta">
+            <a href="tel:07916155054" class="nav-phone">07916 155054</a>
+            <a href="#contact" class="btn btn-primary">Book a lesson</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+<main id="main">
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <span class="hero-eyebrow"><span></span>DVSA Approved Instructor</span>
+                <h1>Pass first time, with <em>confidence.</em></h1>
+                <p class="lead">Calm, structured driving lessons across Manchester. Manual and automatic. From complete beginner to test-ready, at your pace.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Book your first lesson</a>
+                    <a href="#pricing" class="btn-text">See pricing &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-image" role="img" aria-label="Driving lesson in progress">
+                <div class="hero-image-caption">
+                    <strong>8+ years experience</strong>
+                    DVSA Grade A instructor, Manchester
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <div class="stat-num">89%</div>
+                <div class="stat-label">First-time pass rate</div>
+            </div>
+            <div>
+                <div class="stat-num">500+</div>
+                <div class="stat-label">Students passed</div>
+            </div>
+            <div>
+                <div class="stat-num">8+</div>
+                <div class="stat-label">Years teaching</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="pricing" style="background: var(--bg-soft);">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Pricing</span>
+            <h2>Choose the package that fits you.</h2>
+            <p>No hidden fees. Block bookings save you money. Pickup and drop-off included on every lesson.</p>
+        </div>
+        <div class="pricing-list">
+            <div class="pricing-row">
+                <div class="row-num">01</div>
+                <div>
+                    <div class="row-name">Starter<small>10 hours</small></div>
+                </div>
+                <div class="row-desc">For complete beginners or those wanting a refresher on the basics.</div>
+                <div class="row-features">Pickup &amp; drop-off<br>Progress tracker</div>
+                <div class="row-price">&pound;320 <small>&middot; &pound;32/hr</small></div>
+            </div>
+            <div class="pricing-row">
+                <div class="row-num">02</div>
+                <div>
+                    <div class="row-name">Standard<small>15 hours</small></div>
+                </div>
+                <div class="row-desc">For new learners building core skills and ready to start test prep.</div>
+                <div class="row-features">One mock test<br>Flexible scheduling</div>
+                <div class="row-price">&pound;495 <small>&middot; &pound;33/hr</small></div>
+            </div>
+            <div class="pricing-row featured">
+                <div class="row-num">03</div>
+                <div>
+                    <div class="row-name">Test Ready <span class="row-badge">Popular</span><small>20 hours</small></div>
+                </div>
+                <div class="row-desc">Build confidence on busier roads and master key manoeuvres.</div>
+                <div class="row-features">Two mock tests<br>Theory support</div>
+                <div class="row-price">&pound;660 <small>&middot; &pound;33/hr</small></div>
+            </div>
+            <div class="pricing-row">
+                <div class="row-num">04</div>
+                <div>
+                    <div class="row-name">Intensive<small>30 hours</small></div>
+                </div>
+                <div class="row-desc">For serious first-attempt success with comprehensive coverage.</div>
+                <div class="row-features">Three mock tests<br>Motorway lesson</div>
+                <div class="row-price">&pound;990 <small>&middot; &pound;33/hr</small></div>
+            </div>
+            <div class="pricing-row">
+                <div class="row-num">05</div>
+                <div>
+                    <div class="row-name">Full Licence<small>40 hours</small></div>
+                </div>
+                <div class="row-desc">Complete start-to-test programme with unlimited support.</div>
+                <div class="row-features">Unlimited mock tests<br>Weekend availability</div>
+                <div class="row-price">&pound;1,320 <small>&middot; &pound;33/hr</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="about">
+    <div class="container about-grid">
+        <div>
+            <span class="section-eyebrow">About</span>
+            <h2>Calm, patient, and focused on you.</h2>
+            <p>I became a driving instructor because I remember exactly how stressful learning felt, and I wanted to make it easier for the next person.</p>
+            <p>Every lesson is structured around your goals, your pace, and the test routes near you. No shouting, no pressure, just clear feedback that gets you test-ready faster.</p>
+            <a href="#contact" class="btn-text">Get in touch &rarr;</a>
+        </div>
+        <div>
+            <div class="about-image" role="img" aria-label="CruiseNPass instructor portrait"></div>
+            <div class="credentials">
+                <div class="credential">
+                    <div class="credential-num">01</div>
+                    <div class="credential-text"><strong>DVSA Approved</strong><span>Fully qualified ADI</span></div>
+                </div>
+                <div class="credential">
+                    <div class="credential-num">02</div>
+                    <div class="credential-text"><strong>Grade A</strong><span>Top DVSA grade</span></div>
+                </div>
+                <div class="credential">
+                    <div class="credential-num">03</div>
+                    <div class="credential-text"><strong>Dual-controlled</strong><span>Manual and automatic</span></div>
+                </div>
+                <div class="credential">
+                    <div class="credential-num">04</div>
+                    <div class="credential-text"><strong>Fully insured</strong><span>All lessons covered</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="reviews" style="background: var(--bg-soft);">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Reviews</span>
+            <h2>What learners say.</h2>
+            <p>Real students. Real passes. Real stories from people who learned with CruiseNPass.</p>
+        </div>
+        <div class="testimonials">
+            <article class="testimonial">
+                <p class="testimonial-quote">I had failed twice with another instructor. After 25 hours with CruiseNPass I passed first time. The difference was the structure.</p>
+                <div class="testimonial-author">
+                    <div class="avatar">A</div>
+                    <div>
+                        <span class="name">Aisha M.</span>
+                        <span class="meta">Passed at Cheetham Hill</span>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial">
+                <p class="testimonial-quote">Patient, never made me feel stupid for asking the same question twice. Loved that the instructor picked me up from home and work.</p>
+                <div class="testimonial-author">
+                    <div class="avatar">J</div>
+                    <div>
+                        <span class="name">James T.</span>
+                        <span class="meta">Passed at Hyde</span>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial">
+                <p class="testimonial-quote">Booked the 30-hour intensive before my theory test. The mock tests were almost identical to the real thing.</p>
+                <div class="testimonial-author">
+                    <div class="avatar">S</div>
+                    <div>
+                        <span class="name">Sophie L.</span>
+                        <span class="meta">Passed at Salford</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<section id="areas">
+    <div class="container">
+        <div class="section-head center">
+            <span class="section-eyebrow">Coverage</span>
+            <h2>Lessons across Greater Manchester.</h2>
+            <p>Pickup from home, work, or college. Test route familiarisation included.</p>
+        </div>
+        <div class="areas" style="justify-content: center;">
+            <span class="area-pill">Manchester</span>
+            <span class="area-pill">Salford</span>
+            <span class="area-pill">Stockport</span>
+            <span class="area-pill">Altrincham</span>
+            <span class="area-pill">Sale</span>
+            <span class="area-pill">Trafford</span>
+            <span class="area-pill">Cheetham Hill</span>
+            <span class="area-pill">Hyde</span>
+            <span class="area-pill">Denton</span>
+            <span class="area-pill">Stretford</span>
+            <span class="area-pill">Eccles</span>
+            <span class="area-pill">Swinton</span>
+        </div>
+    </div>
+</section>
+<section id="contact" style="background: var(--bg-soft);">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Contact</span>
+            <h2>Ready to start? Let&rsquo;s chat.</h2>
+            <p>Drop a message, call, or text. I usually reply within a few hours.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Direct contact</h3>
+                <p>Fastest way to reach me is a text or WhatsApp.</p>
+                <div class="contact-item">
+                    <div>
+                        <div class="label">Phone &amp; WhatsApp</div>
+                        <a href="tel:07916155054" class="value">07916 155054</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <div class="label">Email</div>
+                        <a href="/cdn-cgi/l/email-protection#3e5d4c4b574d5b504e5f4d4d7e59535f5752105d5153" class="value"><span class="__cf_email__" data-cfemail="d3b0a1a6baa0b6bda3b2a0a093b4beb2babffdb0bcbe">[email&#160;protected]</span></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <div class="label">Based in</div>
+                        <span class="value">Manchester, UK</span>
+                    </div>
+                </div>
+                <div class="socials">
+                    <a href="https://www.facebook.com/CruiseNPass/" class="social-link" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.2c0-1 .3-1.2 1.2-1.2H18V1h-2.8C12.1 1 11 2.8 11 5.4V8z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/cruisenpass/" class="social-link" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2M12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4S.9 3.4.6 4.2C.3 5 .1 5.8.1 7.1.1 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.6C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.3-.8-.7-1.5-1.4-2.2C20.5 1.3 19.8.9 19 .6 18.2.3 17.4.1 16.1.1 14.9 0 14.5 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.8c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@cruisenpass" class="social-link" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2-1.8-.5-9-.5-9-.5s-7.2 0-9 .5c-1 .2-1.7 1-2 2C1 8 1 12 1 12s0 4 .5 5.8c.3 1 1 1.8 2 2 1.8.5 9 .5 9 .5s7.2 0 9-.5c1-.2 1.7-1 2-2 .5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name" name="name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="experience">Your experience level</label>
+                    <select id="experience" name="experience">
+                        <option value="beginner">Complete beginner</option>
+                        <option value="some">Some experience</option>
+                        <option value="refresher">Refresher lessons</option>
+                        <option value="test-prep">Test preparation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me a bit about what you need and your preferred lesson times" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send enquiry</button>
+            </form>
+        </div>
+        <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB7QWkvlxV39ZsyKvhZRjPGVqlJFvxxNkw&q=Manchester" title="CruiseNPass service area in Manchester" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color: white; font-size: 18px; margin-bottom: 12px;">CruiseNPass</h4>
+                <p style="color: rgba(255,255,255,0.6); font-size: 14px; max-width: 320px;">DVSA-approved driving instructor. Calm, structured lessons across Greater Manchester.</p>
+            </div>
+            <div>
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:07916155054">07916 155054</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#214253544852444f5140525261464c40484d0f424e4c"><span class="__cf_email__" data-cfemail="fc9f8e89958f99928c9d8f8fbc9b919d9590d29f9391">[email&#160;protected]</span></a></li>
+                    <li>Manchester, UK</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; <span id="year"></span> CruiseNPass. All rights reserved.</span>
+            <span>DVSA Approved Instructor</span>
+        </div>
+    </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = '';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '76px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px 32px';
+                navLinks.style.borderBottom = '1px solid var(--line)';
+                navLinks.style.gap = '20px';
+            }
+        });
+    }
+</script>
+</body>
+</html>
