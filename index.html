@@ -27,10 +27,11 @@
           },
           colors: {
             brand: {
-              active: '#00F3BB', // Lime Neon Mint
-              electric: '#4F46E5', // Electric Royal Indigo
-              dark: '#0B0F19', // Sleek Rich Dark
-              accent: '#FF007A', // Energetic Vibrant Pink
+              active: '#00D1A0', // Fresh Vibrant Mint Green
+              electric: '#4F46E5', // Electric Indigo Blue
+              dark: '#0B0F19', // Rich slate dark for headings
+              lightBg: '#FFFFFF', // Clean White background
+              accent: '#FF007A', // Vibrant Energetic Coral Pink
             }
           }
         }
@@ -38,92 +39,130 @@
     }
   </script>
 </head>
-<body class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden selection:bg-brand-active selection:text-brand-dark">
+<body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
 
   <!-- Nav Header -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="font-heading font-bold text-2xl tracking-tight text-white hover:text-brand-active transition-colors flex items-center gap-2">
-        <span class="bg-brand-electric p-2 rounded-xl text-white shadow-[0_0_20px_rgba(79,70,229,0.5)]">
-          <i class="fa-solid fa-steering-wheel"></i>🚗
+      <a href="#" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2">
+        <span class="bg-brand-electric p-2 rounded-xl text-white shadow-lg">
+          🚗
         </span>
         Cruise'N'Pass
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
-        <a href="#prices" class="text-sm font-semibold hover:text-brand-active transition-colors">Prices & Plans</a>
-        <a href="#contacts" class="text-sm font-semibold hover:text-brand-active transition-colors">Contacts</a>
+        <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
+        <a href="#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Contacts</a>
       </nav>
 
       <!-- Social Links & Action Button -->
       <div class="flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-3">
-          <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-brand-electric hover:border-brand-electric text-white transition-all">
+        <div class="hidden sm:flex items-center gap-2">
+          <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-electric hover:text-white text-slate-600 transition-all">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/cruisenpass/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-brand-accent hover:border-brand-accent text-white transition-all">
+          <a href="https://www.instagram.com/cruisenpass/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-accent hover:text-white text-slate-600 transition-all">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/@cruisenpass" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-red-600 hover:border-red-600 text-white transition-all">
+          <a href="https://www.youtube.com/@cruisenpass" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-red-500 hover:text-white text-slate-600 transition-all">
             <i class="fa-brands fa-youtube"></i>
           </a>
         </div>
-        <a href="#contacts" class="bg-brand-active hover:bg-white text-brand-dark font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 shadow-[0_4px_20px_rgba(0,243,187,0.3)] text-sm">
-          Book Driving Lesson
+        <a href="#contacts" class="bg-brand-active hover:bg-slate-900 text-white font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 shadow-md shadow-brand-active/20 text-sm">
+          Book Lesson
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
-    <!-- Neon glowing light circles in the background -->
-    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-brand-electric/30 blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 rounded-full bg-brand-active/20 blur-[120px] pointer-events-none"></div>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
+    <!-- Fluid bright blurred blobs for vibrant vibes in light mode -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-indigo-100/60 blur-[130px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[550px] h-[550px] rounded-full bg-emerald-100/50 blur-[140px] pointer-events-none"></div>
 
-    <!-- Cyberpunk grid overlay for high energy motion vibes -->
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    <!-- Modern techy grid lines -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 py-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-active mb-6 text-sm font-semibold">
-        <span class="flex h-2.5 w-2.5 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-active opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-active"></span>
-        </span>
-        Top Rated Driving School in Manchester
+    <div class="max-w-7xl mx-auto px-6 relative z-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left text content -->
+      <div class="lg:col-span-7 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 mb-6 text-sm font-semibold">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-active opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-active"></span>
+          </span>
+          Top Rated Driving School in Manchester
+        </div>
+
+        <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.10] text-brand-dark">
+          Helping you get <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-emerald-400 to-indigo-600">
+            on the road.
+          </span>
+        </h1>
+
+        <p class="text-slate-500 text-lg md:text-xl max-w-xl mb-8 leading-relaxed font-normal">
+          Learn safely, build lifetime confidence, and cruise through your driving test with Manchester's elite, friendly instructors. Let's make passing simple.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a href="#prices" class="w-full sm:w-auto text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-indigo-600/20">
+            View Plans & Prices <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+          </a>
+          <a href="tel:07916155054" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call 07916 155054
+          </a>
+        </div>
       </div>
 
-      <h1 class="font-heading text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
-        Helping you get <br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-active via-[#38bdf8] to-brand-electric">
-          on the road.
-        </span>
-      </h1>
+      <!-- Right image dashboard collage -->
+      <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+        <!-- Main Image -->
+        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" class="w-full h-[380px] object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white text-left">
+            <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
+            <h4 class="text-lg font-bold">"Confidence is key"</h4>
+          </div>
+        </div>
 
-      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-        Learn safely, build lifetime confidence, and cruise through your driving test with Manchester's elite, friendly instructors. Let's make passing simple.
-      </p>
+        <!-- Hover Badge / Accent box -->
+        <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+            98%
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Pass Rate</div>
+            <div class="text-sm font-bold text-brand-dark">Test Day Success</div>
+          </div>
+        </div>
 
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a href="#prices" class="w-full sm:w-auto bg-brand-electric hover:bg-brand-electric/80 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-[0_8px_30px_rgba(79,70,229,0.4)]">
-          View Plans & Prices <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-        </a>
-        <a href="tel:07916155054" class="w-full sm:w-auto bg-white/10 hover:bg-white/15 border border-white/10 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
-          <i class="fa-solid fa-phone"></i> Call 07916 155054
-        </a>
+        <!-- Secondary mini graphic card -->
+        <div class="absolute -top-6 -right-6 z-20 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg">
+            <i class="fa-solid fa-badge-check">🏆</i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-brand-active font-semibold uppercase tracking-wider">Approved School</div>
+            <div class="text-sm font-bold">DVSA Standards</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing Cards Section -->
-  <section id="prices" class="py-24 relative">
+  <section id="prices" class="py-24 relative bg-slate-50/50">
     <div class="max-w-7xl mx-auto px-6">
 
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">
-          Flexible Prices & plans
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark">
+          Flexible Prices & Plans
         </h2>
-        <p class="text-gray-400">
+        <p class="text-slate-500">
           Tailored structures to suit fresh learners, quick refreshers, and intensive goals. Save more with block bookings.
         </p>
       </div>
@@ -131,105 +170,145 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Pkg 1 -->
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-brand-active/50 transition-all flex flex-col justify-between group relative overflow-hidden">
-          <div>
-            <div class="font-heading text-xs font-bold text-brand-active tracking-wider uppercase mb-3">Beginner Boot</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-active transition-colors">Package 1</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl font-bold text-white">£320</span>
-              <span class="text-sm text-gray-400">/ 10 Hours</span>
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" alt="Beginner Driver Starter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Beginners
             </div>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Beginner Boot</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 1</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-bold text-brand-dark">£320</span>
+              <span class="text-sm text-slate-400">/ 10 Hours</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Perfect structure for absolute beginners launching their journey, or looking to brush up on parking techniques and simple maneuvers.
             </p>
           </div>
-          <div class="pt-6 border-t border-white/5">
-            <a href="#contacts" class="block w-full text-center bg-white/10 hover:bg-brand-active hover:text-brand-dark text-white font-bold py-3.5 rounded-xl transition-colors">
-              Book Package
-            </a>
+          <div class="px-8 pb-8">
+            <div class="pt-6 border-t border-slate-100">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
+                Book Package
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Pkg 2 -->
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-brand-active/50 transition-all flex flex-col justify-between group relative overflow-hidden">
-          <div>
-            <div class="font-heading text-xs font-bold text-brand-active tracking-wider uppercase mb-3">Skill Booster</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-active transition-colors">Package 2</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl font-bold text-white">£495</span>
-              <span class="text-sm text-gray-400">/ 15 Hours</span>
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600" alt="Skill Booster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Refresher
             </div>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Skill Booster</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 2</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-bold text-brand-dark">£495</span>
+              <span class="text-sm text-slate-400">/ 15 Hours</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Specifically suited for anyone with basic behind-the-wheel exposure ready to master core roundabouts and test preparation. Only £33/hr!
             </p>
           </div>
-          <div class="pt-6 border-t border-white/5">
-            <a href="#contacts" class="block w-full text-center bg-white/10 hover:bg-brand-active hover:text-brand-dark text-white font-bold py-3.5 rounded-xl transition-colors">
-              Book Package
-            </a>
+          <div class="px-8 pb-8">
+            <div class="pt-6 border-t border-slate-100">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
+                Book Package
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Pkg 3 (Popular Choice Highlighted) -->
-        <div class="bg-gradient-to-br from-brand-electric/30 to-brand-accent/20 border-2 border-brand-electric p-8 rounded-3xl relative flex flex-col justify-between group overflow-hidden shadow-[0_15px_40px_rgba(79,70,229,0.3)]">
-          <div class="absolute -top-3 right-4 bg-brand-active text-brand-dark px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest font-heading shadow-md">
+        <div class="bg-white border-2 border-brand-electric rounded-3xl relative flex flex-col justify-between group overflow-hidden shadow-lg shadow-indigo-100">
+          <div class="absolute -top-3 right-4 z-20 bg-brand-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest font-heading shadow-md">
             Most Popular
           </div>
-          <div>
-            <div class="font-heading text-xs font-bold text-brand-active tracking-wider uppercase mb-3">Confidence builder</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-white">Package 3</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl font-bold text-white">£660</span>
-              <span class="text-sm text-white/70">/ 20 Hours</span>
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d822?auto=format&fit=crop&q=80&w=600" alt="Main Road confidence pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-brand-electric text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Confidence
             </div>
-            <p class="text-gray-300 text-sm leading-relaxed mb-6">
-              Our ideal balanced option. Accelerate your on-road confidence, handle dual carriageways, and learn all vital maneuvers for a smooth test day.
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-brand-electric tracking-wider uppercase mb-3">Confidence Builder</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark">Package 3</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-bold text-brand-dark">£660</span>
+              <span class="text-sm text-slate-500">/ 20 Hours</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              Our ideal balanced option. Accelerate your on-road confidence, handle dual carriageway driving, and learn all vital maneuvers for a smooth test day.
             </p>
           </div>
-          <div class="pt-6 border-t border-white/10">
-            <a href="#contacts" class="block w-full text-center bg-brand-active text-brand-dark font-extrabold py-3.5 rounded-xl transition-all hover:bg-white shadow-[0_4px_15px_rgba(0,243,187,0.3)]">
-              Book Package
-            </a>
+          <div class="px-8 pb-8">
+            <div class="pt-6 border-t border-slate-100">
+              <a href="#contacts" class="block w-full text-center bg-brand-electric text-white font-extrabold py-3.5 rounded-xl transition-all hover:bg-indigo-700 shadow-md">
+                Book Package
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Pkg 4 -->
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-brand-active/50 transition-all flex flex-col justify-between group relative overflow-hidden">
-          <div>
-            <div class="font-heading text-xs font-bold text-brand-active tracking-wider uppercase mb-3">Fast Track Pass</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-active transition-colors">Package 4</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl font-bold text-white">£990</span>
-              <span class="text-sm text-gray-400">/ 30 Hours</span>
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=600" alt="Fast Track Intensive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Intensive pass
             </div>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Fast Track Pass</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 4</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-bold text-brand-dark">£990</span>
+              <span class="text-sm text-slate-400">/ 30 Hours</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               The ultimate intensive package. Best for learners who want to master practical knowledge rapidly and secure a guaranteed first-attempt pass.
             </p>
           </div>
-          <div class="pt-6 border-t border-white/5">
-            <a href="#contacts" class="block w-full text-center bg-white/10 hover:bg-brand-active hover:text-brand-dark text-white font-bold py-3.5 rounded-xl transition-colors">
-              Book Package
-            </a>
+          <div class="px-8 pb-8">
+            <div class="pt-6 border-t border-slate-100">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
+                Book Package
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Pkg 5 -->
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-brand-active/50 transition-all flex flex-col justify-between group relative overflow-hidden">
-          <div>
-            <div class="font-heading text-xs font-bold text-brand-active tracking-wider uppercase mb-3">The Zero to Hero</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-active transition-colors">Package 5</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl font-bold text-white">£1,320</span>
-              <span class="text-sm text-gray-400">/ 40 Hours</span>
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Zero to Hero Comprehensive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+              Complete Mastery
             </div>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">The Zero to Hero</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 5</h3>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-4xl font-bold text-brand-dark">£1,320</span>
+              <span class="text-sm text-slate-400">/ 40 Hours</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Ground-up extensive roadmap. Absolutely comprehensive driver safety mentoring from initial key ignition to the ultimate graduation drive.
             </p>
           </div>
-          <div class="pt-6 border-t border-white/5">
-            <a href="#contacts" class="block w-full text-center bg-white/10 hover:bg-brand-active hover:text-brand-dark text-white font-bold py-3.5 rounded-xl transition-colors">
-              Book Package
-            </a>
+          <div class="px-8 pb-8">
+            <div class="pt-6 border-t border-slate-100">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
+                Book Package
+              </a>
+            </div>
           </div>
         </div>
 
@@ -238,14 +317,14 @@
   </section>
 
   <!-- Contacts & Location Section -->
-  <section id="contacts" class="py-24 bg-white/5 border-t border-white/10 relative">
+  <section id="contacts" class="py-24 bg-white border-t border-slate-100 relative">
     <div class="max-w-7xl mx-auto px-6">
 
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">
-          Get Intouch Today
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark">
+          Get In Touch Today
         </h2>
-        <p class="text-gray-400">
+        <p class="text-slate-500">
           Book immediate evaluations, custom package questions, or schedule driving lesson timings. We answer instantly.
         </p>
       </div>
@@ -253,52 +332,52 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
         <!-- Info & Fast Booking Form -->
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl flex flex-col justify-between gap-8">
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl flex flex-col justify-between gap-8">
           <div>
-            <h3 class="font-heading text-2xl font-bold mb-6 text-white">Contact Channels</h3>
+            <h3 class="font-heading text-2xl font-bold mb-6 text-brand-dark">Contact Channels</h3>
 
-            <div class="space-y-6">
-              <a href="tel:07916155054" class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:border-brand-active/40 border border-white/5 transition-all group">
-                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-active/10 text-brand-active group-hover:bg-brand-active group-hover:text-brand-dark transition-all">
+            <div class="space-y-4">
+              <a href="tel:07916155054" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group">
+                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-brand-active group-hover:text-white transition-all">
                   <i class="fa-solid fa-phone text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Direct Hotline</div>
-                  <div class="text-lg font-bold">07916 155054</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Direct Hotline</div>
+                  <div class="text-lg font-bold text-brand-dark">07916 155054</div>
                 </div>
               </a>
 
-              <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:border-brand-active/40 border border-white/5 transition-all group">
-                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-electric/15 text-brand-electric group-hover:bg-brand-electric group-hover:text-white transition-all">
+              <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group">
+                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-50 text-brand-electric group-hover:bg-brand-electric group-hover:text-white transition-all">
                   <i class="fa-solid fa-envelope text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Email Booking Desk</div>
-                  <div class="text-lg font-bold">cruisenpass@gmail.com</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Email Booking Desk</div>
+                  <div class="text-lg font-bold text-brand-dark">cruisenpass@gmail.com</div>
                 </div>
               </a>
 
-              <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
-                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FF007A]/15 text-brand-accent">
+              <div class="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-150 shadow-sm">
+                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-pink-50 text-brand-accent">
                   <i class="fa-solid fa-location-dot text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider font-sans">Coverage Area</div>
-                  <div class="text-lg font-bold">Manchester, United Kingdom</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Coverage Area</div>
+                  <div class="text-lg font-bold text-brand-dark">Manchester, United Kingdom</div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Socials Promo Panel -->
-          <div class="p-6 bg-brand-electric/20 rounded-2xl border border-brand-electric/30">
-            <h4 class="font-heading text-md font-bold mb-2">Join our driving community!</h4>
-            <p class="text-sm text-gray-400 mb-4">Follow Cruise'N'Pass for real-time practical student pass runs, tip clips & road updates.</p>
+          <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+            <h4 class="font-heading text-brand-dark font-bold mb-2">Join our driving community!</h4>
+            <p class="text-sm text-slate-500 mb-4 font-normal">Follow Cruise'N'Pass for real-time practical student pass runs, tip clips & road updates.</p>
             <div class="flex items-center gap-3">
-              <a href="https://m.facebook.com/CruiseNPass-211956475539908/" class="px-4 py-2 bg-[#1877F2]/20 hover:bg-[#1877F2] hover:text-white text-[#1877F2] rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
+              <a href="https://m.facebook.com/CruiseNPass-211956475539908/" class="px-4 py-2 bg-indigo-50 hover:bg-brand-electric hover:text-white text-indigo-600 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
                 <i class="fa-brands fa-facebook"></i> Facebook
               </a>
-              <a href="https://www.instagram.com/cruisenpass/" class="px-4 py-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 hover:from-pink-500 hover:to-purple-500 hover:text-white text-pink-400 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
+              <a href="https://www.instagram.com/cruisenpass/" class="px-4 py-2 bg-pink-50 hover:bg-brand-accent hover:text-white text-brand-accent rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
                 <i class="fa-brands fa-instagram"></i> Instagram
               </a>
             </div>
@@ -306,11 +385,11 @@
         </div>
 
         <!-- Map & Visuals Card -->
-        <div class="bg-white/5 border border-white/10 p-4 rounded-3xl flex flex-col min-h-[400px]">
-          <div class="w-full h-full rounded-2xl overflow-hidden relative border border-white/15">
+        <div class="bg-slate-50 border border-slate-100 p-4 rounded-3xl flex flex-col min-h-[400px]">
+          <div class="w-full h-full rounded-2xl overflow-hidden relative border border-slate-200">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152254.99616239162!2d-2.3780517707324833!3d53.47222497184291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a4d4c5226f5db%3A0xd9be1430dd7a9f6a!2sManchester!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
-              class="absolute inset-0 w-full h-full grayscale opacity-80 contrast-125 focus:outline-none" 
+              class="absolute inset-0 w-full h-full opacity-90 contrast-100 focus:outline-none" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade"
@@ -324,12 +403,12 @@
   </section>
 
   <!-- Footer block -->
-  <footer class="bg-brand-dark border-t border-white/5 py-8">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-gray-500 text-sm gap-4">
+  <footer class="bg-white border-t border-slate-100 py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-400 text-sm gap-4">
       <p>© 2026 Cruise'N'Pass Driving Solutions. All rights reserved.</p>
       <div class="flex items-center gap-6">
-        <a href="#prices" class="hover:text-white transition-colors">Pricing Structure</a>
-        <a href="#contacts" class="hover:text-white transition-colors">Book evaluated hour</a>
+        <a href="#prices" class="hover:text-brand-electric transition-colors">Pricing Structure</a>
+        <a href="#contacts" class="hover:text-brand-electric transition-colors font-semibold">Book evaluated hour</a>
       </div>
     </div>
   </footer>
