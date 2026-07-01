@@ -79,6 +79,226 @@
       }
     }
   </script>
+
+  <!-- JSON-LD Schema Markup for Rich Snippets (Local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DrivingSchool",
+    "name": "Cruise'N'Pass",
+    "description": "DVSA-approved driving school in Manchester with 98% pass rate. Offering flexible packages and pay-as-you-go lessons across Greater Manchester.",
+    "url": "https://www.cruisenpass.com",
+    "telephone": "+447916155054",
+    "email": "cruisenpass@gmail.com",
+    "priceRange": "£35-£1320",
+    "image": "https://www.cruisenpass.com/og-image.jpg",
+    "logo": "https://www.cruisenpass.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Manchester",
+      "addressRegion": "Greater Manchester",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.4808,
+      "longitude": -2.2426
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Atherton"},
+      {"@type": "City", "name": "Bolton"},
+      {"@type": "City", "name": "Bury"},
+      {"@type": "City", "name": "Bredbury"},
+      {"@type": "City", "name": "Chadderton"},
+      {"@type": "City", "name": "Cheetham Hill"},
+      {"@type": "City", "name": "West Didsbury"},
+      {"@type": "City", "name": "Bradford"},
+      {"@type": "City", "name": "Manchester"}
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Driving Lesson Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Beginner Boot - 10 Hour Package",
+            "description": "Perfect for absolute beginners launching their driving journey"
+          },
+          "price": "320",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Skill Booster - 15 Hour Package",
+            "description": "Master core roundabouts and test preparation"
+          },
+          "price": "495",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Confidence Builder - 20 Hour Package",
+            "description": "Accelerate on-road confidence with dual carriageway driving"
+          },
+          "price": "660",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fast Track Pass - 30 Hour Intensive",
+            "description": "Rapid mastery for first-attempt pass"
+          },
+          "price": "990",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Zero to Hero - 40 Hour Complete Mastery",
+            "description": "Ground-up extensive driver safety mentoring"
+          },
+          "price": "1320",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pay As You Go Lesson",
+            "description": "Flexible hourly lessons at £35/hr with 2-hour minimum"
+          },
+          "price": "35",
+          "priceCurrency": "GBP"
+        }
+      ]
+    },
+    "sameAs": [
+      "https://m.facebook.com/CruiseNPass-211956475539908/",
+      "https://www.instagram.com/cruisenpass/",
+      "https://www.youtube.com/@cruisenpass"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much are driving lessons in Manchester?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cruise'N'Pass offers pay-as-you-go lessons at £35 per hour (2-hour minimum) and discounted block packages starting from £320 for 10 hours. All pricing is transparent with no hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas in Greater Manchester do you cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We currently provide driving lessons in Atherton, Bolton, Bury, Bredbury, Chadderton, Cheetham Hill, West Didsbury, Bradford, and across Greater Manchester."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your pass rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cruise'N'Pass has an outstanding 98% first-time pass rate, with DVSA-approved instructors dedicated to building your confidence and skill on real roads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer intensive driving courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our Fast Track Pass (30 hours, £990) and Zero to Hero (40 hours, £1,320) packages are designed for learners who want to pass their test quickly and comprehensively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a driving lesson?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can book a lesson by calling 07916 155054, emailing cruisenpass@gmail.com, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cruisenpass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Driving Lessons Manchester",
+        "item": "https://www.cruisenpass.com/#about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prices & Packages",
+        "item": "https://www.cruisenpass.com/#prices"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Areas Covered",
+        "item": "https://www.cruisenpass.com/#areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Pay As You Go",
+        "item": "https://www.cruisenpass.com/#payg"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Contact",
+        "item": "https://www.cruisenpass.com/#contacts"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
 
