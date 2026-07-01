@@ -52,6 +52,7 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Why Us</a>
         <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
         <a href="#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Contacts</a>
       </nav>
@@ -78,11 +79,8 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
-    <!-- Fluid bright blurred blobs for vibrant vibes in light mode -->
     <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-indigo-100/60 blur-[130px] pointer-events-none"></div>
     <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[550px] h-[550px] rounded-full bg-emerald-100/50 blur-[140px] pointer-events-none"></div>
-
-    <!-- Modern techy grid lines -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -121,7 +119,7 @@
       <div class="lg:col-span-5 relative mt-6 lg:mt-0">
         <!-- Main Image -->
         <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
-          <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" class="w-full h-[380px] object-cover" />
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" class="w-full h-[380px] object-cover" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white text-left">
             <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
@@ -143,13 +141,77 @@
         <!-- Secondary mini graphic card -->
         <div class="absolute -top-6 -right-6 z-20 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg">
-            <i class="fa-solid fa-badge-check">🏆</i>
+            🏆
           </div>
           <div class="text-left">
             <div class="text-xs text-brand-active font-semibold uppercase tracking-wider">Approved School</div>
             <div class="text-sm font-bold">DVSA Standards</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calm Practice, Clear Targets, Confident Driving Info Section -->
+  <section id="about" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+        <!-- Left Banner Block -->
+        <div class="lg:col-span-6 flex flex-col justify-center">
+          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3">Behind Every Lesson</span>
+          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6">
+            Calm practice, clear targets, confident driving.
+          </h2>
+          <p class="text-slate-500 text-lg leading-relaxed font-light mb-4">
+            The aim is simple: help you understand the road, improve each session, and arrive at your test with the skills that matter.
+          </p>
+        </div>
+
+        <!-- Right Grid of Content Blocks -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <!-- Box 1 -->
+          <div class="bg-sky-50/50 border border-sky-100/80 p-8 rounded-3xl flex flex-col justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-sky-400/20">
+              +
+            </div>
+            <div>
+              <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Build from your level</h4>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Beginner, experienced, or test-ready learners can choose hours that match their current confidence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="bg-amber-50/50 border border-amber-100/80 p-8 rounded-3xl flex flex-col justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-amber-400/20">
+              ↗
+            </div>
+            <div>
+              <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Progress without pressure</h4>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Lessons focus on steady improvement, key manoeuvres, and the decisions you make in real traffic.
+              </p>
+            </div>
+          </div>
+
+          <!-- Wide Banner Box 3 -->
+          <div class="sm:col-span-2 bg-emerald-50/40 border border-emerald-100/60 p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Ready to start?</h4>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Pick a package, get in touch, and Cruise'N'Pass will help you plan the next step toward getting on the road.
+              </p>
+            </div>
+            <a href="#contacts" class="shrink-0 bg-brand-dark hover:bg-brand-electric text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md text-sm">
+              Contact us
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
@@ -225,13 +287,13 @@
           </div>
         </div>
 
-        <!-- Pkg 3 (Popular Choice Highlighted) -->
+        <!-- Pkg 3 (Popular Choice Highlighted with Fixed image link) -->
         <div class="bg-white border-2 border-brand-electric rounded-3xl relative flex flex-col justify-between group overflow-hidden shadow-lg shadow-indigo-100">
           <div class="absolute -top-3 right-4 z-20 bg-brand-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest font-heading shadow-md">
             Most Popular
           </div>
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d822?auto=format&fit=crop&q=80&w=600" alt="Main Road confidence pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600" alt="Main Road confidence pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute top-4 left-4 bg-brand-electric text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Confidence
             </div>
@@ -267,7 +329,7 @@
           <div class="p-8 flex-grow">
             <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Fast Track Pass</div>
             <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 4</h3>
-            <div class="flex items-baseline gap-2 mb-6">
+            <div class="flex items-slate-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£990</span>
               <span class="text-sm text-slate-400">/ 30 Hours</span>
             </div>
