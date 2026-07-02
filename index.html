@@ -971,7 +971,7 @@
           <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
             <h4 class="font-heading text-brand-dark font-bold mb-2">Join our driving community!</h4>
             <p class="text-sm text-slate-500 mb-4 font-normal">Follow Cruise'N'Pass for real-time practical student pass runs, tip clips & road updates.</p>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center flex-wrap gap-3">
               <a href="https://m.facebook.com/CruiseNPass-211956475539908/" class="px-4 py-2 bg-indigo-50 hover:bg-brand-electric hover:text-white text-indigo-600 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
                 <i class="fa-brands fa-facebook"></i> Facebook
               </a>
@@ -1015,45 +1015,6 @@
   </footer>
 
   <!-- Mobile Menu Script -->
-  <!-- FIXED: Added mobile navigation toggle -->
-  <script>
-    // Mobile Menu Toggle
-    const menuBtn = document.createElement('button');
-    menuBtn.id = 'mobile-menu-btn';
-    menuBtn.innerHTML = '<i class="fa-solid fa-bars text-xl text-slate-700"></i>';
-    menuBtn.classList.add('md:hidden', 'text-slate-700', 'font-bold', 'text-lg', 'cursor-pointer', 'mt-4');
-    document.querySelector('nav').prepend(menuBtn);
-
-    // Add mobile nav links
-    const mobileNav = document.createElement('div');
-    mobileNav.id = 'mobile-nav-list';
-    mobileNav.className = 'hidden md:hidden bg-white border-b border-slate-100 py-2 px-6 absolute w-full top-full z-40 shadow-lg';
-    mobileNav.innerHTML = `
-      <a href="#about" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Why Us</a>
-      <a href="#prices" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Prices & Plans</a>
-      <a href="#areas" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Areas Covered</a>
-      <a href="#payg" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Pay As You Go</a>
-      <a href="#contacts" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Contacts</a>
-    `;
-    document.querySelector('nav').appendChild(mobileNav);
-
-    // Toggle Logic
-    menuBtn.addEventListener('click', () => {
-      const list = document.getElementById('mobile-nav-list');
-      list.classList.toggle('hidden');
-      menuBtn.classList.toggle('hidden');
-    });
-
-    // Close menu on link click
-    document.getElementById('mobile-nav-list').addEventListener('click', () => {
-      menuBtn.classList.remove('hidden');
-      document.getElementById('mobile-nav-list').classList.add('hidden');
-    });
-  </script>
-
-  <!-- ... existing footer content ... -->
-
-  <!-- PASTE THE SCRIPT HERE -->
   <script>
     // Mobile Menu Toggle Fix
     document.addEventListener('DOMContentLoaded', () => {
@@ -1080,8 +1041,10 @@
         <a href="tel:07916155054" class="block mt-2 text-center bg-brand-active text-white font-bold py-2 rounded-lg">Call Now</a>
       `;
 
-      // Append to header to ensure correct positioning
-      header.appendChild(menuBtn);
+      // Append hamburger into the header's flex row so it aligns with the logo/CTA,
+      // and append the dropdown to header (fixed, so it anchors correctly below the bar)
+      const headerRow = header.querySelector(':scope > div');
+      headerRow.appendChild(menuBtn);
       header.appendChild(mobileNav);
 
       // Toggle Logic
