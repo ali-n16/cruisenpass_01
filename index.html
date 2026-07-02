@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Optimized SEO Meta Tags with broader geo terms -->
-  <title>Cruise'N'Pass – Driving Lessons in Manchester & Greater Manchester Areas | 90%+ Pass Rate</title>
-  <meta name="description" content="DVSA-approved driving school serving Atherton, Bolton, Bury, Chadderton and more. Flexible packages from £320. Call 07916 155054 or book online for a free evaluation near you.">
+  <title>Cruise'N'Pass - Fresh & Vibrant Driving School</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Cruise'N'Pass | Driving Lessons in Manchester | 90%+ Pass Rate</title>
+  <meta name="description" content="DVSA-approved driving school in Manchester. £35/hr lessons in Atherton, Bolton, Bury, Bredbury, Chadderton, Cheetham Hill, West Didsbury & Bradford. Book with a 90%+ pass rate today.">
   <meta name="keywords" content="driving lessons Manchester, driving school Manchester, learn to drive Atherton, Bolton driving instructor, Bury driving lessons, Bredbury driving school, Chadderton driving lessons, Cheetham Hill driving instructor, West Didsbury driving school, Bradford driving lessons, pay as you go driving lessons, intensive driving course Manchester">
   <meta name="author" content="Cruise'N'Pass">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <!-- Canonical URL -->
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.cruisenpass.com/">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) - Fixed Image URL -->
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.cruisenpass.com/">
   <meta property="og:title" content="Cruise'N'Pass - Manchester's Top Driving School | 90%+ Pass Rate">
@@ -31,7 +31,7 @@
   <!-- Note: Removed local twitter-card.jpg to prevent 404 errors -->
   <meta name="twitter:image" content="https://www.cruisenpass.com/twitter-card.jpg">
 
-  <!-- Geo Meta Tags (Local SEO) - Enhanced coordinates and place names -->
+  <!-- Geo Meta Tags (Local SEO) -->
   <meta name="geo.region" content="GB-MAN">
   <meta name="geo.placename" content="Manchester, Greater Manchester, United Kingdom">
   <meta name="geo.position" content="53.4808;-2.2426">
@@ -43,10 +43,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Cruise'N'Pass">
 
-  <!-- Favicons - Fixed to use absolute CDN path for logo -->
-  <link rel="icon" type="image/png" sizes="32x32" href="https://www.cruisenpass.com/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://www.cruisenpass.com/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://www.cruisenpass.com/apple-touch-icon.png">
+  <!-- Favicons -->
+  <!-- Note: Removed local favicon paths to prevent 404 errors -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <!-- Tailwind CSS via Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -59,7 +60,6 @@
   <!-- FontAwesome for Vibrant Modern Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
@@ -82,71 +82,272 @@
     }
   </script>
 
+  <!-- JSON-LD Schema Markup for Rich Snippets (Local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DrivingSchool",
+    "name": "Cruise'N'Pass",
+    "description": "DVSA-approved driving school in Manchester with 90%+ pass rate. Offering flexible packages and pay-as-you-go lessons across Greater Manchester.",
+    "url": "https://www.cruisenpass.com",
+    "telephone": "+447916155054",
+    "email": "cruisenpass@gmail.com",
+    "priceRange": "£35-£1320",
+    "image": "https://www.cruisenpass.com/og-image.jpg",
+    "logo": "https://www.cruisenpass.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Manchester",
+      "addressRegion": "Greater Manchester",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.4808,
+      "longitude": -2.2426
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Atherton"},
+      {"@type": "City", "name": "Bolton"},
+      {"@type": "City", "name": "Bury"},
+      {"@type": "City", "name": "Bredbury"},
+      {"@type": "City", "name": "Chadderton"},
+      {"@type": "City", "name": "Cheetham Hill"},
+      {"@type": "City", "name": "West Didsbury"},
+      {"@type": "City", "name": "Bradford"},
+      {"@type": "City", "name": "Manchester"}
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Driving Lesson Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Beginner Boot - 10 Hour Package",
+            "description": "Perfect for absolute beginners launching their driving journey"
+          },
+          "price": "320",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Skill Booster - 15 Hour Package",
+            "description": "Master core roundabouts and test preparation"
+          },
+          "price": "495",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Confidence Builder - 20 Hour Package",
+            "description": "Accelerate on-road confidence with dual carriageway driving"
+          },
+          "price": "660",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fast Track Pass - 30 Hour Intensive",
+            "description": "Rapid mastery for first-attempt pass"
+          },
+          "price": "990",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Zero to Hero - 40 Hour Complete Mastery",
+            "description": "Ground-up extensive driver safety mentoring"
+          },
+          "price": "1320",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pay As You Go Lesson",
+            "description": "Flexible hourly lessons at £35/hr with 2-hour minimum"
+          },
+          "price": "35",
+          "priceCurrency": "GBP"
+        }
+      ]
+    },
+    "sameAs": [
+      "https://m.facebook.com/CruiseNPass-211956475539908/",
+      "https://www.instagram.com/cruisenpass/",
+      "https://www.youtube.com/@cruisenpass",
+      "https://www.tiktok.com/@cruisenpassdriving"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much are driving lessons in Manchester?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cruise'N'Pass offers pay-as-you-go lessons at £35 per hour (2-hour minimum) and discounted block packages starting from £320 for 10 hours. All pricing is transparent with no hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas in Greater Manchester do you cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We currently provide driving lessons in Atherton, Bolton, Bury, Bredbury, Chadderton, Cheetham Hill, West Didsbury, Bradford, and across Greater Manchester."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your pass rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cruise'N'Pass has an outstanding 90%+ first-time pass rate, with DVSA-approved instructors dedicated to building your confidence and skill on real roads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer intensive driving courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our Fast Track Pass (30 hours, £990) and Zero to Hero (40 hours, £1,320) packages are designed for learners who want to pass their test quickly and comprehensively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a driving lesson?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can book a lesson by calling 07916 155054, emailing cruisenpass@gmail.com, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cruisenpass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Driving Lessons Manchester",
+        "item": "https://www.cruisenpass.com/#about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prices & Packages",
+        "item": "https://www.cruisenpass.com/#prices"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Areas Covered",
+        "item": "https://www.cruisenpass.com/#areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Pay As You Go",
+        "item": "https://www.cruisenpass.com/#payg"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Contact",
+        "item": "https://www.cruisenpass.com/#contacts"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
 
   <!-- Nav Header -->
   <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-      <!-- Logo - Fixed image path -->
-      <a href="#" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2" aria-label="Cruise'N'Pass Home">
+      <a href="#" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2">
         <span class="bg-brand-electric p-2 rounded-xl text-white shadow-lg">
           🚗
         </span>
         Cruise'N'Pass
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8" role="navigation">
-        <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors aria-label="Why Us" tabindex="0">Why Us</a>
-        <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors aria-label="Prices and Plans" tabindex="0">Prices & Plans</a>
-        <a href="#areas" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors aria-label="Areas Covered" tabindex="0">Areas Covered</a>
-        <a href="#payg" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors aria-label="Pay As You Go" tabindex="0">Pay As You Go</a>
-        <a href="#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors aria-label="Contact Us" tabindex="0">Contacts</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Why Us</a>
+        <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
+        <a href="#areas" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Areas Covered</a>
+        <a href="#payg" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Pay As You Go</a>
+        <a href="#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Contacts</a>
       </nav>
 
       <!-- Social Links & Action Button -->
       <div class="flex items-center gap-4">
         <div class="hidden sm:flex items-center gap-2">
-          <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
-            <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-electric hover:text-white text-slate-600 transition-all cursor-pointer" tabindex="0">
-              <i class="fa-brands fa-facebook-f"></i>
-            </span>
+          <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-electric hover:text-white text-slate-600 transition-all" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
-            <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-accent hover:text-white text-slate-600 transition-all cursor-pointer" tabindex="0">
-              <i class="fa-brands fa-instagram"></i>
-            </span>
+          <a href="https://www.instagram.com/cruisenpass/" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-brand-accent hover:text-white text-slate-600 transition-all" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/@cruisenpass" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
-            <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-red-500 hover:text-white text-slate-600 transition-all cursor-pointer" tabindex="0">
-              <i class="fa-brands fa-youtube"></i>
-            </span>
+          <a href="https://www.youtube.com/@cruisenpass" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-red-500 hover:text-white text-slate-600 transition-all" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
           </a>
-          <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" aria-label="TikTok Account">
-            <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-black hover:text-white text-slate-600 transition-all cursor-pointer" tabindex="0">
-              <i class="fa-brands fa-tiktok"></i>
-            </span>
+          <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 hover:bg-black hover:text-white text-slate-600 transition-all" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
           </a>
         </div>
-        <!-- Primary CTA -->
-        <a href="#contacts" class="bg-brand-active hover:bg-slate-900 text-white font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 shadow-md shadow-brand-active/20 text-sm cursor-pointer" aria-label="Book Lesson Now">
+        <a href="#contacts" class="bg-brand-active hover:bg-slate-900 text-white font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 shadow-md shadow-brand-active/20 text-sm">
           Book Lesson
         </a>
       </div>
     </div>
-
-    <!-- Mobile Menu Toggle (Added via script) -->
-    <button id="mobile-menu-btn" class="md:hidden block absolute top-4 right-4 text-slate-700 cursor-pointer z-50" aria-label="Toggle menu">
-      <span class="block w-6 h-1 bg-current rounded mb-2"></span>
-      <span class="block w-6 h-1 bg-current rounded mb-2"></span>
-      <span class="block w-6 h-1 bg-current rounded"></span>
-    </button>
   </header>
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
-    <!-- Ambient Glows -->
     <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-indigo-100/60 blur-[130px] pointer-events-none"></div>
     <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[550px] h-[550px] rounded-full bg-emerald-100/50 blur-[140px] pointer-events-none"></div>
     <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -154,7 +355,7 @@
     <div class="max-w-7xl mx-auto px-6 relative z-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <!-- Left text content -->
       <div class="lg:col-span-7 text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 mb-6 text-sm font-semibold cursor-default" role="status">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 mb-6 text-sm font-semibold">
           <span class="flex h-2 w-2 relative">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-active opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-active"></span>
@@ -174,10 +375,10 @@
         </p>
 
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <a href="#prices" class="w-full sm:w-auto text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-8 py-2 rounded-xl transition-all hover:scale-105 shadow-lg shadow-indigo-600/20 cursor-pointer">
+          <a href="#prices" class="w-full sm:w-auto text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-8 py-2 rounded-xl transition-all hover:scale-105 shadow-lg shadow-indigo-600/20">
             View Plans & Prices <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
           </a>
-          <a href="tel:07916155054" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold px-8 py-2 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <a href="tel:07916155054" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold px-8 py-2 rounded-xl transition-all flex items-center justify-center gap-2">
             <i class="fa-solid fa-phone"></i> Call 07916 155054
           </a>
         </div>
@@ -185,35 +386,35 @@
 
       <!-- Right image dashboard collage -->
       <div class="lg:col-span-5 relative mt-6 lg:mt-0">
-        <!-- Main Image (Lazy Loaded) -->
-        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300 cursor-pointer group" tabindex="0">
-          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence - Cruise'N'Pass Hero" class="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="high" />
+        <!-- Main Image -->
+        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" class="w-full h-[380px] object-cover" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white text-left">
-            <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold cursor-default">Passed first time!</p>
-            <h4 class="text-lg font-bold group-hover:translate-y-1 transition-transform duration-300">"Confidence is key"</h4>
+            <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
+            <h4 class="text-lg font-bold">"Confidence is key"</h4>
           </div>
         </div>
 
         <!-- Hover Badge / Accent box -->
-        <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;" aria-hidden="true">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm cursor-default">
+        <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
             90%+
           </div>
           <div class="text-left">
-            <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider cursor-default">Pass Rate</div>
-            <div class="text-sm font-bold text-brand-dark group-hover:text-emerald-600 transition-colors">Test Day Success</div>
+            <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Pass Rate</div>
+            <div class="text-sm font-bold text-brand-dark">Test Day Success</div>
           </div>
         </div>
 
         <!-- Secondary mini graphic card -->
-        <div class="absolute -top-6 -right-6 z-20 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3 cursor-pointer group hover:bg-slate-800 transition-colors" tabindex="0">
-          <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg font-bold">
+        <div class="absolute -top-6 -right-6 z-20 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg">
             🏆
           </div>
           <div class="text-left">
-            <div class="text-xs text-brand-active font-semibold uppercase tracking-wider cursor-default">Approved School</div>
-            <div class="text-sm font-bold group-hover:text-emerald-300 transition-colors">DVSA Standards</div>
+            <div class="text-xs text-brand-active font-semibold uppercase tracking-wider">Approved School</div>
+            <div class="text-sm font-bold">DVSA Standards</div>
           </div>
         </div>
       </div>
@@ -227,8 +428,8 @@
 
         <!-- Left Banner Block -->
         <div class="lg:col-span-6 flex flex-col justify-center">
-          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 cursor-default" tabindex="-1">Behind Every Lesson</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6 cursor-default select-none">
+          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3">Behind Every Lesson</span>
+          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6">
             Calm practice, clear targets, confident driving.
           </h2>
           <p class="text-slate-500 text-lg leading-relaxed font-light mb-4">
@@ -240,11 +441,11 @@
         <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
           <!-- Box 1 -->
-          <div class="bg-sky-50/50 border border-sky-100/80 p-8 rounded-3xl flex flex-col justify-between group cursor-pointer hover:bg-sky-100 transition-colors" tabindex="0">
-            <div class="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-sky-400/20 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-sky-50/50 border border-sky-100/80 p-8 rounded-3xl flex flex-col justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-sky-400/20">
               +
             </div>
-            <div class="group-hover:-translate-y-1 transition-transform duration-300">
+            <div>
               <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Build from your level</h4>
               <p class="text-sm text-slate-500 leading-relaxed">
                 Beginner, experienced, or test-ready learners can choose hours that match their current confidence.
@@ -253,11 +454,11 @@
           </div>
 
           <!-- Box 2 -->
-          <div class="bg-amber-50/50 border border-amber-100/80 p-8 rounded-3xl flex flex-col justify-between group cursor-pointer hover:bg-amber-100 transition-colors" tabindex="0">
-            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-amber-400/20 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-amber-50/50 border border-amber-100/80 p-8 rounded-3xl flex flex-col justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-xl font-bold font-heading mb-6 shadow-md shadow-amber-400/20">
               ↗
             </div>
-            <div class="group-hover:-translate-y-1 transition-transform duration-300">
+            <div>
               <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Progress without pressure</h4>
               <p class="text-sm text-slate-500 leading-relaxed">
                 Lessons focus on steady improvement, key manoeuvres, and the decisions you make in real traffic.
@@ -266,14 +467,14 @@
           </div>
 
           <!-- Wide Banner Box 3 -->
-          <div class="sm:col-span-2 bg-emerald-50/40 border border-emerald-100/60 p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 group cursor-pointer hover:bg-emerald-100 transition-colors" tabindex="0">
-            <div class="group-hover:-translate-y-2 transition-transform duration-300">
+          <div class="sm:col-span-2 bg-emerald-50/40 border border-emerald-100/60 p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
               <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Ready to start?</h4>
               <p class="text-sm text-slate-500 leading-relaxed">
                 Pick a package, get in touch, and Cruise'N'Pass will help you plan the next step toward getting on the road.
               </p>
             </div>
-            <a href="#contacts" class="shrink-0 bg-brand-dark hover:bg-brand-electric text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md text-sm cursor-pointer">
+            <a href="#contacts" class="shrink-0 bg-brand-dark hover:bg-brand-electric text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md text-sm">
               Contact us
             </a>
           </div>
@@ -289,10 +490,10 @@
     <div class="max-w-7xl mx-auto px-6">
 
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark cursor-default select-none">
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark">
           Flexible Prices & Plans
         </h2>
-        <p class="text-slate-500 cursor-default" tabindex="-1">
+        <p class="text-slate-500">
           Tailored structures to suit fresh learners, quick refreshers, and intensive goals. Save more with block bookings.
         </p>
       </div>
@@ -300,27 +501,27 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Pkg 1 -->
-        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm cursor-pointer" tabindex="0">
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" alt="Beginner Driver Starter - CruisenPass Package 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="low" />
-            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full cursor-default">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" alt="Beginner Driver Starter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Beginners
             </div>
           </div>
-          <div class="p-8 flex-grow group-hover:-translate-y-4 transition-transform duration-300">
-            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3 cursor-default">Beginner Boot</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors cursor-default select-none">Package 1</h3>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Beginner Boot</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 1</h3>
             <div class="flex items-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£320</span>
               <span class="text-sm text-slate-400">/ 10 Hours</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6 cursor-default" tabindex="-1">
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Perfect structure for absolute beginners launching their journey, or looking to brush up on parking techniques and simple maneuvers.
             </p>
           </div>
-          <div class="px-8 pb-8 group-hover:opacity-50 transition-opacity duration-300">
+          <div class="px-8 pb-8">
             <div class="pt-6 border-t border-slate-100">
-              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors cursor-pointer">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
                 Book Package
               </a>
             </div>
@@ -328,27 +529,27 @@
         </div>
 
         <!-- Pkg 2 -->
-        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm cursor-pointer" tabindex="0">
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600" alt="Skill Booster Refresher - CruisenPass Package 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="low" />
-            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full cursor-default">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600" alt="Skill Booster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Refresher
             </div>
           </div>
-          <div class="p-8 flex-grow group-hover:-translate-y-4 transition-transform duration-300">
-            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3 cursor-default">Skill Booster</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors cursor-default select-none">Package 2</h3>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Skill Booster</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 2</h3>
             <div class="flex items-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£495</span>
               <span class="text-sm text-slate-400">/ 15 Hours</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6 cursor-default" tabindex="-1">
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Specifically suited for anyone with basic behind-the-wheel exposure ready to master core roundabouts and test preparation. Only £33/hr!
             </p>
           </div>
-          <div class="px-8 pb-8 group-hover:opacity-50 transition-opacity duration-300">
+          <div class="px-8 pb-8">
             <div class="pt-6 border-t border-slate-100">
-              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors cursor-pointer">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
                 Book Package
               </a>
             </div>
@@ -356,30 +557,30 @@
         </div>
 
         <!-- Pkg 3 (Popular Choice Highlighted with Fixed image link) -->
-        <div class="bg-white border-2 border-brand-electric rounded-3xl relative flex flex-col justify-between group overflow-hidden shadow-lg shadow-indigo-100 cursor-pointer" tabindex="0">
-          <div class="absolute -top-3 right-4 z-20 bg-brand-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest font-heading shadow-md group-hover:scale-95 transition-transform duration-300" aria-hidden="true">
+        <div class="bg-white border-2 border-brand-electric rounded-3xl relative flex flex-col justify-between group overflow-hidden shadow-lg shadow-indigo-100">
+          <div class="absolute -top-3 right-4 z-20 bg-brand-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest font-heading shadow-md">
             Most Popular
           </div>
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600" alt="Main Road confidence pack - CruisenPass Package 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="low" />
-            <div class="absolute top-4 left-4 bg-brand-electric text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full cursor-default">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600" alt="Main Road confidence pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-brand-electric text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Confidence
             </div>
           </div>
-          <div class="p-8 flex-grow group-hover:-translate-y-4 transition-transform duration-300">
-            <div class="font-heading text-xs font-bold text-brand-electric tracking-wider uppercase mb-3 cursor-default">Confidence Builder</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors cursor-default select-none">Package 3</h3>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-brand-electric tracking-wider uppercase mb-3">Confidence Builder</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark">Package 3</h3>
             <div class="flex items-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£660</span>
               <span class="text-sm text-slate-500">/ 20 Hours</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6 cursor-default" tabindex="-1">
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Our ideal balanced option. Accelerate your on-road confidence, handle dual carriageway driving, and learn all vital maneuvers for a smooth test day.
             </p>
           </div>
-          <div class="px-8 pb-8 group-hover:opacity-50 transition-opacity duration-300">
+          <div class="px-8 pb-8">
             <div class="pt-6 border-t border-slate-100">
-              <a href="#contacts" class="block w-full text-center bg-brand-electric text-white font-extrabold py-3.5 rounded-xl transition-all hover:bg-indigo-700 shadow-md cursor-pointer group-hover:scale-95">
+              <a href="#contacts" class="block w-full text-center bg-brand-electric text-white font-extrabold py-3.5 rounded-xl transition-all hover:bg-indigo-700 shadow-md">
                 Book Package
               </a>
             </div>
@@ -387,27 +588,27 @@
         </div>
 
         <!-- Pkg 4 -->
-        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm cursor-pointer" tabindex="0">
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=600" alt="Fast Track Intensive - CruisenPass Package 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="low" />
-            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full cursor-default">
+            <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=600" alt="Fast Track Intensive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Intensive pass
             </div>
           </div>
-          <div class="p-8 flex-grow group-hover:-translate-y-4 transition-transform duration-300">
-            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3 cursor-default">Fast Track Pass</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors cursor-default select-none">Package 4</h3>
-            <div class="flex items-baseline gap-2 mb-6">
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">Fast Track Pass</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 4</h3>
+            <div class="flex items-slate-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£990</span>
               <span class="text-sm text-slate-400">/ 30 Hours</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6 cursor-default" tabindex="-1">
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               The ultimate intensive package. Best for learners who want to master practical knowledge rapidly and secure a guaranteed first-attempt pass.
             </p>
           </div>
-          <div class="px-8 pb-8 group-hover:opacity-50 transition-opacity duration-300">
+          <div class="px-8 pb-8">
             <div class="pt-6 border-t border-slate-100">
-              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors cursor-pointer">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
                 Book Package
               </a>
             </div>
@@ -415,27 +616,27 @@
         </div>
 
         <!-- Pkg 5 -->
-        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm cursor-pointer" tabindex="0">
+        <div class="bg-white border border-slate-100 rounded-3xl hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col justify-between group relative overflow-hidden shadow-sm">
           <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Zero to Hero Comprehensive - CruisenPass Package 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 loading="lazy"" fetchpriority="low" />
-            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full cursor-default">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Zero to Hero Comprehensive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
               Complete Mastery
             </div>
           </div>
-          <div class="p-8 flex-grow group-hover:-translate-y-4 transition-transform duration-300">
-            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3 cursor-default">The Zero to Hero</div>
-            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors cursor-default select-none">Package 5</h3>
+          <div class="p-8 flex-grow">
+            <div class="font-heading text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">The Zero to Hero</div>
+            <h3 class="font-heading text-2xl font-bold mb-4 text-brand-dark group-hover:text-emerald-500 transition-colors">Package 5</h3>
             <div class="flex items-baseline gap-2 mb-6">
               <span class="text-4xl font-bold text-brand-dark">£1,320</span>
               <span class="text-sm text-slate-400">/ 40 Hours</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6 cursor-default" tabindex="-1">
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
               Ground-up extensive roadmap. Absolutely comprehensive driver safety mentoring from initial key ignition to the ultimate graduation drive.
             </p>
           </div>
-          <div class="px-8 pb-8 group-hover:opacity-50 transition-opacity duration-300">
+          <div class="px-8 pb-8">
             <div class="pt-6 border-t border-slate-100">
-              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors cursor-pointer">
+              <a href="#contacts" class="block w-full text-center bg-slate-50 hover:bg-brand-active hover:text-white text-slate-700 font-bold py-3.5 rounded-xl transition-colors">
                 Book Package
               </a>
             </div>
@@ -446,84 +647,78 @@
     </div>
   </section>
 
-  <!-- Areas Covered Section - Added Geo Content Paragraph -->
+  <!-- Areas Covered Section -->
   <section id="areas" class="py-16 bg-white border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         <!-- Left Text -->
         <div class="lg:col-span-5">
-          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block cursor-default" tabindex="-1">Where We Operate</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6 cursor-default select-none">
+          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Where We Operate</span>
+          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6">
             Areas <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-600">Covered</span>
           </h2>
-          
-          <!-- Geo Content Injection: Natural Language Paragraph -->
-          <p class="text-slate-500 text-lg leading-relaxed mb-6 cursor-default" tabindex="-1">
+          <p class="text-slate-500 text-lg leading-relaxed mb-6">
             We currently serve learners across Greater Manchester and surrounding areas. More locations coming soon!
-            <br><br>
-            Cruise'N'Pass delivers DVSA‑approved driving lessons across Greater Manchester and beyond, including Atherton, Bolton, Bury, Bredbury, Chadderton, Cheetham Hill, West Didsbury, Bradford, and Manchester itself. 
-            Whether you're near the M62 corridor or commuting from Salford, our instructors tailor routes to your home area for maximum convenience.
           </p>
-
-          <a href="#contacts" class="inline-flex items-center gap-2 bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md shadow-indigo-200 text-sm cursor-pointer">
+          <a href="#contacts" class="inline-flex items-center gap-2 bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md shadow-indigo-200 text-sm">
             <i class="fa-solid fa-map-pin"></i> Book in Your Area
           </a>
         </div>
 
         <!-- Right Area Pills Grid -->
         <div class="lg:col-span-7">
-          <div class="flex flex-wrap gap-4" role="list">
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Atherton</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Atherton</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-indigo-100 text-brand-electric flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Bolton</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Bolton</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Bury</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Bury</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Bredbury</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Bredbury</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Chadderton</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Chadderton</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Cheetham Hill</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Cheetham Hill</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">West Didsbury</span>
+              <span class="font-heading font-bold text-brand-dark text-base">West Didsbury</span>
             </div>
-            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default" tabindex="0" role="listitem">
+            <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 hover:border-brand-active hover:bg-emerald-50 transition-all px-5 py-2 rounded-2xl group cursor-default">
               <span class="w-9 h-9 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center group-hover:bg-brand-active group-hover:text-white transition-all">
                 <i class="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <span class="font-heading font-bold text-brand-dark text-base cursor-default">Bradford</span>
+              <span class="font-heading font-bold text-brand-dark text-base">Bradford</span>
             </div>
           </div>
-          <p class="text-xs text-slate-400 mt-6 flex items-center gap-1.5 cursor-default" tabindex="-1">
+          <p class="text-xs text-slate-400 mt-6 flex items-center gap-1.5">
             <i class="fa-solid fa-circle-info"></i> More areas being added soon. Contact us to check availability near you.
           </p>
         </div>
@@ -543,20 +738,20 @@
 
         <!-- Left: Big Price Display -->
         <div class="text-center lg:text-left">
-          <span class="text-xs font-bold text-brand-active uppercase tracking-widest mb-4 block cursor-default" tabindex="-1">No Commitment Needed</span>
-          <h2 class="font-heading text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 cursor-default select-none">
+          <span class="text-xs font-bold text-brand-active uppercase tracking-widest mb-4 block">No Commitment Needed</span>
+          <h2 class="font-heading text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
             Pay As <br>You Go
           </h2>
           <div class="flex items-baseline gap-3 justify-center lg:justify-start mb-6">
-            <span class="font-heading text-7xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-active to-indigo-400 cursor-default select-none">£35</span>
-            <span class="text-2xl text-slate-400 font-semibold cursor-default" tabindex="-1">/ hour</span>
+            <span class="font-heading text-7xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-active to-indigo-400">£35</span>
+            <span class="text-2xl text-slate-400 font-semibold">/ hour</span>
           </div>
-          <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-300 px-4 py-2.5 rounded-xl text-sm font-semibold mb-8 cursor-default" tabindex="-1">
+          <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-300 px-4 py-2.5 rounded-xl text-sm font-semibold mb-8">
             <i class="fa-solid fa-circle-info"></i>
             Minimum lesson time is <strong class="text-amber-200 ml-1">2 hours</strong>
           </div>
           <div class="block">
-            <a href="#contacts" class="inline-flex items-center gap-2 bg-brand-active hover:bg-emerald-400 text-white font-bold px-8 py-2 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-500/20 text-base cursor-pointer">
+            <a href="#contacts" class="inline-flex items-center gap-2 bg-brand-active hover:bg-emerald-400 text-white font-bold px-8 py-2 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-500/20 text-base">
               Book a Lesson Now <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
           </div>
@@ -564,33 +759,33 @@
 
         <!-- Right: Feature Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all cursor-pointer group" tabindex="0">
-            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-brand-active flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-brand-active flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-clock"></i>
             </div>
-            <h4 class="font-heading font-bold text-white mb-2 cursor-default select-none">Flexible Scheduling</h4>
-            <p class="text-sm text-slate-300 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">Book when it suits you — no long-term commitment required.</p>
+            <h4 class="font-heading font-bold text-white mb-2">Flexible Scheduling</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">Book when it suits you — no long-term commitment required.</p>
           </div>
-          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all cursor-pointer group" tabindex="0">
-            <div class="w-11 h-11 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-sterling-sign"></i>
             </div>
-            <h4 class="font-heading font-bold text-white mb-2 cursor-default select-none">No Hidden Fees</h4>
-            <p class="text-sm text-slate-300 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">Simple, transparent pricing. What you see is what you pay.</p>
+            <h4 class="font-heading font-bold text-white mb-2">No Hidden Fees</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">Simple, transparent pricing. What you see is what you pay.</p>
           </div>
-          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all cursor-pointer group" tabindex="0">
-            <div class="w-11 h-11 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-user-check"></i>
             </div>
-            <h4 class="font-heading font-bold text-white mb-2 cursor-default select-none">Same Instructor</h4>
-            <p class="text-sm text-slate-300 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">Consistent, personalised coaching every single session.</p>
+            <h4 class="font-heading font-bold text-white mb-2">Same Instructor</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">Consistent, personalised coaching every single session.</p>
           </div>
-          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all cursor-pointer group" tabindex="0">
-            <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-road"></i>
             </div>
-            <h4 class="font-heading font-bold text-white mb-2 cursor-default select-none">Real Road Practice</h4>
-            <p class="text-sm text-slate-300 leading-relaxed group-hover:translate-x-1 transition-transform duration-300">Every lesson is on real roads — no simulators, just real experience.</p>
+            <h4 class="font-heading font-bold text-white mb-2">Real Road Practice</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">Every lesson is on real roads — no simulators, just real experience.</p>
           </div>
         </div>
 
@@ -599,14 +794,135 @@
   </section>
 
   <!-- Contacts & Location Section -->
+  <!-- Discover our socials (Live Video Reels) -->
+  <section id="socials" class="py-16 bg-slate-50/80 border-t border-slate-100 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Real Student Success</span>
+          <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+            Discover our <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600">socials.</span>
+          </h2>
+          <p class="text-slate-500 mt-4 max-w-xl">
+            Watch real learners pass their tests, master roundabouts, and build confidence behind the wheel.
+          </p>
+        </div>
+        
+        <!-- Tab Switcher -->
+        <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200 self-start md:self-auto">
+          <button id="tab-tiktok" onclick="switchTab('tiktok')" class="px-6 py-2.5 rounded-lg bg-slate-900 text-white font-bold text-sm transition-all flex items-center gap-2">
+            <i class="fa-brands fa-tiktok"></i> TikTok
+          </button>
+          <button id="tab-instagram" onclick="switchTab('instagram')" class="px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-brand-accent transition-all flex items-center gap-2">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </button>
+        </div>
+      </div>
+
+      <!-- TikTok Grid -->
+      <div id="grid-tiktok" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+          <div class="flex-grow overflow-hidden relative">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7611635924514000150" data-video-id="7611635924514000150" style="width: 100%; height: 100%;">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+          <div class="flex-grow overflow-hidden relative">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7565958281869511958" data-video-id="7565958281869511958" style="width: 100%; height: 100%;">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+          <div class="flex-grow overflow-hidden relative">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7573795989849410818" data-video-id="7573795989849410818" style="width: 100%; height: 100%;">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram Grid -->
+      <!-- FIXED: Replaced broken embeds with functional links -->
+      <div id="grid-instagram" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <a href="https://www.instagram.com/cruisenpass/p/DZaVFF6sadX/" target="_blank" class="text-brand-accent hover:text-indigo-600 font-bold text-lg">
+            <i class="fa-brands fa-instagram text-4xl mb-2"></i>
+            View Latest Post
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <a href="https://www.instagram.com/cruisenpass/p/DY5pC34sSYS/" target="_blank" class="text-brand-accent hover:text-indigo-600 font-bold text-lg">
+            <i class="fa-brands fa-instagram text-4xl mb-2"></i>
+            View Latest Post
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <a href="https://www.instagram.com/cruisenpass/p/DVetRkdjLgH/" target="_blank" class="text-brand-accent hover:text-indigo-600 font-bold text-lg">
+            <i class="fa-brands fa-instagram text-4xl mb-2"></i>
+            View Latest Post
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Links -->
+      <div id="cta-tiktok" class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-black text-white px-8 py-2 rounded-2xl font-bold hover:scale-105 transition-all shadow-lg">
+          <i class="fa-brands fa-tiktok"></i> Follow us on TikTok
+        </a>
+      </div>
+      <div id="cta-instagram" class="hidden mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://www.instagram.com/cruisenpass/" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-8 py-2 rounded-2xl font-bold hover:scale-105 transition-all shadow-lg">
+          <i class="fa-brands fa-instagram"></i> Follow on Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Instagram Embed Script -->
+    <!-- FIXED: Removed non-existent Instagram embed script -->
+
+    <script>
+      function switchTab(tab) {
+        const tiktokGrid = document.getElementById('grid-tiktok');
+        const igGrid = document.getElementById('grid-instagram');
+        const ctaTiktok = document.getElementById('cta-tiktok');
+        const ctaIg = document.getElementById('cta-instagram');
+        const tabTiktok = document.getElementById('tab-tiktok');
+        const tabIg = document.getElementById('tab-instagram');
+
+        if (tab === 'tiktok') {
+          tiktokGrid.classList.remove('hidden');
+          igGrid.classList.add('hidden');
+          ctaTiktok.classList.remove('hidden');
+          ctaIg.classList.add('hidden');
+          tabTiktok.className = 'px-6 py-2.5 rounded-lg bg-slate-900 text-white font-bold text-sm transition-all flex items-center gap-2';
+          tabIg.className = 'px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-brand-accent transition-all flex items-center gap-2';
+        } else {
+          tiktokGrid.classList.add('hidden');
+          igGrid.classList.remove('hidden');
+          ctaTiktok.classList.add('hidden');
+          ctaIg.classList.remove('hidden');
+          tabIg.className = 'px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold text-sm transition-all flex items-center gap-2';
+          tabTiktok.className = 'px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-slate-900 transition-all flex items-center gap-2';
+          // Re-process Instagram embeds when tab is shown
+          if (window.instgrm) window.instgrm.Embeds.process();
+        }
+      }
+    </script>
+  </section>
+
   <section id="contacts" class="py-16 bg-white border-t border-slate-100 relative">
     <div class="max-w-7xl mx-auto px-6">
 
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark cursor-default select-none">
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-brand-dark">
           Get In Touch Today
         </h2>
-        <p class="text-slate-500 cursor-default" tabindex="-1">
+        <p class="text-slate-500">
           Book immediate evaluations, custom package questions, or schedule driving lesson timings. We answer instantly.
         </p>
       </div>
@@ -614,76 +930,71 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
         <!-- Info & Fast Booking Form -->
-        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl flex flex-col justify-between gap-8 cursor-pointer group" tabindex="0">
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl flex flex-col justify-between gap-8">
           <div>
-            <h3 class="font-heading text-2xl font-bold mb-6 text-brand-dark group-hover:text-emerald-600 transition-colors cursor-default select-none">Contact Channels</h3>
+            <h3 class="font-heading text-2xl font-bold mb-6 text-brand-dark">Contact Channels</h3>
 
-            <div class="space-y-4 group-hover:opacity-80 transition-opacity duration-300">
-              <a href="tel:07916155054" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group cursor-pointer">
+            <div class="space-y-4">
+              <a href="tel:07916155054" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group">
                 <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-brand-active group-hover:text-white transition-all">
                   <i class="fa-solid fa-phone text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider cursor-default" tabindex="-1">Direct Hotline</div>
-                  <div class="text-lg font-bold text-brand-dark group-hover:text-emerald-700 transition-colors cursor-pointer select-none">07916 155054</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Direct Hotline</div>
+                  <div class="text-lg font-bold text-brand-dark">07916 155054</div>
                 </div>
               </a>
 
-              <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group cursor-pointer">
+              <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white p-4 rounded-2xl hover:border-emerald-300 border border-slate-150 shadow-sm transition-all group">
                 <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-50 text-brand-electric group-hover:bg-brand-electric group-hover:text-white transition-all">
                   <i class="fa-solid fa-envelope text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider cursor-default" tabindex="-1">Email Booking Desk</div>
-                  <div class="text-lg font-bold text-brand-dark group-hover:text-indigo-700 transition-colors cursor-pointer select-none">cruisenpass@gmail.com</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Email Booking Desk</div>
+                  <div class="text-lg font-bold text-brand-dark">cruisenpass@gmail.com</div>
                 </div>
               </a>
 
-              <div class="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-150 shadow-sm group cursor-pointer hover:bg-emerald-50 transition-colors" tabindex="0">
-                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-pink-50 text-brand-accent group-hover:text-white transition-all">
+              <div class="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-150 shadow-sm">
+                <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-pink-50 text-brand-accent">
                   <i class="fa-solid fa-location-dot text-lg"></i>
                 </span>
                 <div>
-                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider cursor-default" tabindex="-1">Coverage Area</div>
-                  <div class="text-lg font-bold text-brand-dark group-hover:text-pink-600 transition-colors cursor-pointer select-none">Manchester, United Kingdom</div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Coverage Area</div>
+                  <div class="text-lg font-bold text-brand-dark">Manchester, United Kingdom</div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Socials Promo Panel -->
-          <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100 group-hover:opacity-90 transition-opacity duration-300" tabindex="0">
-            <h4 class="font-heading text-brand-dark font-bold mb-2 cursor-default select-none">Join our driving community!</h4>
-            <p class="text-sm text-slate-500 mb-4 font-normal group-hover:text-emerald-700 transition-colors cursor-default" tabindex="-1">Follow Cruise'N'Pass for real-time practical student pass runs, tip clips & road updates.</p>
-            <div class="flex items-center gap-3 group-hover:translate-x-2 transition-transform duration-300">
-              <a href="https://m.facebook.com/CruiseNPass-211956475539908/" rel="noopener noreferrer" aria-label="Facebook Page">
-                <span class="px-4 py-2 bg-indigo-50 hover:bg-brand-electric hover:text-white text-indigo-600 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 cursor-pointer label-tag">
-                  <i class="fa-brands fa-facebook"></i> Facebook
-                </span>
+          <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+            <h4 class="font-heading text-brand-dark font-bold mb-2">Join our driving community!</h4>
+            <p class="text-sm text-slate-500 mb-4 font-normal">Follow Cruise'N'Pass for real-time practical student pass runs, tip clips & road updates.</p>
+            <div class="flex items-center gap-3">
+              <a href="https://m.facebook.com/CruiseNPass-211956475539908/" class="px-4 py-2 bg-indigo-50 hover:bg-brand-electric hover:text-white text-indigo-600 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
+                <i class="fa-brands fa-facebook"></i> Facebook
               </a>
-              <a href="https://www.instagram.com/cruisenpass/" rel="noopener noreferrer" aria-label="Instagram Profile">
-                <span class="px-4 py-2 bg-pink-50 hover:bg-brand-accent hover:text-white text-brand-accent rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 cursor-pointer label-tag">
-                  <i class="fa-brands fa-instagram"></i> Instagram
-                </span>
+              <a href="https://www.instagram.com/cruisenpass/" class="px-4 py-2 bg-pink-50 hover:bg-brand-accent hover:text-white text-brand-accent rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
+                <i class="fa-brands fa-instagram"></i> Instagram
               </a>
-              <a href="https://www.tiktok.com/@cruisenpassdriving" rel="noopener noreferrer" aria-label="TikTok Account">
-                <span class="px-4 py-2 bg-slate-100 hover:bg-black hover:text-white text-slate-800 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 cursor-pointer label-tag">
-                  <i class="fa-brands fa-tiktok"></i> TikTok
-                </span>
+              <a href="https://www.tiktok.com/@cruisenpassdriving" class="px-4 py-2 bg-slate-100 hover:bg-black hover:text-white text-slate-800 rounded-lg transition-all text-sm font-semibold flex items-center gap-1.5 label-tag">
+                <i class="fa-brands fa-tiktok"></i> TikTok
               </a>
             </div>
           </div>
         </div>
 
         <!-- Map & Visuals Card -->
-        <div class="bg-slate-50 border border-slate-100 p-4 rounded-3xl flex flex-col min-h-[400px] group cursor-pointer" tabindex="0">
-          <div class="w-full h-full rounded-2xl overflow-hidden relative border border-slate-200 shadow-md group-hover:scale-[1.02] transition-transform duration-500">
+        <div class="bg-slate-50 border border-slate-100 p-4 rounded-3xl flex flex-col min-h-[400px]">
+          <div class="w-full h-full rounded-2xl overflow-hidden relative border border-slate-200">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152254.99616239162!2d-2.3780517707324833!3d53.47222497184291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a4d4c5226f5db%3A0xd9be1430dd7a9f6a!2sManchester!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
-              class="absolute inset-0 w-full h-full opacity-90 contrast-100 focus:outline-none rounded-xl loading="lazy"" 
+              class="absolute inset-0 w-full h-full opacity-90 contrast-100 focus:outline-none" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade"
+              style="border:0;"
             ></iframe>
           </div>
         </div>
@@ -692,83 +1003,52 @@
     </div>
   </section>
 
-  <!-- Footer block with hidden location text for crawlers -->
+  <!-- Footer block -->
   <footer class="bg-white border-t border-slate-100 py-4">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-400 text-sm gap-4 cursor-default" tabindex="-1">
-      <!-- Hidden location text for crawlers -->
-      <span class="sr-only scroll-mr-20" aria-label="Location: Manchester, Greater Manchester, UK">
-        Location: Manchester, Greater Manchester, United Kingdom
-      </span>
-      
-      <p class="cursor-default select-none">© 2026 Cruise'N'Pass Driving Solutions. All rights reserved.</p>
-      <div class="flex items-center gap-6 cursor-default" tabindex="-1">
-        <a href="#prices" class="hover:text-brand-electric transition-colors cursor-pointer select-none">Pricing Structure</a>
-        <a href="#contacts" class="hover:text-brand-electric transition-colors font-semibold cursor-pointer select-none">Book evaluated hour</a>
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-400 text-sm gap-4">
+      <p>© 2026 Cruise'N'Pass Driving Solutions. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#prices" class="hover:text-brand-electric transition-colors">Pricing Structure</a>
+        <a href="#contacts" class="hover:text-brand-electric transition-colors font-semibold">Book evaluated hour</a>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Menu Script - Enhanced with close logic -->
+  <!-- Mobile Menu Script -->
+  <!-- FIXED: Added mobile navigation toggle -->
   <script>
-    // DOM Elements for Mobile Menu
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    if (!menuBtn) {
-      console.warn('Mobile menu button not found in DOM. Ensure the header structure matches.');
-    }
+    // Mobile Menu Toggle
+    const menuBtn = document.createElement('button');
+    menuBtn.id = 'mobile-menu-btn';
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars text-xl text-slate-700"></i>';
+    menuBtn.classList.add('md:hidden', 'text-slate-700', 'font-bold', 'text-lg', 'cursor-pointer', 'mt-4');
+    document.querySelector('nav').prepend(menuBtn);
 
-    let isMenuOpen = false;
+    // Add mobile nav links
+    const mobileNav = document.createElement('div');
+    mobileNav.id = 'mobile-nav-list';
+    mobileNav.className = 'hidden md:hidden bg-white border-b border-slate-100 py-2 px-6 absolute w-full top-full z-40 shadow-lg';
+    mobileNav.innerHTML = `
+      <a href="#about" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Why Us</a>
+      <a href="#prices" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Prices & Plans</a>
+      <a href="#areas" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Areas Covered</a>
+      <a href="#payg" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Pay As You Go</a>
+      <a href="#contacts" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Contacts</a>
+    `;
+    document.querySelector('nav').appendChild(mobileNav);
 
-    function toggleMobileMenu() {
-      const navContainer = document.querySelector('nav[role="navigation"]');
-      if (!navContainer) return;
+    // Toggle Logic
+    menuBtn.addEventListener('click', () => {
+      const list = document.getElementById('mobile-nav-list');
+      list.classList.toggle('hidden');
+      menuBtn.classList.toggle('hidden');
+    });
 
-      const list = document.getElementById('mobile-nav-list') || createMobileList(navContainer);
-      
-      // Toggle visibility
-      if (isMenuOpen) {
-        list.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-      } else {
-        list.classList.remove('hidden');
-        menuBtn.classList.add('hidden');
-      }
-
-      isMenuOpen = !isMenuOpen;
-    }
-
-    // Create mobile navigation list if it doesn't exist (fallback)
-    function createMobileList(navContainer) {
-      const newNav = document.createElement('div');
-      newNav.id = 'mobile-nav-list';
-      newNav.className = 'hidden md:hidden bg-white border-b border-slate-100 py-2 px-6 absolute w-full top-full z-40 shadow-lg rounded-xl mx-4 my-2';
-      newNav.innerHTML = `
-        <a href="#about" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Why Us</a>
-        <a href="#prices" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Prices & Plans</a>
-        <a href="#areas" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Areas Covered</a>
-        <a href="#payg" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Pay As You Go</a>
-        <a href="#contacts" class="block py-2 text-sm font-semibold text-slate-600 hover:text-brand-electric">Contacts</a>
-      `;
-      navContainer.appendChild(newNav);
-      return newNav;
-    }
-
-    // Attach click listener to the button (if it exists)
-    if (menuBtn && menuBtn.offsetParent !== null) {
-      menuBtn.addEventListener('click', toggleMobileMenu);
-    }
-
-    // Close menu on link click (optional, good UX for mobile users who tap links quickly)
-    const list = document.getElementById('mobile-nav-list');
-    if (list) {
-      list.addEventListener('click', () => {
-        if (!isMenuOpen) return; // Don't close immediately after opening
-        toggleMobileMenu();
-      });
-    }
-
-    // Ensure the button is initially hidden on desktop to prevent layout issues
-    menuBtn.classList.add('md:hidden');
-
+    // Close menu on link click
+    document.getElementById('mobile-nav-list').addEventListener('click', () => {
+      menuBtn.classList.remove('hidden');
+      document.getElementById('mobile-nav-list').classList.add('hidden');
+    });
   </script>
 
 </body>
