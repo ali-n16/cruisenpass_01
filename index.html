@@ -806,62 +806,101 @@
           </p>
         </div>
         
-        <!-- Custom Tab Switcher (Visual Only) -->
+        <!-- Tab Switcher -->
         <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200 self-start md:self-auto">
-          <button class="px-6 py-2.5 rounded-lg bg-slate-900 text-white font-bold text-sm transition-all flex items-center gap-2">
+          <button id="tab-tiktok" onclick="switchTab('tiktok')" class="px-6 py-2.5 rounded-lg bg-slate-900 text-white font-bold text-sm transition-all flex items-center gap-2">
             <i class="fa-brands fa-tiktok"></i> TikTok
           </button>
-          <button class="px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-brand-accent transition-all flex items-center gap-2">
+          <button id="tab-instagram" onclick="switchTab('instagram')" class="px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-brand-accent transition-all flex items-center gap-2">
             <i class="fa-brands fa-instagram"></i> Instagram
           </button>
         </div>
       </div>
 
       <!-- TikTok Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
-        
-        <!-- TikTok 1 -->
-        <div class="tiktok-card bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+      <div id="grid-tiktok" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
           <div class="flex-grow overflow-hidden relative">
             <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7611635924514000150" data-video-id="7611635924514000150" style="width: 100%; height: 100%;">
               <section></section>
             </blockquote>
           </div>
         </div>
-
-        <!-- TikTok 2 -->
-        <div class="tiktok-card bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
           <div class="flex-grow overflow-hidden relative">
             <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7565958281869511958" data-video-id="7565958281869511958" style="width: 100%; height: 100%;">
               <section></section>
             </blockquote>
           </div>
         </div>
-
-        <!-- TikTok 3 -->
-        <div class="tiktok-card bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all h-[580px] flex flex-col">
           <div class="flex-grow overflow-hidden relative">
             <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cruisenpassdriving/video/7573795989849410818" data-video-id="7573795989849410818" style="width: 100%; height: 100%;">
               <section></section>
             </blockquote>
           </div>
         </div>
+      </div>
 
+      <!-- Instagram Grid -->
+      <div id="grid-instagram" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/cruisenpass/p/DZaVFF6sadX/" data-instgrm-version="14" style="width:100%; min-width:280px;"></blockquote>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/cruisenpass/p/DY5pC34sSYS/" data-instgrm-version="14" style="width:100%; min-width:280px;"></blockquote>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all flex flex-col items-center justify-center p-2">
+          <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/cruisenpass/p/DVetRkdjLgH/" data-instgrm-version="14" style="width:100%; min-width:280px;"></blockquote>
+        </div>
       </div>
 
       <!-- CTA Links -->
-      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+      <div id="cta-tiktok" class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
         <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-lg">
           <i class="fa-brands fa-tiktok"></i> Follow us on TikTok
         </a>
+      </div>
+      <div id="cta-instagram" class="hidden mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
         <a href="https://www.instagram.com/cruisenpass/" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-lg">
           <i class="fa-brands fa-instagram"></i> Follow on Instagram
         </a>
       </div>
     </div>
-    
+
     <!-- TikTok Embed Script -->
     <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Instagram Embed Script -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+
+    <script>
+      function switchTab(tab) {
+        const tiktokGrid = document.getElementById('grid-tiktok');
+        const igGrid = document.getElementById('grid-instagram');
+        const ctaTiktok = document.getElementById('cta-tiktok');
+        const ctaIg = document.getElementById('cta-instagram');
+        const tabTiktok = document.getElementById('tab-tiktok');
+        const tabIg = document.getElementById('tab-instagram');
+
+        if (tab === 'tiktok') {
+          tiktokGrid.classList.remove('hidden');
+          igGrid.classList.add('hidden');
+          ctaTiktok.classList.remove('hidden');
+          ctaIg.classList.add('hidden');
+          tabTiktok.className = 'px-6 py-2.5 rounded-lg bg-slate-900 text-white font-bold text-sm transition-all flex items-center gap-2';
+          tabIg.className = 'px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-brand-accent transition-all flex items-center gap-2';
+        } else {
+          tiktokGrid.classList.add('hidden');
+          igGrid.classList.remove('hidden');
+          ctaTiktok.classList.add('hidden');
+          ctaIg.classList.remove('hidden');
+          tabIg.className = 'px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold text-sm transition-all flex items-center gap-2';
+          tabTiktok.className = 'px-6 py-2.5 rounded-lg bg-transparent text-slate-500 font-bold text-sm hover:text-slate-900 transition-all flex items-center gap-2';
+          // Re-process Instagram embeds when tab is shown
+          if (window.instgrm) window.instgrm.Embeds.process();
+        }
+      }
+    </script>
   </section>
 
   <section id="contacts" class="py-24 bg-white border-t border-slate-100 relative">
