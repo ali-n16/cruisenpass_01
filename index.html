@@ -85,6 +85,21 @@
     }
   </script>
 
+  <!-- Review Card Line Clamp Styles -->
+  <style>
+    .line-clamp-4 {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-none {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  </style>
+
   <!-- JSON-LD Schema Markup for Rich Snippets (Local SEO) -->
   <script type="application/ld+json">
   {
@@ -507,6 +522,359 @@
     </div>
   </section>
 
+  <!-- Google Reviews Section -->
+  <section class="py-20 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left: Rating Badge -->
+        <div class="lg:col-span-3 text-center lg:text-left lg:sticky lg:top-24">
+          <div class="inline-block bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+            <div class="text-xl font-heading font-extrabold text-brand-dark mb-2">EXCELLENT</div>
+            <div class="flex justify-center lg:justify-start gap-1 text-yellow-400 text-lg mb-2">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="text-sm text-slate-500 mb-3">Based on <span class="font-bold text-brand-dark">100+ reviews</span></div>
+            <div class="flex justify-center lg:justify-start">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Reviews" class="h-6">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Reviews Carousel -->
+        <div class="lg:col-span-9 relative">
+          <div class="flex items-center gap-4">
+            <button type="button" id="reviews-prev" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Previous review">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="overflow-hidden flex-grow">
+              <div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4">
+
+                <!-- Review 1 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold text-sm">A</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Amalu Jose</div>
+                        <div class="text-xs text-slate-400">a month ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance.
+                  </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-sm">N</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Nazia Munawar</div>
+                        <div class="text-xs text-slate-400">4 weeks ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I passed my driving test today and I couldn't have done it without Hassan's excellent instruction. He was patient, professional, and explained everything clearly, which helped build my confidence. His teaching methods made learning enjoyable and stress-free.
+                  </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">A</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Aghabiomon Oladeru</div>
+                        <div class="text-xs text-slate-400">8 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%.
+                  </p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm">M</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">M Chebet</div>
+                        <div class="text-xs text-slate-400">4 weeks ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    Early morning pass. Syed Ali is the guy to go to! He has been very instrumental in getting this pass even with few classes. Highly recommended instructor.
+                  </p>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-sm">C</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Cecilia Akpan</div>
+                        <div class="text-xs text-slate-400">8 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    💃💃💃💃💃💃💃💃💃💃 I just passed my Driving test at Chadderton test centre, Manchester. So happy and grateful for the support from Cruise'N'Pass!
+                  </p>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold text-sm">S</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Suba Penmetsa</div>
+                        <div class="text-xs text-slate-400">a month ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him.
+                  </p>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">G</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">G A</div>
+                        <div class="text-xs text-slate-400">2 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I have been doing my lessons with Mr. Ali from Cruise'N'Pass, and passed my driving test today with a couple of minor faults. Ali has been amazing since the beginning, patient and very thorough with the lessons. I'm very grateful to Ali and Cruise'N'Pass for their efforts.
+                  </p>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm">M</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Mary-Ann Addo-Mensah</div>
+                        <div class="text-xs text-slate-400">2 weeks ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed.
+                  </p>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm">M</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Maya G Nair</div>
+                        <div class="text-xs text-slate-400">9 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey.
+                  </p>
+                </div>
+
+                <!-- Review 10 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center font-bold text-sm">C</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Christopher Nwatuzor</div>
+                        <div class="text-xs text-slate-400">a month ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I was trained by Hassan. I can confirm he is a great instructor and he was committed to making sure I passed. I learnt a lot from him beyond what the test requires. I can recommend Hassan 100% to anyone going for exam.
+                  </p>
+                </div>
+
+                <!-- Review 11 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-lime-600 text-white flex items-center justify-center font-bold text-sm">Q</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Qaddafi Azad</div>
+                        <div class="text-xs text-slate-400">2 weeks ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I'm very happy to say that today I passed my driving test! A big thank you to Mr. Farhan for his patience, professional guidance, and excellent teaching throughout my lessons. His clear instructions and encouragement gave me the confidence to succeed. I highly recommend Mr. Farhan to anyone looking for a great driving instructor.
+                  </p>
+                </div>
+
+                <!-- Review 12 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-violet-500 text-white flex items-center justify-center font-bold text-sm">S</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Saidur Rahman</div>
+                        <div class="text-xs text-slate-400">a month ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    Alhamdulillah, today I passed my driving test. Thank you so much, Farhan Sir. You are truly brilliant and very helpful. Because of your guidance and support, I passed my driving test. I will pray that Allah blesses you, helps you at all times, and rewards you for your kindness. Thank you again!
+                  </p>
+                </div>
+
+                <!-- Review 13 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-fuchsia-500 text-white flex items-center justify-center font-bold text-sm">S</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Sala Phix</div>
+                        <div class="text-xs text-slate-400">4 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I passed my driving test today in Chadderton with Cruise'n'Pass! I'm very happy with the whole driving experience. A big thank you to my instructor, Farhan. Thanks very much!
+                  </p>
+                </div>
+
+                <!-- Review 14 -->
+                <div class="review-card min-w-[280px] md:min-w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-sm">U</div>
+                      <div>
+                        <div class="font-bold text-brand-dark text-sm">Umair Ali</div>
+                        <div class="text-xs text-slate-400">3 months ago</div>
+                      </div>
+                    </div>
+                    <i class="fa-brands fa-google text-slate-400 text-lg"></i>
+                  </div>
+                  <div class="flex text-yellow-400 text-xs gap-0.5 mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>
+                  </div>
+                  <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">
+                    I had an amazing experience learning with Cruise'n'Pass Driving School, especially with my instructor Sir Farhan. He is very professional, patient, and explains everything clearly, which really helped build my confidence on the road.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <button type="button" id="reviews-next" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Next review">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="flex md:hidden justify-center gap-2 mt-4" id="reviews-dots">
+            <button class="w-2 h-2 rounded-full bg-brand-electric" aria-label="Slide 1"></button>
+            <button class="w-2 h-2 rounded-full bg-slate-300" aria-label="Slide 2"></button>
+            <button class="w-2 h-2 rounded-full bg-slate-300" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="text-right mt-4">
+            <span class="inline-flex items-center gap-1 text-xs text-slate-500 bg-white border border-slate-100 rounded-full px-3 py-1">
+              <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+              Verified by Cruise'N'Pass
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Prices & Plans Section -->
   <section id="prices" class="py-20 bg-brand-surface">
     <div class="max-w-7xl mx-auto px-6">
@@ -755,6 +1123,7 @@
   </footer>
 
   <script>
+    // Mobile menu toggle
     var menuBtn = document.getElementById('mobile-menu-btn');
     var menuPanel = document.getElementById('mobile-menu');
 
@@ -777,6 +1146,100 @@
         });
       });
     }
+
+    // Google Reviews Carousel
+    (function() {
+      var track = document.getElementById('reviews-track');
+      var prevBtn = document.getElementById('reviews-prev');
+      var nextBtn = document.getElementById('reviews-next');
+      var dots = document.getElementById('reviews-dots');
+      if (!track) return;
+
+      var cards = track.querySelectorAll('.review-card');
+      var currentIndex = 0;
+
+      function getCardWidth() {
+        return cards[0] ? cards[0].offsetWidth + 16 : 336;
+      }
+
+      function getVisibleCount() {
+        return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      }
+
+      function updatePosition() {
+        var visible = getVisibleCount();
+        var maxSlide = Math.max(0, cards.length - visible);
+        currentIndex = Math.min(currentIndex, maxSlide);
+        track.style.transform = 'translateX(-' + (currentIndex * getCardWidth()) + 'px)';
+
+        if (dots) {
+          var dotButtons = dots.querySelectorAll('button');
+          dotButtons.forEach(function(dot, idx) {
+            dot.classList.toggle('bg-brand-electric', idx === currentIndex);
+            dot.classList.toggle('bg-slate-300', idx !== currentIndex);
+          });
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          currentIndex = Math.max(0, currentIndex - 1);
+          updatePosition();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          var visible = getVisibleCount();
+          var maxSlide = Math.max(0, cards.length - visible);
+          currentIndex = Math.min(maxSlide, currentIndex + 1);
+          updatePosition();
+        });
+      }
+
+      if (dots) {
+        var dotButtons = dots.querySelectorAll('button');
+        dotButtons.forEach(function(dot, idx) {
+          dot.addEventListener('click', function() {
+            currentIndex = idx;
+            updatePosition();
+          });
+        });
+      }
+
+      cards.forEach(function(card) {
+        var paragraph = card.querySelector('.review-text');
+        if (!paragraph) return;
+
+        if (paragraph.scrollHeight > paragraph.clientHeight + 2) {
+          var toggleBtn = document.createElement('button');
+          toggleBtn.type = 'button';
+          toggleBtn.className = 'text-brand-electric text-xs font-semibold mt-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded';
+          toggleBtn.textContent = 'Read more';
+          toggleBtn.setAttribute('aria-expanded', 'false');
+
+          toggleBtn.addEventListener('click', function() {
+            var isExpanded = paragraph.classList.contains('line-clamp-none');
+            if (isExpanded) {
+              paragraph.classList.add('line-clamp-4');
+              paragraph.classList.remove('line-clamp-none');
+              toggleBtn.textContent = 'Read more';
+              toggleBtn.setAttribute('aria-expanded', 'false');
+            } else {
+              paragraph.classList.remove('line-clamp-4');
+              paragraph.classList.add('line-clamp-none');
+              toggleBtn.textContent = 'Show less';
+              toggleBtn.setAttribute('aria-expanded', 'true');
+            }
+          });
+
+          paragraph.parentNode.appendChild(toggleBtn);
+        }
+      });
+
+      window.addEventListener('resize', updatePosition);
+      updatePosition();
+    })();
   </script>
 
 </body>
