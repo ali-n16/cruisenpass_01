@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Now | Driving Tutorials | Cruise'N'Pass Manchester</title>
+  
+  <!-- SEO & Fonts (Matches your Home Page) -->
+  <meta name="description" content="Watch our range of driving tutorials and playlists to help you pass your test.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          colors: { brand: { active: '#00D1A0', electric: '#4F46E5', dark: '#0B0F19', surface: '#F8FAFC' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-700 font-sans antialiased">
+
+  <!-- Simple Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading font-bold text-2xl tracking-tight text-brand-dark flex items-center gap-2">
+        <span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span> Cruise'N'Pass
+      </a>
+      <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">
+        <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Video Tutorials</span>
+      <h1 class="font-heading text-5xl font-extrabold text-brand-dark mb-4">Learn Now</h1>
+      <p class="text-slate-500 text-lg max-w-2xl mx-auto">Master the roads from your screen. Browse our curated YouTube playlists covering everything from roundabouts to emergency stops.</p>
+    </div>
+  </section>
+
+  <!-- Playlists Grid -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <!-- Playlist 1: How to Pass -->
+        <div class="space-y-4">
+          <h3 class="font-heading text-2xl font-bold text-brand-dark flex items-center gap-3">
+            <i class="fa-brands fa-youtube text-red-600"></i> Test Day Excellence
+          </h3>
+          <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+            <!-- REPLACE 'PLAYLIST_ID_1' with your actual ID -->
+            <iframe 
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID_1" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="text-slate-500 text-sm">Essential tips and mock tests to get you ready for the big day.</p>
+        </div>
+
+        <!-- Playlist 2: Maneuvers -->
+        <div class="space-y-4">
+          <h3 class="font-heading text-2xl font-bold text-brand-dark flex items-center gap-3">
+            <i class="fa-brands fa-youtube text-red-600"></i> Master the Maneuvers
+          </h3>
+          <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+             <!-- REPLACE 'PLAYLIST_ID_2' with your actual ID -->
+            <iframe 
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID_2" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="text-slate-500 text-sm">Step-by-step guides for parallel parking, reversing into bays, and more.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Social Footer -->
+  <section class="py-16 bg-brand-dark text-white rounded-t-[3rem]">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="font-heading text-3xl font-bold mb-6">Need more help?</h2>
+      <p class="text-slate-400 mb-8">Subscribe to our YouTube channel for weekly driving tips and Manchester test route walkthroughs.</p>
+      <a href="https://www.youtube.com/@cruisenpass" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3 rounded-xl transition-all inline-flex items-center gap-2">
+        <i class="fa-brands fa-youtube"></i> Visit Channel
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
