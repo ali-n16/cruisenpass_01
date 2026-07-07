@@ -1,22 +1,468 @@
-<nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
-  <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Why Us</a>
-  <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
-  <a href="#areas" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Areas Covered</a>
-  <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">FAQs</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Join Dropdown -->
-  <div class="relative group">
-    <button type="button" class="text-sm font-semibold text-brand-electric flex items-center gap-1 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded-lg px-1">
-      Join Cruise'N'Pass
-      <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-    </button>
-    <div class="absolute top-full left-0 mt-1 w-72 bg-white border border-slate-100 rounded-2xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-      <a href="join-cruisenpass.html" class="block p-3 rounded-xl hover:bg-brand-surface transition-colors">
-        <div class="font-heading font-bold text-brand-dark text-sm">Becoming a Driving Instructor</div>
-        <div class="text-xs text-slate-500 mt-1">Learn more about a lucrative, flexible opportunity!</div>
+  <title>Join Cruise'N'Pass | Become a Driving Instructor in Manchester</title>
+  <meta name="description" content="Join Cruise'N'Pass as a DVSA-approved driving instructor. Flexible hours, competitive earnings, and full support across Greater Manchester. Apply today.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cruisenpass.com/join-cruisenpass.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cruisenpass.com/join-cruisenpass.html">
+  <meta property="og:title" content="Join Cruise'N'Pass | Become a Driving Instructor">
+  <meta property="og:description" content="Flexible, lucrative driving instructor opportunities across Greater Manchester.">
+  <meta property="og:image" content="https://cruisenpass.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Join Cruise'N'Pass | Become a Driving Instructor">
+  <meta name="twitter:description" content="Flexible, lucrative driving instructor opportunities across Greater Manchester.">
+  <meta name="twitter:image" content="https://cruisenpass.com/twitter-card.jpg">
+
+  <meta name="theme-color" content="#00D1A0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              active: '#00D1A0',
+              electric: '#4F46E5',
+              dark: '#0B0F19',
+              lightBg: '#FFFFFF',
+              surface: '#F8FAFC',
+              accent: '#FF007A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "DVSA-Approved Driving Instructor",
+    "description": "Join Cruise'N'Pass as a self-employed or franchise driving instructor across Greater Manchester. Flexible hours, competitive earnings, and full business support.",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Cruise'N'Pass",
+      "value": "instructor-001"
+    },
+    "hiringOrganization": {
+      "@type": "DrivingSchool",
+      "name": "Cruise'N'Pass",
+      "sameAs": "https://cruisenpass.com",
+      "logo": "https://cruisenpass.com/logo.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manchester",
+        "addressRegion": "Greater Manchester",
+        "addressCountry": "GB"
+      }
+    },
+    "employmentType": "CONTRACTOR",
+    "workHours": "7am - 8pm, 7 days a week (flexible)",
+    "datePosted": "2026-07-07",
+    "validThrough": "2027-07-07",
+    "applicationContact": {
+      "@type": "ContactPoint",
+      "telephone": "+447916155054",
+      "email": "cruisenpass@gmail.com",
+      "contactType": "Recruitment"
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
+
+  <!-- Nav Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <a href="index.html" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2">
+        <span class="bg-brand-electric p-2 rounded-xl text-white shadow-lg">🚗</span>
+        Cruise'N'Pass
       </a>
-    </div>
-  </div>
 
-  <a href="#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Contacts</a>
-</nav>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        <a href="index.html#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Why Us</a>
+        <a href="index.html#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
+        <a href="index.html#areas" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Areas Covered</a>
+        <a href="index.html#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">FAQs</a>
+
+        <!-- Join Dropdown -->
+        <div class="relative group">
+          <button type="button" class="text-sm font-semibold text-brand-electric flex items-center gap-1 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded-lg px-1">
+            Join Cruise'N'Pass
+            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-72 bg-white border border-slate-100 rounded-2xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="join-cruisenpass.html" class="block p-3 rounded-xl hover:bg-brand-surface transition-colors">
+              <div class="font-heading font-bold text-brand-dark text-sm">Becoming a Driving Instructor</div>
+              <div class="text-xs text-slate-500 mt-1">Learn more about a lucrative, flexible opportunity!</div>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#contacts" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Contacts</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="index.html#contacts" class="hidden sm:inline-block bg-brand-active hover:bg-slate-900 text-white font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 shadow-md shadow-brand-active/20 text-sm">
+          Book Lesson
+        </a>
+        <button id="mobile-menu-btn" type="button" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200 text-slate-700" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="text-sm font-semibold text-slate-600 py-1">Why Us</a>
+      <a href="index.html#prices" class="text-sm font-semibold text-slate-600 py-1">Prices & Plans</a>
+      <a href="index.html#areas" class="text-sm font-semibold text-slate-600 py-1">Areas Covered</a>
+      <a href="index.html#faq" class="text-sm font-semibold text-slate-600 py-1">FAQs</a>
+      <a href="join-cruisenpass.html" class="text-sm font-semibold text-brand-electric py-1">Join Cruise'N'Pass</a>
+      <a href="index.html#contacts" class="bg-brand-active text-white font-bold px-4 py-2.5 rounded-xl text-center text-sm mt-1">Book Lesson</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[80vh] flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-indigo-100/60 blur-[130px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[550px] h-[550px] rounded-full bg-emerald-100/50 blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 mb-6 text-sm font-semibold">
+          <i class="fa-solid fa-briefcase text-xs"></i>
+          Now Recruiting Instructors
+        </div>
+
+        <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.10] text-brand-dark">
+          Become a <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-emerald-400 to-indigo-600">
+            driving instructor.
+          </span>
+        </h1>
+
+        <p class="text-slate-500 text-lg md:text-xl max-w-xl mb-8 leading-relaxed font-normal">
+          Join Cruise'N'Pass and turn your driving expertise into a flexible, rewarding career. Be your own boss, set your own hours, and help learners pass across Greater Manchester.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a href="#apply" class="w-full sm:w-auto text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-8 py-2 rounded-xl transition-all hover:scale-105 shadow-lg shadow-indigo-600/20">
+            Apply Now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+          </a>
+          <a href="tel:07916155054" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold px-8 py-2 rounded-xl transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call 07916 155054
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800" alt="Driving instructor teaching a learner" width="800" height="380" class="w-full h-[380px] object-cover" loading="eager" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white text-left">
+            <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Flexible Career</p>
+            <h4 class="text-lg font-bold">"Work around your life"</h4>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
+            ££
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Earnings</div>
+            <div class="text-sm font-bold text-brand-dark">Competitive Rates</div>
+          </div>
+        </div>
+
+        <div class="absolute -top-6 -right-6 z-20 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-lg">
+            🏠
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-brand-active font-semibold uppercase tracking-wider">Freedom</div>
+            <div class="text-sm font-bold">Be Your Own Boss</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Why Drive With Us?</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">A Career That Fits Your Life</h2>
+        <p class="text-slate-500 text-lg leading-relaxed">We support our instructors with pupils, scheduling help, and a strong local brand — so you can focus on teaching.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-brand-surface border border-slate-100 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-electric mx-auto mb-5">
+            <i class="fa-solid fa-clock text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Flexible Hours</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Choose when you work. Full-time, part-time, or evenings and weekends.</p>
+        </div>
+
+        <div class="bg-brand-surface border border-slate-100 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-active mx-auto mb-5">
+            <i class="fa-solid fa-money-bill-wave text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Strong Earnings</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Keep more of what you earn with fair franchise terms and a steady flow of pupils.</p>
+        </div>
+
+        <div class="bg-brand-surface border border-slate-100 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-accent mx-auto mb-5">
+            <i class="fa-solid fa-user-group text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Pupils Supplied</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We handle marketing and enquiries, matching you with learners in your area.</p>
+        </div>
+
+        <div class="bg-brand-surface border border-slate-100 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-electric mx-auto mb-5">
+            <i class="fa-solid fa-headset text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Ongoing Support</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">From diary management to advice, our team is here to help you succeed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements Section -->
+  <section class="py-20 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">What You Need</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-6 leading-tight">Ready to Join?</h2>
+        <p class="text-slate-500 text-lg leading-relaxed mb-8">We're looking for reliable, patient instructors who are passionate about road safety and helping learners succeed.</p>
+
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-brand-active/10 text-brand-active flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-dark">DVSA Approved Driving Instructor (ADI)</h4>
+              <p class="text-slate-500 text-sm">Fully qualified with a current green badge, or a trainee pink badge with appropriate supervision.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-brand-active/10 text-brand-active flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Dual-Controlled Vehicle</h4>
+              <p class="text-slate-500 text-sm">A modern, well-maintained car with dual controls and valid business insurance.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-brand-active/10 text-brand-active flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Professional & Patient Attitude</h4>
+              <p class="text-slate-500 text-sm">Great communication skills and a genuine desire to help nervous learners build confidence.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-brand-active/10 text-brand-active flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-sm"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-dark">Available Across Greater Manchester</h4>
+              <p class="text-slate-500 text-sm">Willing to cover one or more of our service areas in and around Manchester.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
+        <h3 class="font-heading font-bold text-2xl text-brand-dark mb-4">Not Yet Qualified?</h3>
+        <p class="text-slate-500 leading-relaxed mb-6">If you're thinking about becoming an ADI, we can point you toward reputable training providers and discuss future opportunities with Cruise'N'Pass once you're qualified.</p>
+        <a href="#apply" class="inline-block bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">
+          Register Your Interest
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section id="apply" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Apply Today</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Join the Team</h2>
+        <p class="text-slate-500 text-lg leading-relaxed">Tell us about yourself and we'll be in touch within 48 hours to discuss the next steps.</p>
+      </div>
+
+      <form action="#" method="POST" class="bg-brand-surface border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="first-name" class="block text-sm font-semibold text-brand-dark mb-2">First Name</label>
+            <input type="text" id="first-name" name="first-name" required autocomplete="given-name" placeholder="Jane" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
+          </div>
+          <div>
+            <label for="last-name" class="block text-sm font-semibold text-brand-dark mb-2">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required autocomplete="family-name" placeholder="Smith" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-brand-dark mb-2">Phone Number</label>
+            <input type="tel" id="phone" name="phone" inputmode="tel" required autocomplete="tel" placeholder="07xxx xxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-brand-dark mb-2">Email Address</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label for="status" class="block text-sm font-semibold text-brand-dark mb-2">Instructor Status</label>
+          <select id="status" name="status" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm bg-white">
+            <option value="qualified-adi">Fully Qualified ADI (Green Badge)</option>
+            <option value="trainee">Trainee Instructor (Pink Badge)</option>
+            <option value="training">Currently Training to Become an ADI</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="areas" class="block text-sm font-semibold text-brand-dark mb-2">Areas You Can Cover</label>
+          <input type="text" id="areas" name="areas" placeholder="e.g. Bolton, Bury, Salford" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
+        </div>
+
+        <div>
+          <label for="experience" class="block text-sm font-semibold text-brand-dark mb-2">Teaching Experience</label>
+          <textarea id="experience" name="experience" rows="4" placeholder="Tell us about your experience, availability, and why you'd like to join Cruise'N'Pass..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-brand-surface">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Instructor FAQs</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Common Questions</h2>
+      </div>
+
+      <div class="space-y-3">
+        <details class="group bg-white rounded-2xl p-5">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
+            Is this a franchise or employed role?
+            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">We work with self-employed ADIs on a franchise basis. You keep control of your diary while benefiting from our marketing, branding, and pupil supply.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
+            How much can I earn?
+            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">Earnings depend on your hours and package structure. Many of our instructors work flexibly and earn a strong full-time or supplementary income. We'll discuss exact terms during your interview.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
+            Do I need my own car?
+            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">Yes, you'll need a modern, dual-controlled vehicle with valid business insurance and a clean, professional appearance.</p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
+            What areas do you need instructors in?
+            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">We're actively looking for instructors across Greater Manchester, including Bolton, Bury, Salford, Stockport, Manchester city centre, and surrounding areas.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-slate-300 py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2 font-heading font-bold text-xl text-white">
+        <span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span>
+        Cruise'N'Pass
+      </div>
+      <p class="text-sm text-slate-400 text-center">© 2026 Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
+      <div class="flex items-center gap-2">
+        <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@cruisenpass" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-red-500 hover:text-white text-slate-300 transition-all" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white hover:text-black text-slate-300 transition-all" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var menuPanel = document.getElementById('mobile-menu');
+
+    if (menuBtn && menuPanel) {
+      menuBtn.addEventListener('click', function () {
+        var isHidden = menuPanel.classList.contains('hidden');
+        menuPanel.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+        menuBtn.innerHTML = isHidden
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      var mobileLinks = menuPanel.querySelectorAll('a');
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          menuPanel.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
