@@ -85,6 +85,21 @@
     }
   </script>
 
+  <!-- Review Card Line Clamp Styles -->
+  <style>
+    .line-clamp-4 {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-none {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  </style>
+
   <!-- JSON-LD Schema Markup for Rich Snippets (Local SEO) -->
   <script type="application/ld+json">
   {
@@ -314,9 +329,9 @@
       </a>
 
 <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
-  <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Why Us</a>
   <a href="#prices" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Prices & Plans</a>
   <a href="#areas" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Areas Covered</a>
+  <a href="learn-now.html" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
   <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">FAQs</a>
 
   <!-- Join Dropdown -->
@@ -363,9 +378,9 @@
 
     <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-3">
-      <a href="#about" class="text-sm font-semibold text-slate-600 py-1">Why Us</a>
       <a href="#prices" class="text-sm font-semibold text-slate-600 py-1">Prices & Plans</a>
       <a href="#areas" class="text-sm font-semibold text-slate-600 py-1">Areas Covered</a>
+      <a href="learn-now.html" class="text-sm font-semibold text-slate-600 py-1">Learn Now</a>
       <a href="#faq" class="text-sm font-semibold text-slate-600 py-1">FAQs</a>
       <a href="#contacts" class="bg-brand-active text-white font-bold px-4 py-2.5 rounded-xl text-center text-sm mt-1">Book Lesson</a>
       <a href="join-cruisenpass.html" class="text-sm font-semibold text-brand-electric py-1">Join Cruise'N'Pass</a>
@@ -506,6 +521,81 @@
       </div>
     </div>
   </section>
+
+  <!-- Google Reviews Section -->
+  <section class="py-20 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left: Rating Badge -->
+        <div class="lg:col-span-3 text-center lg:text-left lg:sticky lg:top-24">
+          <div class="inline-block bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+            <div class="text-xl font-heading font-extrabold text-brand-dark mb-2">EXCELLENT</div>
+            <div class="flex justify-center lg:justify-start gap-1 text-yellow-400 text-lg mb-2">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="text-sm text-slate-500 mb-3">Based on <span class="font-bold text-brand-dark">100+ reviews</span></div>
+            <div class="flex justify-center lg:justify-start">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Reviews" class="h-6" width="74" height="24" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Reviews Carousel -->
+        <div class="lg:col-span-9 relative">
+          <div class="flex items-center gap-4">
+            <button type="button" id="reviews-prev" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Previous review">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="overflow-hidden flex-grow">
+              <!-- Cards are rendered into this track by renderReviews() from the REVIEWS_DATA array below -->
+              <div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews"></div>
+            </div>
+
+            <button type="button" id="reviews-next" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Next review">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Dots are rendered dynamically to match the real number of slides -->
+          <div class="flex md:hidden justify-center gap-2 mt-4" id="reviews-dots"></div>
+
+          <div class="text-right mt-4">
+            <span class="inline-flex items-center gap-1 text-xs text-slate-500 bg-white border border-slate-100 rounded-full px-3 py-1">
+              <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+              Verified by Cruise'N'Pass
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Review data for the carousel above. Kept as JSON so the markup isn't duplicated 14x. -->
+  <script type="application/json" id="reviews-data">
+[
+  {"name":"Amalu Jose","initial":"A","color":"bg-indigo-500","time":"a month ago","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},
+  {"name":"Nazia Munawar","initial":"N","color":"bg-pink-500","time":"4 weeks ago","text":"I passed my driving test today and I couldn't have done it without Hassan's excellent instruction. He was patient, professional, and explained everything clearly, which helped build my confidence. His teaching methods made learning enjoyable and stress-free."},
+  {"name":"Aghabiomon Oladeru","initial":"A","color":"bg-emerald-500","time":"8 months ago","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},
+  {"name":"M Chebet","initial":"M","color":"bg-orange-500","time":"4 weeks ago","text":"Early morning pass. Syed Ali is the guy to go to! He has been very instrumental in getting this pass even with few classes. Highly recommended instructor."},
+  {"name":"Cecilia Akpan","initial":"C","color":"bg-purple-500","time":"8 months ago","text":"💃💃💃💃💃💃💃💃💃💃 I just passed my Driving test at Chadderton test centre, Manchester. So happy and grateful for the support from Cruise'N'Pass!"},
+  {"name":"Suba Penmetsa","initial":"S","color":"bg-teal-500","time":"a month ago","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."},
+  {"name":"G A","initial":"G","color":"bg-blue-500","time":"2 months ago","text":"I have been doing my lessons with Mr. Ali from Cruise'N'Pass, and passed my driving test today with a couple of minor faults. Ali has been amazing since the beginning, patient and very thorough with the lessons. I'm very grateful to Ali and Cruise'N'Pass for their efforts."},
+  {"name":"Mary-Ann Addo-Mensah","initial":"M","color":"bg-rose-500","time":"2 weeks ago","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."},
+  {"name":"Maya G Nair","initial":"M","color":"bg-amber-500","time":"9 months ago","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."},
+  {"name":"Christopher Nwatuzor","initial":"C","color":"bg-cyan-500","time":"a month ago","text":"I was trained by Hassan. I can confirm he is a great instructor and he was committed to making sure I passed. I learnt a lot from him beyond what the test requires. I can recommend Hassan 100% to anyone going for exam."},
+  {"name":"Qaddafi Azad","initial":"Q","color":"bg-lime-600","time":"2 weeks ago","text":"I'm very happy to say that today I passed my driving test! A big thank you to Mr. Farhan for his patience, professional guidance, and excellent teaching throughout my lessons. His clear instructions and encouragement gave me the confidence to succeed. I highly recommend Mr. Farhan to anyone looking for a great driving instructor."},
+  {"name":"Saidur Rahman","initial":"S","color":"bg-violet-500","time":"a month ago","text":"Alhamdulillah, today I passed my driving test. Thank you so much, Farhan Sir. You are truly brilliant and very helpful. Because of your guidance and support, I passed my driving test. I will pray that Allah blesses you, helps you at all times, and rewards you for your kindness. Thank you again!"},
+  {"name":"Sala Phix","initial":"S","color":"bg-fuchsia-500","time":"4 months ago","text":"I passed my driving test today in Chadderton with Cruise'n'Pass! I'm very happy with the whole driving experience. A big thank you to my instructor, Farhan. Thanks very much!"},
+  {"name":"Umair Ali","initial":"U","color":"bg-sky-500","time":"3 months ago","text":"I had an amazing experience learning with Cruise'n'Pass Driving School, especially with my instructor Sir Farhan. He is very professional, patient, and explains everything clearly, which really helped build my confidence on the road."}
+]
+  </script>
 
   <!-- Prices & Plans Section -->
   <section id="prices" class="py-20 bg-brand-surface">
@@ -664,7 +754,7 @@
             How do I book a driving lesson?
             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">You can book a lesson by calling 07916 155054, emailing cruisenpass@gmail.com, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm.</p>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">You can book a lesson by calling 07916 155054, emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0d1c1b071d0b001e0f1d1d2e09030f0702400d0103">[email&#160;protected]</a>, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm.</p>
         </details>
       </div>
     </div>
@@ -684,9 +774,9 @@
             <div class="w-11 h-11 rounded-xl bg-brand-active/10 text-brand-active flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
             <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Call Us</div><div class="font-bold text-brand-dark">07916 155054</div></div>
           </a>
-          <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
+          <a href="/cdn-cgi/l/email-protection#096a7b7c607a6c6779687a7a496e64686065276a6664" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
             <div class="w-11 h-11 rounded-xl bg-brand-electric/10 text-brand-electric flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
-            <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Email Us</div><div class="font-bold text-brand-dark">cruisenpass@gmail.com</div></div>
+            <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Email Us</div><div class="font-bold text-brand-dark"><span class="__cf_email__" data-cfemail="8deefff8e4fee8e3fdecfefecdeae0ece4e1a3eee2e0">[email&#160;protected]</span></div></div>
           </a>
           <div class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4">
             <div class="w-11 h-11 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center"><i class="fa-solid fa-clock"></i></div>
@@ -754,7 +844,8 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Mobile menu toggle
     var menuBtn = document.getElementById('mobile-menu-btn');
     var menuPanel = document.getElementById('mobile-menu');
 
@@ -777,6 +868,170 @@
         });
       });
     }
+
+    // Google Reviews Carousel — data-driven, rebuilds cards + dots so they always match
+    (function() {
+      var track = document.getElementById('reviews-track');
+      var prevBtn = document.getElementById('reviews-prev');
+      var nextBtn = document.getElementById('reviews-next');
+      var dotsWrap = document.getElementById('reviews-dots');
+      var dataEl = document.getElementById('reviews-data');
+      if (!track || !dataEl) return;
+
+      var reviews = [];
+      try {
+        reviews = JSON.parse(dataEl.textContent);
+      } catch (e) {
+        console.error('Could not parse reviews data', e);
+        return;
+      }
+
+      var CARD_WIDTH = 320; // px, matches md:min-w-[320px] below
+      var CARD_WIDTH_MOBILE = 280; // px, matches min-w-[280px] below
+      var GAP = 16; // px, matches gap-4
+      var currentIndex = 0;
+      var resizeTimer = null;
+
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, function(ch) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+        });
+      }
+
+      function cardWidth() {
+        return window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH;
+      }
+
+      function getVisibleCount() {
+        return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      }
+
+      function maxSlideIndex() {
+        return Math.max(0, reviews.length - getVisibleCount());
+      }
+
+      function renderCards() {
+        track.innerHTML = reviews.map(function(r) {
+          return (
+            '<div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">' +
+              '<div class="flex items-center justify-between mb-3">' +
+                '<div class="flex items-center gap-3">' +
+                  '<div class="w-10 h-10 rounded-full ' + r.color + ' text-white flex items-center justify-center font-bold text-sm">' + escapeHtml(r.initial) + '</div>' +
+                  '<div>' +
+                    '<div class="font-bold text-brand-dark text-sm">' + escapeHtml(r.name) + '</div>' +
+                    '<div class="text-xs text-slate-400">' + escapeHtml(r.time) + '</div>' +
+                  '</div>' +
+                '</div>' +
+                '<i class="fa-brands fa-google text-slate-400 text-lg"></i>' +
+              '</div>' +
+              '<div class="flex text-yellow-400 text-xs gap-0.5 mb-2">' +
+                '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>' +
+                '<i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>' +
+              '</div>' +
+              '<p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">' + escapeHtml(r.text) + '</p>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function renderDots() {
+        if (!dotsWrap) return;
+        var totalDots = maxSlideIndex() + 1;
+        var buttons = [];
+        for (var i = 0; i < totalDots; i++) {
+          buttons.push(
+            '<button type="button" class="w-2 h-2 rounded-full ' + (i === currentIndex ? 'bg-brand-electric' : 'bg-slate-300') + '" aria-label="Slide ' + (i + 1) + '" data-index="' + i + '"></button>'
+          );
+        }
+        dotsWrap.innerHTML = buttons.join('');
+        dotsWrap.querySelectorAll('button').forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            currentIndex = parseInt(dot.getAttribute('data-index'), 10) || 0;
+            updatePosition();
+          });
+        });
+      }
+
+      function updatePosition() {
+        var maxSlide = maxSlideIndex();
+        currentIndex = Math.min(Math.max(0, currentIndex), maxSlide);
+        track.style.transform = 'translateX(-' + (currentIndex * (cardWidth() + GAP)) + 'px)';
+
+        if (dotsWrap) {
+          var dotButtons = dotsWrap.querySelectorAll('button');
+          // Rebuild dots if the count is stale (e.g. after a breakpoint change)
+          if (dotButtons.length !== maxSlide + 1) {
+            renderDots();
+          } else {
+            dotButtons.forEach(function(dot, idx) {
+              dot.classList.toggle('bg-brand-electric', idx === currentIndex);
+              dot.classList.toggle('bg-slate-300', idx !== currentIndex);
+            });
+          }
+        }
+
+        if (prevBtn) prevBtn.disabled = currentIndex === 0;
+        if (nextBtn) nextBtn.disabled = currentIndex === maxSlide;
+      }
+
+      function attachReadMoreToggles() {
+        track.querySelectorAll('.review-card').forEach(function(card) {
+          var paragraph = card.querySelector('.review-text');
+          if (!paragraph || card.querySelector('.review-toggle')) return;
+
+          if (paragraph.scrollHeight > paragraph.clientHeight + 2) {
+            var toggleBtn = document.createElement('button');
+            toggleBtn.type = 'button';
+            toggleBtn.className = 'review-toggle text-brand-electric text-xs font-semibold mt-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded';
+            toggleBtn.textContent = 'Read more';
+            toggleBtn.setAttribute('aria-expanded', 'false');
+
+            toggleBtn.addEventListener('click', function() {
+              var isExpanded = paragraph.classList.contains('line-clamp-none');
+              paragraph.classList.toggle('line-clamp-4', isExpanded);
+              paragraph.classList.toggle('line-clamp-none', !isExpanded);
+              toggleBtn.textContent = isExpanded ? 'Read more' : 'Show less';
+              toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+            });
+
+            paragraph.parentNode.appendChild(toggleBtn);
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          currentIndex = Math.max(0, currentIndex - 1);
+          updatePosition();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          currentIndex = Math.min(maxSlideIndex(), currentIndex + 1);
+          updatePosition();
+        });
+      }
+
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updatePosition, 150);
+      });
+
+      // Initial render
+      renderCards();
+      renderDots();
+      updatePosition();
+
+      // Re-check "Read more" needs once fonts/webfonts have settled so clamp heights are accurate
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(attachReadMoreToggles);
+      } else {
+        window.addEventListener('load', attachReadMoreToggles);
+      }
+      // Fallback in case fonts.ready never resolves in older browsers
+      setTimeout(attachReadMoreToggles, 500);
+    })();
   </script>
 
 </body>
