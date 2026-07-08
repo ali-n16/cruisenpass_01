@@ -249,6 +249,34 @@
     </div>
   </section>
 
+  <!-- TikTok Tips Section -->
+  <section id="tiktok-tips" class="py-20 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Quick Driving Tips</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Quick Driving Tips</h2>
+        <p class="text-slate-500 text-lg leading-relaxed">Bite-sized driving tips and tricks from our TikTok.</p>
+      </div>
+
+      <!-- Empty state -->
+      <div id="tiktok-empty" class="hidden text-center max-w-xl mx-auto bg-white border border-slate-100 rounded-2xl p-12">
+        <div class="w-14 h-14 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-4">
+          <i class="fa-brands fa-tiktok text-2xl"></i>
+        </div>
+        <h3 class="font-heading font-bold text-xl text-brand-dark mb-2">No TikTok videos yet</h3>
+        <p class="text-slate-500 mb-6">Add videos to the TIKTOK_VIDEOS array in the page script to display them here.</p>
+        <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="inline-block bg-black hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-all">
+          Visit Our TikTok
+        </a>
+      </div>
+
+      <!-- TikTok grid -->
+      <div id="tiktok-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="py-20 bg-brand-surface">
     <div class="max-w-4xl mx-auto px-6 text-center">
@@ -434,6 +462,87 @@
           console.error('YouTube API error:', err);
           showError();
         });
+    })();
+
+    // TikTok Quick Driving Tips
+    (function () {
+      var TIKTOK_VIDEOS = [
+        // Replace these example URLs with your real TikTok video URLs.
+        {
+          url: 'https://www.tiktok.com/@cruisenpassdriving/video/PLACEHOLDER_1',
+          title: 'Mirror check habit',
+          description: 'The simple routine that keeps you safe at every junction.',
+          thumbnail: ''
+        },
+        {
+          url: 'https://www.tiktok.com/@cruisenpassdriving/video/PLACEHOLDER_2',
+          title: 'Roundabout lane discipline',
+          description: 'How to pick the right lane and exit safely.',
+          thumbnail: ''
+        },
+        {
+          url: 'https://www.tiktok.com/@cruisenpassdriving/video/PLACEHOLDER_3',
+          title: 'Smooth gear changes',
+          description: 'Tips for changing gears without the jerks.',
+          thumbnail: ''
+        }
+      ];
+
+      var gridEl = document.getElementById('tiktok-grid');
+      var emptyEl = document.getElementById('tiktok-empty');
+
+      function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.textContent = text || '';
+        return div.innerHTML;
+      }
+
+      function createCard(video) {
+        var title = video.title || 'Untitled Video';
+        var description = video.description || '';
+        var thumbnail = video.thumbnail && video.thumbnail.trim()
+          ? video.thumbnail
+          : 'assets/tiktok-placeholder.svg';
+
+        var card = document.createElement('a');
+        card.href = video.url || 'https://www.tiktok.com/@cruisenpassdriving';
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+        card.className = 'group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1';
+
+        card.innerHTML =
+          '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
+            '<img src="' + escapeHtml(thumbnail) + '" alt="' + escapeHtml(title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src=\'assets/tiktok-placeholder.svg\'">' +
+            '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
+              '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
+                '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="p-5">' +
+            '<h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">' + escapeHtml(title) + '</h3>' +
+            '<p class="text-slate-500 text-sm leading-relaxed line-clamp-3">' + escapeHtml(description) + '</p>' +
+          '</div>';
+
+        return card;
+      }
+
+      function render() {
+        if (!gridEl || !emptyEl) return;
+
+        if (!TIKTOK_VIDEOS || TIKTOK_VIDEOS.length === 0) {
+          gridEl.classList.add('hidden');
+          emptyEl.classList.remove('hidden');
+          return;
+        }
+
+        gridEl.innerHTML = '';
+        TIKTOK_VIDEOS.forEach(function (video) {
+          gridEl.appendChild(createCard(video));
+        });
+      }
+
+      render();
     })();
   </script>
 
