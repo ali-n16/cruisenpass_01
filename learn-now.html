@@ -1,3 +1,5 @@
+review this code 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -467,24 +469,20 @@
     // TikTok Quick Driving Tips
     (function () {
       var TIKTOK_VIDEOS = [
-        // Replace these example URLs with your real TikTok video URLs.
         {
           url: 'https://www.tiktok.com/@cruisenpassdriving/video/7553552845044206870',
           title: 'Gestures of the driving examiner',
-          description: 'The simple routine that keeps you safe at every junction.',
-          thumbnail: ''
+          description: 'The simple routine that keeps you safe at every junction.'
         },
         {
           url: 'https://www.tiktok.com/@cruisenpassdriving/video/7565958281869511958',
           title: 'Roundabout lane discipline',
-          description: 'How to pick the right lane and exit safely.',
-          thumbnail: ''
+          description: 'How to pick the right lane and exit safely.'
         },
         {
           url: 'https://www.tiktok.com/@cruisenpassdriving/video/7567037359812857110',
           title: 'Dont Forget',
-          description: 'Tips for changing gears without the jerks.',
-          thumbnail: ''
+          description: 'Tips for changing gears without the jerks.'
         }
       ];
 
@@ -497,12 +495,23 @@
         return div.innerHTML;
       }
 
-      function createCard(video) {
+      // Fetch thumbnail from TikTok oEmbed API
+      function fetchThumbnail(videoUrl) {
+        var oembedUrl = 'https://www.tiktok.com/oembed?url=' + encodeURIComponent(videoUrl);
+        return fetch(oembedUrl)
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            return data.thumbnail_url || '';
+          })
+          .catch(function () {
+            return ''; // fall back to placeholder on error
+          });
+      }
+
+      function createCard(video, thumbnailUrl) {
         var title = video.title || 'Untitled Video';
         var description = video.description || '';
-        var thumbnail = video.thumbnail && video.thumbnail.trim()
-          ? video.thumbnail
-          : 'assets/tiktok-placeholder.svg';
+        var thumbnail = thumbnailUrl || '';
 
         var card = document.createElement('a');
         card.href = video.url || 'https://www.tiktok.com/@cruisenpassdriving';
@@ -510,15 +519,20 @@
         card.rel = 'noopener noreferrer';
         card.className = 'group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1';
 
-        card.innerHTML =
-          '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
-            '<img src="' + escapeHtml(thumbnail) + '" alt="' + escapeHtml(title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src=\'assets/tiktok-placeholder.svg\'">' +
-            '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
-              '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
-                '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
+        var imgHtml = thumbnail
+          ? '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
+              '<img src="' + escapeHtml(thumbnail) + '" alt="' + escapeHtml(title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
+              '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
+                '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
+                  '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
+                '</div>' +
               '</div>' +
-            '</div>' +
-          '</div>' +
+            '</div>'
+          : '<div class="aspect-video bg-slate-100 flex items-center justify-center text-slate-300">' +
+              '<i class="fa-brands fa-tiktok text-4xl"></i>' +
+            '</div>';
+
+        card.innerHTML = imgHtml +
           '<div class="p-5">' +
             '<h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">' + escapeHtml(title) + '</h3>' +
             '<p class="text-slate-500 text-sm leading-relaxed line-clamp-3">' + escapeHtml(description) + '</p>' +
@@ -536,9 +550,28 @@
           return;
         }
 
+        // Show skeleton cards immediately, then update with real thumbnails
         gridEl.innerHTML = '';
         TIKTOK_VIDEOS.forEach(function (video) {
-          gridEl.appendChild(createCard(video));
+          // Create card with no thumbnail first (shows TikTok icon placeholder)
+          var card = createCard(video, '');
+          gridEl.appendChild(card);
+
+          // Fetch real thumbnail and update the card
+          fetchThumbnail(video.url).then(function (thumbUrl) {
+            if (thumbUrl) {
+              var imgContainer = card.querySelector('.aspect-video');
+              if (imgContainer) {
+                imgContainer.innerHTML =
+                  '<img src="' + escapeHtml(thumbUrl) + '" alt="' + escapeHtml(video.title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
+                  '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
+                    '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
+                      '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
+                    '</div>' +
+                  '</div>';
+              }
+            }
+          });
         });
       }
 
