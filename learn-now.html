@@ -1,5 +1,7 @@
 review this code 
 
+review this code 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,7 +254,7 @@ review this code
   </section>
 
   <!-- TikTok Tips Section -->
-  <section id="tiktok-tips" class="py-20 bg-brand-surface">
+  <section id="tiktok-tips" class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Quick Driving Tips</span>
@@ -266,7 +268,7 @@ review this code
           <i class="fa-brands fa-tiktok text-2xl"></i>
         </div>
         <h3 class="font-heading font-bold text-xl text-brand-dark mb-2">No TikTok videos yet</h3>
-        <p class="text-slate-500 mb-6">Add videos to the TIKTOK_VIDEOS array in the page script to display them here.</p>
+        <p class="text-slate-500 mb-6">Add video URLs to the TIKTOK_VIDEOS array in the page script to display them here.</p>
         <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="inline-block bg-black hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-all">
           Visit Our TikTok
         </a>
@@ -274,7 +276,7 @@ review this code
 
       <!-- TikTok grid -->
       <div id="tiktok-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards injected by JS -->
+        <!-- TikTok embeds injected by JS -->
       </div>
     </div>
   </section>
@@ -466,28 +468,21 @@ review this code
         });
     })();
 
-    // TikTok Quick Driving Tips
+    // TikTok Quick Driving Tips — uses TikTok's official embed player
     (function () {
       var TIKTOK_VIDEOS = [
-        {
-          url: 'https://www.tiktok.com/@cruisenpassdriving/video/7553552845044206870',
-          title: 'Gestures of the driving examiner',
-          description: 'The simple routine that keeps you safe at every junction.'
-        },
-        {
-          url: 'https://www.tiktok.com/@cruisenpassdriving/video/7565958281869511958',
-          title: 'Roundabout lane discipline',
-          description: 'How to pick the right lane and exit safely.'
-        },
-        {
-          url: 'https://www.tiktok.com/@cruisenpassdriving/video/7567037359812857110',
-          title: 'Dont Forget',
-          description: 'Tips for changing gears without the jerks.'
-        }
+        'https://www.tiktok.com/@cruisenpassdriving/video/7553552845044206870',
+        'https://www.tiktok.com/@cruisenpassdriving/video/7565958281869511958',
+        'https://www.tiktok.com/@cruisenpassdriving/video/7567037359812857110'
       ];
 
       var gridEl = document.getElementById('tiktok-grid');
       var emptyEl = document.getElementById('tiktok-empty');
+
+      function getVideoId(url) {
+        var match = url.match(/\/video\/(\d+)/);
+        return match ? match[1] : '';
+      }
 
       function escapeHtml(text) {
         var div = document.createElement('div');
@@ -495,50 +490,19 @@ review this code
         return div.innerHTML;
       }
 
-      // Fetch thumbnail from TikTok oEmbed API
-      function fetchThumbnail(videoUrl) {
-        var oembedUrl = 'https://www.tiktok.com/oembed?url=' + encodeURIComponent(videoUrl);
-        return fetch(oembedUrl)
-          .then(function (res) { return res.json(); })
-          .then(function (data) {
-            return data.thumbnail_url || '';
-          })
-          .catch(function () {
-            return ''; // fall back to placeholder on error
-          });
-      }
+      function createEmbed(url) {
+        var videoId = getVideoId(url);
+        if (!videoId) return null;
 
-      function createCard(video, thumbnailUrl) {
-        var title = video.title || 'Untitled Video';
-        var description = video.description || '';
-        var thumbnail = thumbnailUrl || '';
+        var wrapper = document.createElement('div');
+        wrapper.className = 'bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1';
 
-        var card = document.createElement('a');
-        card.href = video.url || 'https://www.tiktok.com/@cruisenpassdriving';
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
-        card.className = 'group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1';
+        wrapper.innerHTML =
+          '<blockquote class="tiktok-embed" cite="' + escapeHtml(url) + '" data-video-id="' + escapeHtml(videoId) + '" style="max-width: 100%; min-width: 100%;">' +
+            '<section></section>' +
+          '</blockquote>';
 
-        var imgHtml = thumbnail
-          ? '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
-              '<img src="' + escapeHtml(thumbnail) + '" alt="' + escapeHtml(title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
-              '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
-                '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
-                  '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
-                '</div>' +
-              '</div>' +
-            '</div>'
-          : '<div class="aspect-video bg-slate-100 flex items-center justify-center text-slate-300">' +
-              '<i class="fa-brands fa-tiktok text-4xl"></i>' +
-            '</div>';
-
-        card.innerHTML = imgHtml +
-          '<div class="p-5">' +
-            '<h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">' + escapeHtml(title) + '</h3>' +
-            '<p class="text-slate-500 text-sm leading-relaxed line-clamp-3">' + escapeHtml(description) + '</p>' +
-          '</div>';
-
-        return card;
+        return wrapper;
       }
 
       function render() {
@@ -550,29 +514,22 @@ review this code
           return;
         }
 
-        // Show skeleton cards immediately, then update with real thumbnails
         gridEl.innerHTML = '';
-        TIKTOK_VIDEOS.forEach(function (video) {
-          // Create card with no thumbnail first (shows TikTok icon placeholder)
-          var card = createCard(video, '');
-          gridEl.appendChild(card);
-
-          // Fetch real thumbnail and update the card
-          fetchThumbnail(video.url).then(function (thumbUrl) {
-            if (thumbUrl) {
-              var imgContainer = card.querySelector('.aspect-video');
-              if (imgContainer) {
-                imgContainer.innerHTML =
-                  '<img src="' + escapeHtml(thumbUrl) + '" alt="' + escapeHtml(video.title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
-                  '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
-                    '<div class="w-12 h-12 rounded-full bg-white/90 text-brand-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
-                      '<i class="fa-brands fa-tiktok ml-0.5"></i>' +
-                    '</div>' +
-                  '</div>';
-              }
-            }
-          });
+        TIKTOK_VIDEOS.forEach(function (url) {
+          var embed = createEmbed(url);
+          if (embed) {
+            gridEl.appendChild(embed);
+          }
         });
+
+        // Load TikTok's official embed script once
+        if (!document.getElementById('tiktok-embed-script')) {
+          var script = document.createElement('script');
+          script.id = 'tiktok-embed-script';
+          script.src = 'https://www.tiktok.com/embed.js';
+          script.async = true;
+          document.body.appendChild(script);
+        }
       }
 
       render();
