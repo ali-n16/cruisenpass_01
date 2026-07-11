@@ -1,5 +1,15 @@
+Here is the complete, finalized code with all the recommended fixes applied. 
+
+### What's been updated in this version:
+1. **Accessibility (Contrast):** Upgraded `text-slate-400` to `text-slate-500` across the board to meet WCAG AA standards.
+2. **Cloudflare Cleanup:** Removed the broken Cloudflare email obfuscation scripts and replaced them with standard, clean `mailto:` links.
+3. **Performance:** Added `fetchpriority="high"` to the hero image and `scroll-smooth` to the `<html>` tag.
+4. **Carousel UX & A11y:** Added `aria-live="polite"` for screen readers, plus full **Keyboard Navigation** (Left/Right arrows) and **Touch/Swipe** support for mobile users.
+5. **Form Integration:** Added a placeholder Formspree action so the contact form is ready to be made functional in 10 seconds.
+
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -429,7 +439,7 @@
       <div class="lg:col-span-5 relative mt-6 lg:mt-0">
         <!-- Main Image -->
         <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
-          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" width="800" height="380" class="w-full h-[380px] object-cover" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" width="800" height="380" class="w-full h-[380px] object-cover" loading="eager" fetchpriority="high" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white text-left">
             <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
@@ -443,7 +453,7 @@
             90%+
           </div>
           <div class="text-left">
-            <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Pass Rate</div>
+            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Pass Rate</div>
             <div class="text-sm font-bold text-brand-dark">Test Day Success</div>
           </div>
         </div>
@@ -554,7 +564,7 @@
 
             <div class="overflow-hidden flex-grow">
               <!-- Cards are rendered into this track by renderReviews() from the REVIEWS_DATA array below -->
-              <div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews"></div>
+              <div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews" aria-live="polite"></div>
             </div>
 
             <button type="button" id="reviews-next" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Next review">
@@ -610,7 +620,7 @@
 
         <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
           <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Beginner Boot</h3>
-          <p class="text-slate-400 text-sm mb-6">10 Hour Package</p>
+          <p class="text-slate-500 text-sm mb-6">10 Hour Package</p>
           <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£320</span></div>
           <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Perfect for absolute beginners launching their driving journey.</p>
           <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
@@ -618,7 +628,7 @@
 
         <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
           <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Skill Booster</h3>
-          <p class="text-slate-400 text-sm mb-6">15 Hour Package</p>
+          <p class="text-slate-500 text-sm mb-6">15 Hour Package</p>
           <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£495</span></div>
           <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Master core roundabouts and get solid test preparation.</p>
           <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
@@ -635,7 +645,7 @@
 
         <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
           <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Fast Track Pass</h3>
-          <p class="text-slate-400 text-sm mb-6">30 Hour Intensive</p>
+          <p class="text-slate-500 text-sm mb-6">30 Hour Intensive</p>
           <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£990</span></div>
           <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Rapid mastery designed for a first-attempt pass.</p>
           <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
@@ -643,7 +653,7 @@
 
         <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
           <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Zero to Hero</h3>
-          <p class="text-slate-400 text-sm mb-6">40 Hour Complete Mastery</p>
+          <p class="text-slate-500 text-sm mb-6">40 Hour Complete Mastery</p>
           <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£1,320</span></div>
           <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Ground-up, extensive driver safety mentoring.</p>
           <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
@@ -651,8 +661,8 @@
 
         <div id="payg-card" class="bg-white border-2 border-dashed border-brand-electric/40 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
           <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Pay As You Go</h3>
-          <p class="text-slate-400 text-sm mb-6">Per Hour, 2hr Minimum</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£35</span><span class="text-slate-400 text-sm">/hr</span></div>
+          <p class="text-slate-500 text-sm mb-6">Per Hour, 2hr Minimum</p>
+          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£35</span><span class="text-slate-500 text-sm">/hr</span></div>
           <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">No commitment, just flexible hourly lessons whenever you need them.</p>
           <a href="#contacts" class="text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl transition-all">Book Now</a>
         </div>
@@ -754,7 +764,7 @@
             How do I book a driving lesson?
             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">You can book a lesson by calling 07916 155054, emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0d1c1b071d0b001e0f1d1d2e09030f0702400d0103">[email&#160;protected]</a>, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm.</p>
+          <p class="text-slate-500 text-sm leading-relaxed mt-3">You can book a lesson by calling 07916 155054, emailing <a href="mailto:cruisenpass@gmail.com" class="text-brand-electric hover:underline">cruisenpass@gmail.com</a>, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm.</p>
         </details>
       </div>
     </div>
@@ -772,23 +782,22 @@
         <div class="space-y-4">
           <a href="tel:07916155054" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
             <div class="w-11 h-11 rounded-xl bg-brand-active/10 text-brand-active flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
-            <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Call Us</div><div class="font-bold text-brand-dark">07916 155054</div></div>
+            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Call Us</div><div class="font-bold text-brand-dark">07916 155054</div></div>
           </a>
-          <a href="/cdn-cgi/l/email-protection#096a7b7c607a6c6779687a7a496e64686065276a6664" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
+          <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
             <div class="w-11 h-11 rounded-xl bg-brand-electric/10 text-brand-electric flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
-            <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Email Us</div><div class="font-bold text-brand-dark"><span class="__cf_email__" data-cfemail="8deefff8e4fee8e3fdecfefecdeae0ece4e1a3eee2e0">[email&#160;protected]</span></div></div>
+            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Email Us</div><div class="font-bold text-brand-dark">cruisenpass@gmail.com</div></div>
           </a>
           <div class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4">
             <div class="w-11 h-11 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center"><i class="fa-solid fa-clock"></i></div>
-            <div><div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Opening Hours</div><div class="font-bold text-brand-dark">7 days a week, 7am - 8pm</div></div>
+            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Opening Hours</div><div class="font-bold text-brand-dark">7 days a week, 7am - 8pm</div></div>
           </div>
         </div>
       </div>
 
       <div class="lg:col-span-7">
-        <!-- NOTE: This form currently has no backend. Connect it to a form service (Formspree, Netlify Forms)
-             or your own API endpoint by replacing the action attribute and adding a method handler. -->
-        <form action="#" method="POST" class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+        <!-- NOTE: Replace YOUR_FORM_ID with your actual Formspree ID, or use Netlify Forms if hosting on Netlify. -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label for="name" class="block text-sm font-semibold text-brand-dark mb-2">Full Name</label>
@@ -844,7 +853,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Mobile menu toggle
     var menuBtn = document.getElementById('mobile-menu-btn');
     var menuPanel = document.getElementById('mobile-menu');
@@ -919,7 +928,7 @@
                   '<div class="w-10 h-10 rounded-full ' + r.color + ' text-white flex items-center justify-center font-bold text-sm">' + escapeHtml(r.initial) + '</div>' +
                   '<div>' +
                     '<div class="font-bold text-brand-dark text-sm">' + escapeHtml(r.name) + '</div>' +
-                    '<div class="text-xs text-slate-400">' + escapeHtml(r.time) + '</div>' +
+                    '<div class="text-xs text-slate-500">' + escapeHtml(r.time) + '</div>' +
                   '</div>' +
                 '</div>' +
                 '<i class="fa-brands fa-google text-slate-400 text-lg"></i>' +
@@ -1013,6 +1022,44 @@
         });
       }
 
+      // Keyboard navigation for accessibility
+      document.addEventListener('keydown', function(e) {
+        var isTyping = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName);
+        if (isTyping) return;
+        
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          if (prevBtn) prevBtn.click();
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          if (nextBtn) nextBtn.click();
+        }
+      });
+
+      // Touch/Swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          if (nextBtn) nextBtn.click();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+          if (prevBtn) prevBtn.click();
+        }
+      }
+
       window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(updatePosition, 150);
@@ -1036,3 +1083,4 @@
 
 </body>
 </html>
+```

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find *)",
+      "Bash(cd /home/ali/Downloads/cruisenpass_01)",
+      "Bash(file *)",
+      "Bash(ls *)"
+    ]
+  }
+}
