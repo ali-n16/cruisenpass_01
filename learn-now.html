@@ -1,7 +1,3 @@
-review this code 
-
-review this code 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -340,6 +336,13 @@ review this code
       });
     }
 
+    // Shared HTML-escaping helper
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML;
+    }
+
     // YouTube Data API integration
     // IMPORTANT: Replace YOUR_YOUTUBE_API_KEY below with a real key from Google Cloud Console.
     // Restrict the key to HTTP referrers (cruisenpass.com and localhost) to reduce abuse.
@@ -399,12 +402,6 @@ review this code
           '</div>';
 
         return card;
-      }
-
-      function escapeHtml(text) {
-        var div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
       }
 
       function sortPlaylists(playlists) {
@@ -482,12 +479,6 @@ review this code
       function getVideoId(url) {
         var match = url.match(/\/video\/(\d+)/);
         return match ? match[1] : '';
-      }
-
-      function escapeHtml(text) {
-        var div = document.createElement('div');
-        div.textContent = text || '';
-        return div.innerHTML;
       }
 
       function createEmbed(url) {
