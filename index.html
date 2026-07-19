@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary SEO Meta Tags -->
-  <title>Cruise'N'Pass | Driving Lessons in Manchester | 90%+ Pass Rate</title>
-  <meta name="description" content="Book DVSA-approved driving lessons in Manchester with Cruise'N'Pass. 90%+ pass rate, flexible packages from £32/hr, pay-as-you-go at £35/hr. Covering Manchester city centre, Salford, Stockport, Bolton, Bury and surrounding areas.">
-  <meta name="keywords" content="driving lessons Manchester, driving school Manchester, learn to drive Atherton, Bolton driving instructor, Bury driving lessons, Bredbury driving school, Chadderton driving lessons, Cheetham Hill driving instructor, West Didsbury driving school, Bradford driving lessons, pay as you go driving lessons, intensive driving course Manchester">
+  <title>Driving Lessons in Manchester | Cruise'N'Pass Driving School</title>
+  <meta name="description" content="Driving lessons in Manchester with Cruise'N'Pass. DVSA-approved instructors, 90%+ first-time pass rate, lessons from £32/hr across Greater Manchester. Book today.">
   <meta name="author" content="Cruise'N'Pass">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cruisenpass.com/">
@@ -16,9 +15,9 @@
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cruisenpass.com/">
-  <meta property="og:title" content="Cruise'N'Pass - Manchester's Top Driving School | 90%+ Pass Rate">
+  <meta property="og:title" content="Driving Lessons in Manchester | Cruise'N'Pass Driving School">
   <meta property="og:description" content="Pass first time with Manchester's friendliest DVSA-approved driving instructors. Flexible packages from £32/hr. Book your lesson today.">
-  <!-- TODO: Upload a real 1200x630 image and update the path below -->
+  <!-- Save the generated share image as og-image.jpg in your site root -->
   <meta property="og:image" content="https://cruisenpass.com/og-image.jpg">
   <meta property="og:site_name" content="Cruise'N'Pass">
   <meta property="og:locale" content="en_GB">
@@ -26,10 +25,10 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://cruisenpass.com/">
-  <meta name="twitter:title" content="Cruise'N'Pass Driving School Manchester | 90%+ Pass Rate">
+  <meta name="twitter:title" content="Driving Lessons in Manchester | Cruise'N'Pass Driving School">
   <meta name="twitter:description" content="DVSA-approved driving lessons from £35/hr across Greater Manchester. Book now!">
-  <!-- TODO: Upload a real 1200x600 image and update the path below -->
-  <meta name="twitter:image" content="https://cruisenpass.com/twitter-card.jpg">
+  <!-- Reuses og-image.jpg so you only need one share image file -->
+  <meta name="twitter:image" content="https://cruisenpass.com/og-image.jpg">
 
   <!-- Geo Meta Tags (Local SEO) -->
   <meta name="geo.region" content="GB-MAN">
@@ -43,11 +42,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Cruise'N'Pass">
 
-  <!-- Favicons -->
-  <!-- TODO: Create and upload these favicon files, or remove the lines if not available -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <!-- Favicon: inline SVG, no files needed. Swap for real PNG/ICO files later if you design a logo. -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
 
   <!-- Tailwind CSS via Play CDN -->
   <!-- NOTE: This CDN build is for prototyping only. Before launch, compile Tailwind with the CLI or PostCSS
@@ -101,6 +97,8 @@
   </style>
 
   <!-- JSON-LD Schema Markup for Rich Snippets (Local SEO) -->
+  <!-- NOTE: aggregateRating intentionally removed. Google ignores self-serving ratings on
+       LocalBusiness schema; your real Google Business Profile reviews carry the weight instead. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,13 +130,6 @@
         "closes": "20:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "areaServed": [
       {"@type": "City", "name": "Ancoats"},
       {"@type": "City", "name": "Atherton"},
@@ -299,22 +290,6 @@
     ]
   }
   </script>
-
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://cruisenpass.com/"
-      }
-    ]
-  }
-  </script>
 </head>
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
 
@@ -405,9 +380,9 @@
         </div>
 
         <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.10] text-brand-dark">
-          Helping you get <br>
+          Driving Lessons in Manchester <br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-emerald-400 to-indigo-600">
-            on the road.
+            that get you on the road.
           </span>
         </h1>
 
@@ -429,7 +404,10 @@
       <div class="lg:col-span-5 relative mt-6 lg:mt-0">
         <!-- Main Image -->
         <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-1 transition-transform duration-300">
-          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Student driving on road with confidence" width="800" height="380" class="w-full h-[380px] object-cover" loading="eager" fetchpriority="high" />
+          <!-- TODO: Replace this stock photo with a REAL photo (your branded car, an instructor, or a pupil
+               holding their pass certificate) saved as images/hero.jpg. Real photos build trust and help
+               local SEO far more than stock. Until then this placeholder keeps the layout working. -->
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Learner driver on a driving lesson in Manchester with a Cruise'N'Pass instructor" width="800" height="380" class="w-full h-[380px] object-cover" loading="eager" fetchpriority="high" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white text-left">
             <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
@@ -515,562 +493,3 @@
             </div>
             <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Tracked Progress</h3>
             <p class="text-slate-500 text-sm leading-relaxed">Every lesson builds on the last, with clear milestones so you always know how close you are to test-ready.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Google Reviews Section -->
-  <section class="py-20 bg-brand-surface">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-
-        <!-- Left: Rating Badge -->
-        <div class="lg:col-span-3 text-center lg:text-left lg:sticky lg:top-24">
-          <div class="inline-block bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-            <div class="text-xl font-heading font-extrabold text-brand-dark mb-2">EXCELLENT</div>
-            <div class="flex justify-center lg:justify-start gap-1 text-yellow-400 text-lg mb-2">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="text-sm text-slate-500 mb-3">Based on <span class="font-bold text-brand-dark">100+ reviews</span></div>
-            <div class="flex justify-center lg:justify-start">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Reviews" class="h-6" width="74" height="24" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Reviews Carousel -->
-        <div class="lg:col-span-9 relative">
-          <div class="flex items-center gap-4">
-            <button type="button" id="reviews-prev" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Previous review">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <div class="overflow-hidden flex-grow">
-              <!-- Cards are rendered into this track by renderReviews() from the REVIEWS_DATA array below -->
-              <div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews" aria-live="polite"></div>
-            </div>
-
-            <button type="button" id="reviews-next" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Next review">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <!-- Dots are rendered dynamically to match the real number of slides -->
-          <div class="flex md:hidden justify-center gap-2 mt-4" id="reviews-dots"></div>
-
-          <div class="text-right mt-4">
-            <span class="inline-flex items-center gap-1 text-xs text-slate-500 bg-white border border-slate-100 rounded-full px-3 py-1">
-              <i class="fa-solid fa-shield-halved text-emerald-500"></i>
-              Verified by Cruise'N'Pass
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Review data for the carousel above. Kept as JSON so the markup isn't duplicated 14x. -->
-  <script type="application/json" id="reviews-data">
-[
-  {"name":"Amalu Jose","initial":"A","color":"bg-indigo-500","time":"a month ago","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},
-  {"name":"Nazia Munawar","initial":"N","color":"bg-pink-500","time":"4 weeks ago","text":"I passed my driving test today and I couldn't have done it without Hassan's excellent instruction. He was patient, professional, and explained everything clearly, which helped build my confidence. His teaching methods made learning enjoyable and stress-free."},
-  {"name":"Aghabiomon Oladeru","initial":"A","color":"bg-emerald-500","time":"8 months ago","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},
-  {"name":"M Chebet","initial":"M","color":"bg-orange-500","time":"4 weeks ago","text":"Early morning pass. Syed Ali is the guy to go to! He has been very instrumental in getting this pass even with few classes. Highly recommended instructor."},
-  {"name":"Cecilia Akpan","initial":"C","color":"bg-purple-500","time":"8 months ago","text":"💃💃💃💃💃💃💃💃💃💃 I just passed my Driving test at Chadderton test centre, Manchester. So happy and grateful for the support from Cruise'N'Pass!"},
-  {"name":"Suba Penmetsa","initial":"S","color":"bg-teal-500","time":"a month ago","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."},
-  {"name":"G A","initial":"G","color":"bg-blue-500","time":"2 months ago","text":"I have been doing my lessons with Mr. Ali from Cruise'N'Pass, and passed my driving test today with a couple of minor faults. Ali has been amazing since the beginning, patient and very thorough with the lessons. I'm very grateful to Ali and Cruise'N'Pass for their efforts."},
-  {"name":"Mary-Ann Addo-Mensah","initial":"M","color":"bg-rose-500","time":"2 weeks ago","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."},
-  {"name":"Maya G Nair","initial":"M","color":"bg-amber-500","time":"9 months ago","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."},
-  {"name":"Christopher Nwatuzor","initial":"C","color":"bg-cyan-500","time":"a month ago","text":"I was trained by Hassan. I can confirm he is a great instructor and he was committed to making sure I passed. I learnt a lot from him beyond what the test requires. I can recommend Hassan 100% to anyone going for exam."},
-  {"name":"Qaddafi Azad","initial":"Q","color":"bg-lime-600","time":"2 weeks ago","text":"I'm very happy to say that today I passed my driving test! A big thank you to Mr. Farhan for his patience, professional guidance, and excellent teaching throughout my lessons. His clear instructions and encouragement gave me the confidence to succeed. I highly recommend Mr. Farhan to anyone looking for a great driving instructor."},
-  {"name":"Saidur Rahman","initial":"S","color":"bg-violet-500","time":"a month ago","text":"Alhamdulillah, today I passed my driving test. Thank you so much, Farhan Sir. You are truly brilliant and very helpful. Because of your guidance and support, I passed my driving test. I will pray that Allah blesses you, helps you at all times, and rewards you for your kindness. Thank you again!"},
-  {"name":"Sala Phix","initial":"S","color":"bg-fuchsia-500","time":"4 months ago","text":"I passed my driving test today in Chadderton with Cruise'n'Pass! I'm very happy with the whole driving experience. A big thank you to my instructor, Farhan. Thanks very much!"},
-  {"name":"Umair Ali","initial":"U","color":"bg-sky-500","time":"3 months ago","text":"I had an amazing experience learning with Cruise'n'Pass Driving School, especially with my instructor Sir Farhan. He is very professional, patient, and explains everything clearly, which really helped build my confidence on the road."}
-]
-  </script>
-
-  <!-- Prices & Plans Section -->
-  <section id="prices" class="py-20 bg-brand-surface">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Simple, Transparent Pricing</span>
-        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Prices & Plans</h2>
-        <p class="text-slate-500 text-lg leading-relaxed">Choose a block package for the best value, or stay flexible with pay-as-you-go. No hidden fees, ever.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Beginner Boot</h3>
-          <p class="text-slate-500 text-sm mb-6">10 Hour Package</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£320</span></div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Perfect for absolute beginners launching their driving journey.</p>
-          <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
-        </div>
-
-        <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Skill Booster</h3>
-          <p class="text-slate-500 text-sm mb-6">15 Hour Package</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£495</span></div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Master core roundabouts and get solid test preparation.</p>
-          <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
-        </div>
-
-        <div class="relative bg-brand-dark border border-brand-dark rounded-3xl p-8 flex flex-col shadow-xl text-white">
-          <span class="absolute -top-3 right-6 bg-brand-active text-brand-dark text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
-          <h3 class="font-heading font-bold text-xl mb-1">Confidence Builder</h3>
-          <p class="text-slate-400 text-sm mb-6">20 Hour Package</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold">£660</span></div>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">Accelerate on-road confidence with dual carriageway driving.</p>
-          <a href="#contacts" class="text-center bg-brand-active hover:bg-emerald-400 text-brand-dark font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
-        </div>
-
-        <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Fast Track Pass</h3>
-          <p class="text-slate-500 text-sm mb-6">30 Hour Intensive</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£990</span></div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Rapid mastery designed for a first-attempt pass.</p>
-          <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
-        </div>
-
-        <div class="bg-white border border-slate-100 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Zero to Hero</h3>
-          <p class="text-slate-500 text-sm mb-6">40 Hour Complete Mastery</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£1,320</span></div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">Ground-up, extensive driver safety mentoring.</p>
-          <a href="#contacts" class="text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">Get Started</a>
-        </div>
-
-        <div id="payg-card" class="bg-white border-2 border-dashed border-brand-electric/40 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-lg transition-shadow">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-1">Pay As You Go</h3>
-          <p class="text-slate-500 text-sm mb-6">Per Hour, 2hr Minimum</p>
-          <div class="mb-6"><span class="font-heading text-4xl font-extrabold text-brand-dark">£35</span><span class="text-slate-500 text-sm">/hr</span></div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">No commitment, just flexible hourly lessons whenever you need them.</p>
-          <a href="#contacts" class="text-center bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl transition-all">Book Now</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Areas Covered Section -->
-  <section id="areas" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Greater Manchester & Beyond</span>
-        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Areas We Cover</h2>
-        <p class="text-slate-500 text-lg leading-relaxed">Our instructors pick up learners from these areas across Greater Manchester.</p>
-      </div>
-
-      <div class="flex flex-wrap justify-center gap-3">
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Ancoats</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Atherton</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Blackley</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Bolton</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Bramhall</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Bredbury</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Broughton</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Burnage</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Burnden</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Bury</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Cheadle</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Cheadle Hulme</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Cheetham Hill</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Chorlton-Cum-Hardy</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Chadderton</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Crumpsall</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Didsbury</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Bradford</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Harwood</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Hazel Grove</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Heald Green</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Hulme</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Levenshulme</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Longsight</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Manchester City Centre</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Old Trafford</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Romiley</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Rusholme</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Salford</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Sale</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Stockport</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Withington</span>
-        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>West Didsbury</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Got Questions?</span>
-        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="space-y-3">
-        <details class="group bg-brand-surface rounded-2xl p-5" open>
-          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
-            How much are driving lessons in Manchester?
-            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
-          </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">Cruise'N'Pass offers pay-as-you-go lessons at £35 per hour (2-hour minimum) and discounted block packages starting from £320 for 10 hours. All pricing is transparent with no hidden fees.</p>
-        </details>
-
-        <details class="group bg-brand-surface rounded-2xl p-5">
-          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
-            What areas in Greater Manchester do you cover?
-            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
-          </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">We provide driving lessons across Greater Manchester, including Manchester city centre, Salford, Stockport, Bolton, Bury, Atherton, Bredbury, Chadderton, Cheetham Hill, Didsbury, Withington, Chorlton, Cheadle, Sale, Old Trafford and many surrounding neighbourhoods.</p>
-        </details>
-
-        <details class="group bg-brand-surface rounded-2xl p-5">
-          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
-            What is your pass rate?
-            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
-          </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">Cruise'N'Pass has an outstanding 90%+ first-time pass rate, with DVSA-approved instructors dedicated to building your confidence and skill on real roads.</p>
-        </details>
-
-        <details class="group bg-brand-surface rounded-2xl p-5">
-          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
-            Do you offer intensive driving courses?
-            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
-          </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">Yes, our Fast Track Pass (30 hours, £990) and Zero to Hero (40 hours, £1,320) packages are designed for learners who want to pass their test quickly and comprehensively.</p>
-        </details>
-
-        <details class="group bg-brand-surface rounded-2xl p-5">
-          <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-brand-dark list-none">
-            How do I book a driving lesson?
-            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
-          </summary>
-          <p class="text-slate-500 text-sm leading-relaxed mt-3">You can book a lesson by calling 07916 155054, emailing <a href="mailto:cruisenpass@gmail.com" class="text-brand-electric hover:underline">cruisenpass@gmail.com</a>, or using the booking form on our website. We offer flexible scheduling 7 days a week from 7am to 8pm.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Booking Section -->
-  <section id="contacts" class="py-20 bg-brand-surface">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-      <div class="lg:col-span-5">
-        <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Let's Get You Started</span>
-        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-6 leading-tight">Book Your Lesson</h2>
-        <p class="text-slate-500 text-lg leading-relaxed mb-8">Fill in the form or contact us directly. We'll get back to you within 24 hours to confirm your first lesson.</p>
-
-        <div class="space-y-4">
-          <a href="tel:07916155054" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
-            <div class="w-11 h-11 rounded-xl bg-brand-active/10 text-brand-active flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
-            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Call Us</div><div class="font-bold text-brand-dark">07916 155054</div></div>
-          </a>
-          <a href="mailto:cruisenpass@gmail.com" class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4 hover:shadow-md transition-shadow">
-            <div class="w-11 h-11 rounded-xl bg-brand-electric/10 text-brand-electric flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
-            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Email Us</div><div class="font-bold text-brand-dark">cruisenpass@gmail.com</div></div>
-          </a>
-          <div class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-4">
-            <div class="w-11 h-11 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center"><i class="fa-solid fa-clock"></i></div>
-            <div><div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Opening Hours</div><div class="font-bold text-brand-dark">7 days a week, 7am - 8pm</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7">
-        <!-- NOTE: Replace YOUR_FORM_ID with your actual Formspree ID, or use Netlify Forms if hosting on Netlify. -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div>
-              <label for="name" class="block text-sm font-semibold text-brand-dark mb-2">Full Name</label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
-            </div>
-            <div>
-              <label for="phone" class="block text-sm font-semibold text-brand-dark mb-2">Phone Number</label>
-              <input type="tel" id="phone" name="phone" inputmode="tel" required autocomplete="tel" placeholder="07xxx xxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
-            </div>
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-semibold text-brand-dark mb-2">Email Address</label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm">
-          </div>
-          <div>
-            <label for="package" class="block text-sm font-semibold text-brand-dark mb-2">Package of Interest</label>
-            <select id="package" name="package" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm bg-white">
-              <option value="payg">Pay As You Go (£35/hr)</option>
-              <option value="beginner-boot">Beginner Boot - 10 Hours (£320)</option>
-              <option value="skill-booster">Skill Booster - 15 Hours (£495)</option>
-              <option value="confidence-builder">Confidence Builder - 20 Hours (£660)</option>
-              <option value="fast-track">Fast Track Pass - 30 Hours (£990)</option>
-              <option value="zero-to-hero">Zero to Hero - 40 Hours (£1,320)</option>
-            </select>
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-semibold text-brand-dark mb-2">Message (Optional)</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your availability or experience level..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm resize-none"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">
-            Send Booking Request
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-brand-dark text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-2 font-heading font-bold text-xl text-white">
-        <span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span>
-        Cruise'N'Pass
-      </div>
-      <p class="text-sm text-slate-400 text-center">© 2026 Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
-      <div class="flex items-center gap-2">
-        <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@cruisenpass" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-red-500 hover:text-white text-slate-300 transition-all" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white hover:text-black text-slate-300 transition-all" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu toggle
-    var menuBtn = document.getElementById('mobile-menu-btn');
-    var menuPanel = document.getElementById('mobile-menu');
-
-    if (menuBtn && menuPanel) {
-      menuBtn.addEventListener('click', function () {
-        var isHidden = menuPanel.classList.contains('hidden');
-        menuPanel.classList.toggle('hidden');
-        menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-        menuBtn.innerHTML = isHidden
-          ? '<i class="fa-solid fa-xmark"></i>'
-          : '<i class="fa-solid fa-bars"></i>';
-      });
-
-      var mobileLinks = menuPanel.querySelectorAll('a');
-      mobileLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          menuPanel.classList.add('hidden');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        });
-      });
-    }
-
-    // Google Reviews Carousel — data-driven, rebuilds cards + dots so they always match
-    (function() {
-      var track = document.getElementById('reviews-track');
-      var prevBtn = document.getElementById('reviews-prev');
-      var nextBtn = document.getElementById('reviews-next');
-      var dotsWrap = document.getElementById('reviews-dots');
-      var dataEl = document.getElementById('reviews-data');
-      if (!track || !dataEl) return;
-
-      var reviews = [];
-      try {
-        reviews = JSON.parse(dataEl.textContent);
-      } catch (e) {
-        console.error('Could not parse reviews data', e);
-        return;
-      }
-
-      var CARD_WIDTH = 320; // px, matches md:min-w-[320px] below
-      var CARD_WIDTH_MOBILE = 280; // px, matches min-w-[280px] below
-      var GAP = 16; // px, matches gap-4
-      var currentIndex = 0;
-      var resizeTimer = null;
-
-      function escapeHtml(str) {
-        return String(str).replace(/[&<>"']/g, function(ch) {
-          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
-        });
-      }
-
-      function cardWidth() {
-        return window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH;
-      }
-
-      function getVisibleCount() {
-        return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      }
-
-      function maxSlideIndex() {
-        return Math.max(0, reviews.length - getVisibleCount());
-      }
-
-      function renderCards() {
-        track.innerHTML = reviews.map(function(r) {
-          return (
-            '<div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">' +
-              '<div class="flex items-center justify-between mb-3">' +
-                '<div class="flex items-center gap-3">' +
-                  '<div class="w-10 h-10 rounded-full ' + r.color + ' text-white flex items-center justify-center font-bold text-sm">' + escapeHtml(r.initial) + '</div>' +
-                  '<div>' +
-                    '<div class="font-bold text-brand-dark text-sm">' + escapeHtml(r.name) + '</div>' +
-                    '<div class="text-xs text-slate-500">' + escapeHtml(r.time) + '</div>' +
-                  '</div>' +
-                '</div>' +
-                '<i class="fa-brands fa-google text-slate-400 text-lg"></i>' +
-              '</div>' +
-              '<div class="flex text-yellow-400 text-xs gap-0.5 mb-2">' +
-                '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>' +
-                '<i class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i>' +
-              '</div>' +
-              '<p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">' + escapeHtml(r.text) + '</p>' +
-            '</div>'
-          );
-        }).join('');
-      }
-
-      function renderDots() {
-        if (!dotsWrap) return;
-        var totalDots = maxSlideIndex() + 1;
-        var buttons = [];
-        for (var i = 0; i < totalDots; i++) {
-          buttons.push(
-            '<button type="button" class="w-2 h-2 rounded-full ' + (i === currentIndex ? 'bg-brand-electric' : 'bg-slate-300') + '" aria-label="Slide ' + (i + 1) + '" data-index="' + i + '"></button>'
-          );
-        }
-        dotsWrap.innerHTML = buttons.join('');
-        dotsWrap.querySelectorAll('button').forEach(function(dot) {
-          dot.addEventListener('click', function() {
-            currentIndex = parseInt(dot.getAttribute('data-index'), 10) || 0;
-            updatePosition();
-          });
-        });
-      }
-
-      function updatePosition() {
-        var maxSlide = maxSlideIndex();
-        currentIndex = Math.min(Math.max(0, currentIndex), maxSlide);
-        track.style.transform = 'translateX(-' + (currentIndex * (cardWidth() + GAP)) + 'px)';
-
-        if (dotsWrap) {
-          var dotButtons = dotsWrap.querySelectorAll('button');
-          // Rebuild dots if the count is stale (e.g. after a breakpoint change)
-          if (dotButtons.length !== maxSlide + 1) {
-            renderDots();
-          } else {
-            dotButtons.forEach(function(dot, idx) {
-              dot.classList.toggle('bg-brand-electric', idx === currentIndex);
-              dot.classList.toggle('bg-slate-300', idx !== currentIndex);
-            });
-          }
-        }
-
-        if (prevBtn) prevBtn.disabled = currentIndex === 0;
-        if (nextBtn) nextBtn.disabled = currentIndex === maxSlide;
-      }
-
-      function attachReadMoreToggles() {
-        track.querySelectorAll('.review-card').forEach(function(card) {
-          var paragraph = card.querySelector('.review-text');
-          if (!paragraph || card.querySelector('.review-toggle')) return;
-
-          if (paragraph.scrollHeight > paragraph.clientHeight + 2) {
-            var toggleBtn = document.createElement('button');
-            toggleBtn.type = 'button';
-            toggleBtn.className = 'review-toggle text-brand-electric text-xs font-semibold mt-2 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded';
-            toggleBtn.textContent = 'Read more';
-            toggleBtn.setAttribute('aria-expanded', 'false');
-
-            toggleBtn.addEventListener('click', function() {
-              var isExpanded = paragraph.classList.contains('line-clamp-none');
-              paragraph.classList.toggle('line-clamp-4', isExpanded);
-              paragraph.classList.toggle('line-clamp-none', !isExpanded);
-              toggleBtn.textContent = isExpanded ? 'Read more' : 'Show less';
-              toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-            });
-
-            paragraph.parentNode.appendChild(toggleBtn);
-          }
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-          currentIndex = Math.max(0, currentIndex - 1);
-          updatePosition();
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-          currentIndex = Math.min(maxSlideIndex(), currentIndex + 1);
-          updatePosition();
-        });
-      }
-
-      // Keyboard navigation for accessibility
-      document.addEventListener('keydown', function(e) {
-        var isTyping = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName);
-        if (isTyping) return;
-        
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          if (prevBtn) prevBtn.click();
-        }
-        if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          if (nextBtn) nextBtn.click();
-        }
-      });
-
-      // Touch/Swipe support for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      track.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      track.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      }, { passive: true });
-
-      function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-          if (nextBtn) nextBtn.click();
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-          if (prevBtn) prevBtn.click();
-        }
-      }
-
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(updatePosition, 150);
-      });
-
-      // Initial render
-      renderCards();
-      renderDots();
-      updatePosition();
-
-      // Re-check "Read more" needs once fonts/webfonts have settled so clamp heights are accurate
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(attachReadMoreToggles);
-      } else {
-        window.addEventListener('load', attachReadMoreToggles);
-      }
-      // Fallback in case fonts.ready never resolves in older browsers
-      setTimeout(attachReadMoreToggles, 500);
-    })();
-  </script>
-
-</body>
-</html>
-```
