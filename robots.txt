@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cruisenpass.com/sitemap.xml
