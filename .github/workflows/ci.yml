@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install validators
+        run: npm install --no-save html-validate broken-link-checker
+
+      - name: HTML validation
+        run: |
+          for f in index.html learn-now.html join-cruisenpass.html; do
+            echo "::group::$f"
+            npx html-validate "$f"
+            echo "::endgroup::"
+          done
+
+      - name: Required files
+        run: |
+          for f in index.html learn-now.html join-cruisenpass.html sitemap.xml robots.txt; do
+            test -f "$f" || { echo "Missing: $f"; exit 1; }
+          done
+          echo "All required files present."
+
+      - name: Check that referenced files exist
+        run: |
+          node scripts/check-local-refs.mjs
+
+      - name: Internal link check
+        run: |
+          npx blc --input-cont-internal=true --input-cont-external=true --filter-level=3 \
+            index.html learn-now.html join-cruisenpass.html sitemap.xml || true
+
+      - name: SEO sanity
+        run: node scripts/seo-check.mjs
+
+      - name: Lighthouse (homepage)
+        if: github.event_name == 'push'
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  status:
+    name: Status check
+    if: always()
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if validate failed
+        run: |
+          if [ "${{ needs.validate.result }}" != "success" ]; then
+            echo "Validation failed."
+            exit 1
+          fi
