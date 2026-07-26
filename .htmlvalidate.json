@@ -8,12 +8,13 @@
     "wcag/h32": "off",
     "no-inline-style": "off",
     "long-title": "off",
-    "attribute-allowed-values": ["arctic", "Telton", "foobar"],
     "no-redundant-role": "off",
     "no-raw-characters": "off",
     "require-sri": "off",
     "no-protocol-relative-urls": "off",
     "doctype-style": "off",
-    "no-omit-replaceme": "off"
+    "no-omit-replaceme": "off",
+    "tel-non-breaking": "off",
+    "prefer-native-element": "off"
   }
 }

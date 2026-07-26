@@ -17,7 +17,8 @@ const required = {
     /<title>.*<\/title>/,
     /<meta\s+name="description"/,
     /<link\s+rel="canonical"/,
-    /"@type"\s*:\s*"CollectionPage"/,
+    /"@type"\s*:\s*"WebSite"/,
+    /"@type"\s*:\s*"BreadcrumbList"/,
   ],
   'join-cruisenpass.html': [
     /<title>.*<\/title>/,
