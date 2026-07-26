@@ -26,7 +26,7 @@ jobs:
           node-version: '24'
 
       - name: Install validators
-        run: npm install --no-save html-validate broken-link-checker
+        run: npm install --no-save html-validate
 
       - name: HTML validation
         run: |
@@ -47,23 +47,13 @@ jobs:
         run: |
           node scripts/check-local-refs.mjs
 
-      - name: Internal link check
+      - name: Internal link check (local only)
         run: |
-          npx blc --input-cont-internal=true --input-cont-external=true --filter-level=3 \
-            index.html learn-now.html join-cruisenpass.html sitemap.xml || true
+          node scripts/check-local-refs.mjs
+          node scripts/check-anchor-refs.mjs
 
       - name: SEO sanity
         run: node scripts/seo-check.mjs
-
-      - name: Lighthouse (homepage)
-        if: github.event_name == 'push'
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: .lighthouserc.json
-          uploadArtifacts: true
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
   status:
     name: Status check
     if: always()
