@@ -15,6 +15,8 @@ const rootFiles = [
   "join-cruisenpass.html",
   "privacy.html",
   "styles.css",
+  "og-image.jpg.webp",
+  "logo.png",
   "robots.txt",
   "sitemap.xml",
 ];
@@ -40,7 +42,7 @@ for (const f of rootFiles) {
     copyFileSync(f, join(OUT, f));
     copied++;
   } else {
-    console.warn(`assemble: skipped missing file "${f}"`);
+    throw new Error(`assemble: required file missing "${f}"`);
   }
 }
 for (const d of dirs) {
@@ -48,7 +50,7 @@ for (const d of dirs) {
     copyDir(d, join(OUT, d));
     copied++;
   } else {
-    console.warn(`assemble: skipped missing dir "${d}"`);
+    throw new Error(`assemble: required directory missing "${d}"`);
   }
 }
 

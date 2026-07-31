@@ -7,6 +7,8 @@
     "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
     "build:assemble": "node scripts/assemble.mjs",
     "build": "npm run build:css && npm run build:assemble",
+    "check": "npx html-validate index.html learn-now.html join-cruisenpass.html privacy.html && node scripts/check-local-refs.mjs && node scripts/check-anchor-refs.mjs && node scripts/check-jsonld.mjs && node scripts/seo-check.mjs",
+    "test": "npm run check",
     "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch"
   },
   "devDependencies": {

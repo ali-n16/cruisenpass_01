@@ -26,6 +26,11 @@ const required = {
     /<link\s+rel="canonical"/,
     /"@type"\s*:\s*"JobPosting"/,
   ],
+  'privacy.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
 };
 
 const issues = [];
@@ -49,7 +54,7 @@ for (const [file, patterns] of Object.entries(required)) {
 }
 
 const sitemap = readFileSync('sitemap.xml', 'utf8');
-for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now.html', 'https://cruisenpass.com/join-cruisenpass.html']) {
+for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now.html', 'https://cruisenpass.com/join-cruisenpass.html', 'https://cruisenpass.com/privacy.html']) {
   if (!sitemap.includes(url)) {
     issues.push(`sitemap.xml: missing ${url}`);
   }

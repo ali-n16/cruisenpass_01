@@ -24,13 +24,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: npm
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Build deployable site
+        run: npm run build
 
       - name: Install validators
         run: npm install --no-save html-validate
 
       - name: HTML validation
         run: |
-          for f in index.html learn-now.html join-cruisenpass.html; do
+          for f in index.html learn-now.html join-cruisenpass.html privacy.html; do
             echo "::group::$f"
             npx html-validate "$f"
             echo "::endgroup::"
@@ -38,7 +45,7 @@ jobs:
 
       - name: Required files
         run: |
-          for f in index.html learn-now.html join-cruisenpass.html sitemap.xml robots.txt; do
+          for f in index.html learn-now.html join-cruisenpass.html privacy.html sitemap.xml robots.txt; do
             test -f "$f" || { echo "Missing: $f"; exit 1; }
           done
           echo "All required files present."
@@ -53,7 +60,7 @@ jobs:
           node scripts/check-anchor-refs.mjs
 
       - name: SEO sanity
-        run: node scripts/seo-check.mjs
+        run: node scripts/check-jsonld.mjs && node scripts/seo-check.mjs
   status:
     name: Status check
     if: always()

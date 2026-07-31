@@ -2,7 +2,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html'];
+const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html'];
 const issues = [];
 
 const skipProtocol = /^(https?:)?\/\//;

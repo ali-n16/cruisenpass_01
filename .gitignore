@@ -1,0 +1,9 @@
+node_modules/
+public/
+.DS_Store
+*.log
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
