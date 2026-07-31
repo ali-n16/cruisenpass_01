@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,34 +39,12 @@
   <!-- Plausible Analytics — privacy-first, no cookie banner needed (no cross-site cookies, anonymised IP, no personal data). -->
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Space Grotesk', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              active: '#00D1A0',
-              electric: '#4F46E5',
-              dark: '#0B0F19',
-              lightBg: '#FFFF',
-              surface: '#F8FAFC',
-              accent: '#FF007A',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
     .line-clamp-2 {
@@ -296,7 +274,7 @@
         <span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span>
         Cruise'N'Pass
       </a>
-      <p class="text-sm text-slate-400 text-center">© 2026 Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
+      <p class="text-sm text-slate-400 text-center">© <span id="footer-year">2026</span> Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
       <div class="flex items-center gap-2">
         <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -521,6 +499,8 @@
       render();
     })();
   </script>
+
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>

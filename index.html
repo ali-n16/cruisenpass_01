@@ -55,7 +55,7 @@
   <!-- Plausible Analytics — privacy-first, no cookie banner needed (no cross-site cookies, anonymised IP, no personal data). -->
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 
   <!-- Google Fonts: Space Grotesk (Heading) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,28 +66,6 @@
   <!-- FontAwesome for Vibrant Modern Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Space Grotesk', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              active: '#00D1A0',
-              electric: '#4F46E5',
-              dark: '#0B0F19',
-              lightBg: '#FFFFFF',
-              surface: '#F8FAFC',
-              accent: '#FF007A',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <!-- Review Card Line Clamp Styles -->
   <style>
@@ -156,6 +134,7 @@
       {"@type": "City", "name": "Chadderton"},
       {"@type": "City", "name": "Crumpsall"},
       {"@type": "City", "name": "Didsbury"},
+      {"@type": "City", "name": "Harwood"},
       {"@type": "City", "name": "Hazel Grove"},
       {"@type": "City", "name": "Heald Green"},
       {"@type": "City", "name": "Hulme"},
@@ -572,7 +551,7 @@
             </div>
             <div class="text-sm text-slate-500 mb-3">Based on <span class="font-bold text-brand-dark">100+ reviews</span></div>
             <div class="flex justify-center lg:justify-start">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Reviews" class="h-6" width="74" height="24" loading="lazy">
+              <img src="assets/google-logo.svg" alt="Google Reviews" class="h-6" width="74" height="24" loading="lazy">
             </div>
           </div>
         </div>
@@ -726,6 +705,7 @@
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Hulme</span>
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Levenshulme</span>
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Longsight</span>
+        <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Manchester</span>
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Manchester City Centre</span>
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Old Trafford</span>
         <span class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 font-semibold text-sm flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-active"></i>Romiley</span>
@@ -863,7 +843,7 @@
         <span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span>
         Cruise'N'Pass
       </div>
-      <p class="text-sm text-slate-400 text-center">© 2026 Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
+      <p class="text-sm text-slate-400 text-center">© <span id="footer-year">2026</span> Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
       <div class="flex items-center gap-2">
         <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1098,6 +1078,8 @@
       setTimeout(attachReadMoreToggles, 500);
     })();
   </script>
+
+  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+  "name": "cruisenpass",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cruise'N'Pass driving school website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
