@@ -5,8 +5,9 @@
   "description": "Cruise'N'Pass driving school website",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch",
-    "build": "npm run build:css"
+    "build:assemble": "node scripts/assemble.mjs",
+    "build": "npm run build:css && npm run build:assemble",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
