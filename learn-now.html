@@ -197,26 +197,27 @@
         <p class="text-slate-500 text-lg leading-relaxed">Hand-picked playlists to boost your driving knowledge before your next lesson or test.</p>
       </div>
 
-      <!-- Loading state -->
-      <div id="playlists-loading" class="flex flex-col items-center justify-center py-16">
-        <div class="w-12 h-12 border-4 border-brand-active/20 border-t-brand-active rounded-full animate-spin mb-4"></div>
-        <p class="text-slate-500 font-medium">Loading playlists from YouTube...</p>
+      <!-- Featured playlist player (real Cruise'N'Pass content, no API key needed) -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <div class="relative aspect-video rounded-2xl overflow-hidden shadow-xl bg-black">
+          <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/videoseries?list=PLUMEmKborQSJJX20FJOvROiMrJ3fufjYV" title="Cruise'N'Pass Tutorial Videos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
       </div>
 
-      <!-- Error / no-key state -->
+      <!-- Error / empty state -->
       <div id="playlists-error" class="hidden text-center max-w-xl mx-auto bg-brand-surface border border-slate-100 rounded-2xl p-8">
         <div class="w-14 h-14 rounded-full bg-red-50 text-red-500 flex items-center justify-center mx-auto mb-4">
           <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
         </div>
-        <h3 class="font-heading font-bold text-xl text-brand-dark mb-2">YouTube connection not set up yet</h3>
-        <p class="text-slate-500 mb-6">Add a YouTube Data API key to show your playlists automatically, or visit your channel directly below.</p>
+        <h3 class="font-heading font-bold text-xl text-brand-dark mb-2">No playlists to show</h3>
+        <p class="text-slate-500 mb-6">Visit the Cruise'N'Pass channel directly below to browse all driving tutorials.</p>
         <a href="https://www.youtube.com/@cruisenpass/playlists" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition-all">
           View Playlists on YouTube
         </a>
       </div>
 
-      <!-- Playlist grid -->
-      <div id="playlists-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Playlist grid (real Cruise'N'Pass playlists, rendered without an API key) -->
+      <div id="playlists-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Cards injected by JS -->
       </div>
     </div>
@@ -317,127 +318,117 @@
       return div.innerHTML;
     }
 
-    // YouTube Data API integration
-    // IMPORTANT: Replace YOUR_YOUTUBE_API_KEY below with a real key from Google Cloud Console.
-    // Restrict the key to HTTP referrers (cruisenpass.com and localhost) to reduce abuse.
-    // The key will be visible in the page source — this is unavoidable for a static client-side request.
+    // YouTube playlists — rendered from the real Cruise'N'Pass channel data.
+    // No API key needed: cards link to each playlist, the featured player embeds
+    // the Tutorial Videos playlist directly via the official youtube-nocookie embed.
     (function () {
-      // Do not commit a browser API key. Add a referrer-restricted key only at deploy time.
-      var API_KEY = '';
-      var HANDLE = 'cruisenpass';
-      var loadingEl = document.getElementById('playlists-loading');
-      var errorEl = document.getElementById('playlists-error');
       var gridEl = document.getElementById('playlists-grid');
+      var errorEl = document.getElementById('playlists-error');
 
-      function showError() {
-        if (loadingEl) loadingEl.classList.add('hidden');
-        if (errorEl) errorEl.classList.remove('hidden');
-        if (gridEl) gridEl.classList.add('hidden');
-      }
+      // Real Cruise'N'Pass playlists (ids + thumbnails pulled from the channel).
+      // Ordered to surface the most useful learning content first.
+      var PLAYLISTS = [
+        {
+          id: 'PLUMEmKborQSJJX20FJOvROiMrJ3fufjYV',
+          title: 'Tutorial Videos',
+          description: 'Step-by-step driving tutorials covering the skills you need to pass.',
+          count: '72 videos',
+          thumb: 'https://i.ytimg.com/vi/6vCVDjyq4dU/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSKxjLvw-hfY29l1tugvSxcF',
+          title: 'Failed Test',
+          description: 'Real failed driving tests with commentary on what went wrong and how to avoid it.',
+          count: '39 videos',
+          thumb: 'https://i.ytimg.com/vi/DUlwdlpRifY/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSIsX_4mcUyOyRmR3RGmZ-Fj',
+          title: 'Roundabout Guide',
+          description: 'Master roundabouts of every shape and size with these guided lessons.',
+          count: '5 videos',
+          thumb: 'https://i.ytimg.com/vi/xftwsUlmzTc/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSLLUHA6aBydJhi8QCS2nTdQ',
+          title: 'Parking Manoeuvres Guide',
+          description: 'Bay, parallel and reverse parking manoeuvres explained and demonstrated.',
+          count: '4 videos',
+          thumb: 'https://i.ytimg.com/vi/FHQ--n6vYhY/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSIU9uGsZzbSS0IgMrf_NwdB',
+          title: 'Atherton Test Route',
+          description: 'Drive the Atherton test centre route with a DVSA-approved instructor.',
+          count: '10 videos',
+          thumb: 'https://i.ytimg.com/vi/hmaNAHQmGEM/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSKIeUpf9WZGYK_jjq9RqkX1',
+          title: 'Sale Test Route',
+          description: 'Full Sale test centre route walkthroughs and tips.',
+          count: '11 videos',
+          thumb: 'https://i.ytimg.com/vi/_2czRMSlF-Q/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSIrQAH7ZNEVP4Zj7pHyQD4C',
+          title: 'Bury Test Route',
+          description: 'Bury driving test route guidance from Cruise\'N\'Pass.',
+          count: '8 videos',
+          thumb: 'https://i.ytimg.com/vi/U4bwEDtJQgM/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSLjcywoRgN6J52ErU1VHQh8',
+          title: 'Hyde Test Route',
+          description: 'Hyde test centre routes and what examiners look for.',
+          count: '33 videos',
+          thumb: 'https://i.ytimg.com/vi/L8e1Nor_5Wk/hqdefault.jpg'
+        },
+        {
+          id: 'PLUMEmKborQSIBwcjDShh9fgUThAyFSW9K',
+          title: 'Bolton (1) Test Route',
+          description: 'Bolton test route drive-throughs and key junctions.',
+          count: '11 videos',
+          thumb: 'https://i.ytimg.com/vi/81z4X2xP5J4/hqdefault.jpg'
+        }
+      ];
 
-      function showGrid() {
-        if (loadingEl) loadingEl.classList.add('hidden');
-        if (errorEl) errorEl.classList.add('hidden');
-        if (gridEl) gridEl.classList.remove('hidden');
-      }
-
-      function createCard(playlist) {
-        var snippet = playlist.snippet || {};
-        var id = playlist.id;
-        var title = snippet.title || 'Untitled Playlist';
-        var description = snippet.description || '';
-        var thumbs = snippet.thumbnails || {};
-        var thumb = thumbs.high || thumbs.medium || thumbs.default || {};
-        var thumbUrl = thumb.url || '';
-        var videoCount = playlist.contentDetails && playlist.contentDetails.itemCount ? playlist.contentDetails.itemCount : null;
-        var url = 'https://www.youtube.com/playlist?list=' + encodeURIComponent(id);
-
+      function createCard(p) {
+        var url = 'https://www.youtube.com/playlist?list=' + encodeURIComponent(p.id);
         var card = document.createElement('a');
         card.href = url;
         card.target = '_blank';
         card.rel = 'noopener noreferrer';
         card.className = 'group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1';
 
-        var imgHtml = thumbUrl
-          ? '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
-              '<img src="' + escapeHtml(thumbUrl) + '" alt="' + escapeHtml(title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
-              '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
-                '<div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
-                  '<i class="fa-solid fa-play ml-1"></i>' +
-                '</div>' +
+        card.innerHTML =
+          '<div class="relative aspect-video overflow-hidden bg-slate-100">' +
+            '<img src="' + escapeHtml(p.thumb) + '" alt="' + escapeHtml(p.title) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">' +
+            '<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">' +
+              '<div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">' +
+                '<i class="fa-solid fa-play ml-1"></i>' +
               '</div>' +
-              (Number.isFinite(Number(videoCount)) ? '<div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">' + String(Number(videoCount)) + ' video' + (Number(videoCount) === 1 ? '' : 's') + '</div>' : '') +
-            '</div>'
-          : '<div class="aspect-video bg-slate-100 flex items-center justify-center text-slate-300"><i class="fa-brands fa-youtube text-4xl"></i></div>';
-
-        card.innerHTML = imgHtml +
+            '</div>' +
+            (p.count ? '<div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">' + escapeHtml(p.count) + '</div>' : '') +
+          '</div>' +
           '<div class="p-5">' +
-            '<h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">' + escapeHtml(title) + '</h3>' +
-            '<p class="text-slate-500 text-sm leading-relaxed line-clamp-3">' + escapeHtml(description) + '</p>' +
+            '<h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">' + escapeHtml(p.title) + '</h3>' +
+            '<p class="text-slate-500 text-sm leading-relaxed line-clamp-3">' + escapeHtml(p.description) + '</p>' +
           '</div>';
 
         return card;
       }
 
-      function sortPlaylists(playlists) {
-        var order = ['failed test', 'roundabout', 'tutorial'];
-        return playlists.slice().sort(function (a, b) {
-          var aTitle = (a.snippet && a.snippet.title || '').toLowerCase();
-          var bTitle = (b.snippet && b.snippet.title || '').toLowerCase();
-          for (var i = 0; i < order.length; i++) {
-            var aMatch = aTitle.indexOf(order[i]) !== -1;
-            var bMatch = bTitle.indexOf(order[i]) !== -1;
-            if (aMatch && !bMatch) return -1;
-            if (!aMatch && bMatch) return 1;
-          }
-          return bTitle.localeCompare(aTitle);
-        });
-      }
+      if (!gridEl) return;
 
-      if (!API_KEY || API_KEY === 'YOUR_YOUTUBE_API_KEY') {
-        showError();
+      if (!PLAYLISTS || PLAYLISTS.length === 0) {
+        if (errorEl) errorEl.classList.remove('hidden');
         return;
       }
 
-      // Resolve handle to channel ID, then fetch playlists
-      fetch('https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&forHandle=' + encodeURIComponent(HANDLE) + '&key=' + encodeURIComponent(API_KEY))
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          if (!data.items || data.items.length === 0) {
-            throw new Error('Channel not found');
-          }
-          var channelId = data.items[0].id;
-          return fetch('https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=' + encodeURIComponent(channelId) + '&maxResults=50&key=' + encodeURIComponent(API_KEY));
-        })
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          if (!data.items || data.items.length === 0) {
-            throw new Error('No playlists found');
-          }
-
-          // Filter to playlists matching user-requested topics, but fall back to all if none match
-          var keywords = ['failed test', 'roundabout', 'tutorial'];
-          var filtered = data.items.filter(function (playlist) {
-            var title = (playlist.snippet && playlist.snippet.title || '').toLowerCase();
-            return keywords.some(function (k) { return title.indexOf(k) !== -1; });
-          });
-
-          var playlistsToShow = filtered.length > 0 ? filtered : data.items;
-          playlistsToShow = sortPlaylists(playlistsToShow);
-
-          if (playlistsToShow.length === 0) {
-            throw new Error('No playlists to display');
-          }
-
-          playlistsToShow.forEach(function (playlist) {
-            gridEl.appendChild(createCard(playlist));
-          });
-          showGrid();
-        })
-        .catch(function (err) {
-          console.error('YouTube API error:', err);
-          showError();
-        });
+      PLAYLISTS.forEach(function (p) {
+        gridEl.appendChild(createCard(p));
+      });
     })();
 
     // TikTok Quick Driving Tips — uses TikTok's official embed player
