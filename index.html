@@ -610,7 +610,8 @@
         </div>
       </div>
       <div class="lg:col-span-7">
-        <form action="https://formspree.io/f/xpqvogbl" method="POST" class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+        <form id="booking-form" action="https://formspree.io/f/xpqvogbl" method="POST" class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+          <input type="hidden" name="_subject" value="New booking enquiry — cruisenpass.com">
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div><label for="name" class="block text-sm font-semibold text-brand-dark mb-2">Full Name</label><input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm"></div>
@@ -619,7 +620,25 @@
           <div><label for="email" class="block text-sm font-semibold text-brand-dark mb-2">Email Address</label><input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm"></div>
           <div><label for="package" class="block text-sm font-semibold text-brand-dark mb-2">Package of Interest</label><select id="package" name="package" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm bg-white"><option value="payg">Pay As You Go (£35/hr)</option><option value="beginner-boot">Beginner Boot - 10 Hours (£320)</option><option value="skill-booster">Skill Booster - 15 Hours (£495)</option><option value="confidence-builder">Confidence Builder - 20 Hours (£660)</option><option value="fast-track">Fast Track Pass - 30 Hours (£990)</option><option value="zero-to-hero">Zero to Hero - 40 Hours (£1,320)</option></select></div>
           <div><label for="message" class="block text-sm font-semibold text-brand-dark mb-2">Message (Optional)</label><textarea id="message" name="message" rows="4" placeholder="Tell us about your availability or experience level..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm resize-none"></textarea></div>
-          <button type="submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">Send Booking Request</button>
+          <button type="submit" id="booking-submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">Send Booking Request</button>
+          <div id="booking-success" class="hidden form-status-in mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 flex items-start gap-4" role="status">
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-check text-lg" aria-hidden="true"></i>
+            </div>
+            <div>
+              <p class="font-heading font-bold text-brand-dark">Request sent!</p>
+              <p data-msg class="text-sm text-emerald-800 mt-1 leading-relaxed"></p>
+            </div>
+          </div>
+          <div id="booking-error" class="hidden form-status-in mt-4 rounded-2xl border border-red-200 bg-red-50 p-5 flex items-start gap-4" role="alert">
+            <div class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-circle-exclamation text-lg" aria-hidden="true"></i>
+            </div>
+            <div>
+              <p class="font-heading font-bold text-brand-dark">Something went wrong</p>
+              <p data-msg class="text-sm text-red-800 mt-1 leading-relaxed"></p>
+            </div>
+          </div>
           <p class="text-xs text-slate-500">By submitting this form, you agree that we may use your details to respond to your enquiry. See our <a href="privacy.html" class="text-brand-electric hover:underline">Privacy Policy</a>.</p>
         </form>
       </div>
@@ -710,9 +729,57 @@
       track.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; const swipeThreshold = 50; if (touchEndX < touchStartX - swipeThreshold) { if (nextBtn) nextBtn.click(); } if (touchEndX > touchStartX + swipeThreshold) { if (prevBtn) prevBtn.click(); } }, { passive: true });
       window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(updatePosition, 150); });
       renderCards(); renderDots(); updatePosition();
-      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(attachReadMoreToggles); } else { window.addEventListener('load', attachReadMoreToggles); }
-      setTimeout(attachReadMoreToggles, 500);
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(attachReadMoreToggles); } else { window.addEventListener('load', attachReadMoreToggles); }      setTimeout(attachReadMoreToggles, 500);
     })();
   </script>
+
+  <script>
+    // Booking form — AJAX to Formspree with inline confirmation (no page navigation)
+    (function () {
+      var form = document.getElementById('booking-form');
+      if (!form) return;
+      var successEl = document.getElementById('booking-success');
+      var errorEl = document.getElementById('booking-error');
+      var submitBtn = document.getElementById('booking-submit');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (successEl) successEl.classList.add('hidden');
+        if (errorEl) errorEl.classList.add('hidden');
+        var originalBtn = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Form submission failed (' + res.status + ')');
+            return res.json().catch(function () { return {}; });
+          })
+          .then(function () {
+            if (successEl) {
+              var msg = successEl.querySelector('[data-msg]');
+              if (msg) msg.textContent = 'Thanks! We\u2019ll be in touch within 24 hours to confirm your first lesson.';
+              successEl.classList.remove('hidden');
+            }
+            form.reset();
+          })
+          .catch(function () {
+            if (errorEl) {
+              var msg = errorEl.querySelector('[data-msg]');
+              if (msg) msg.textContent = 'We couldn\u2019t send your request. Please try again, or call us on 07916 155054.';
+              errorEl.classList.remove('hidden');
+            }
+          })
+          .then(function () {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalBtn; }
+          });
+      });
+    })();
+  </script>
+
 </body>
 </html>

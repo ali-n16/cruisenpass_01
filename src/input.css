@@ -8,3 +8,18 @@
 [id] {
   scroll-margin-top: 5rem;
 }
+
+/* Subtle entrance for the form success/error panels. */
+@keyframes status-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.form-status-in {
+  animation: status-in 0.25s ease-out;
+}

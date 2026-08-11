@@ -341,12 +341,7 @@
         <p class="text-slate-500 text-lg leading-relaxed">Tell us about yourself and we'll be in touch within 48 hours to discuss the next steps.</p>
       </div>
 
-      <!-- TODO: use a dedicated Formspree form ID for instructor applications —
-           this currently shares the booking-form endpoint (f/xpqvogbl), so
-           applications and booking enquiries land in the same inbox. Create a
-           second form at formspree.io and replace the ID below. -->
-      <form action="https://formspree.io/f/xpqvogbl" method="POST" class="bg-brand-surface border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+      <form id="application-form" action="mailto:cruisenpass@gmail.com" method="post" enctype="text/plain" class="bg-brand-surface border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label for="first-name" class="block text-sm font-semibold text-brand-dark mb-2">First Name</label>
@@ -389,9 +384,18 @@
           <textarea id="experience" name="experience" rows="4" placeholder="Tell us about your experience, availability, and why you'd like to join Cruise'N'Pass..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-electric/40 text-sm resize-none"></textarea>
         </div>
 
-        <button type="submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">
+        <button type="submit" id="application-submit" class="w-full bg-brand-electric hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.01]">
           Submit Application
         </button>
+        <div id="application-success" class="hidden form-status-in mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 flex items-start gap-4" role="status">
+          <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-check text-lg" aria-hidden="true"></i>
+          </div>
+          <div>
+            <p class="font-heading font-bold text-brand-dark">Email opened</p>
+            <p data-msg class="text-sm text-emerald-800 mt-1 leading-relaxed"></p>
+          </div>
+        </div>
         <p class="text-xs text-slate-500">By submitting this form, you agree that we may use your details to respond to your application. See our <a href="privacy.html" class="text-brand-electric hover:underline">Privacy Policy</a>.</p>
       </form>
     </div>
@@ -460,6 +464,53 @@
   </footer>
 
   <script src="assets/js/site.js"></script>
+
+  <script>
+    // Instructor application — opens the visitor's email app pre-filled (mailto:)
+    (function () {
+      var form = document.getElementById('application-form');
+      if (!form) return;
+      var successEl = document.getElementById('application-success');
+
+      function field(name) {
+        var el = form.elements[name];
+        return el ? el.value.trim() : '';
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (successEl) successEl.classList.add('hidden');
+
+        var firstName = field('first-name');
+        var lastName = field('last-name');
+        var fullName = (firstName + ' ' + lastName).trim();
+        var subject = 'Instructor Application' + (fullName ? ' — ' + fullName : '');
+        // Skip fields the applicant left empty so the email reads cleanly.
+        var lines = [
+          ['First Name', firstName],
+          ['Last Name', lastName],
+          ['Phone', field('phone')],
+          ['Email', field('email')],
+          ['Instructor Status', field('status')],
+          ['Areas You Can Cover', field('areas')],
+          ['Teaching Experience', field('experience')]
+        ];
+        var body = lines
+          .filter(function (pair) { return pair[1] !== ''; })
+          .map(function (pair) { return pair[0] + ': ' + pair[1]; })
+          .join('\n');
+
+        window.location.href = 'mailto:cruisenpass@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        if (successEl) {
+          var msg = successEl.querySelector('[data-msg]');
+          if (msg) msg.textContent = 'Your email app should now open with your application pre-filled — just press send. If nothing opened, email us directly at cruisenpass@gmail.com.';
+          successEl.classList.remove('hidden');
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
