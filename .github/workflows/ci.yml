@@ -61,6 +61,10 @@ jobs:
 
       - name: SEO sanity
         run: node scripts/check-jsonld.mjs && node scripts/seo-check.mjs
+
+      - name: External link check (best effort)
+        continue-on-error: true
+        run: node scripts/check-external-links.mjs
   status:
     name: Status check
     if: always()

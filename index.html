@@ -54,24 +54,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" fetchpriority="high">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    .line-clamp-4 {
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .line-clamp-none {
-      display: block;
-      -webkit-line-clamp: unset;
-      overflow: visible;
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -83,6 +72,12 @@
     "telephone": "+447916155054",
     "email": "cruisenpass@gmail.com",
     "priceRange": "£35 - £1320",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "reviewCount": 100
+    },
     "image": "https://cruisenpass.com/og-image.jpg.webp",
     "logo": "https://cruisenpass.com/logo.png",
     "address": {
@@ -187,11 +182,12 @@
   </script>
 </head>
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden selection:bg-brand-active/30 selection:text-slate-950">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-electric focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:shadow-lg">Skip to content</a>
 
   <!-- Nav Header -->
   <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-      <a href="#" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2">
+      <a href="index.html" class="font-heading font-bold text-2xl tracking-tight text-brand-dark hover:text-brand-electric transition-colors flex items-center gap-2">
         <span class="bg-brand-electric p-2 rounded-xl text-white shadow-lg">🚗</span>
         Cruise'N'Pass
       </a>
@@ -201,11 +197,11 @@
         <a href="learn-now.html" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
         <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">FAQs</a>
         <div class="relative group">
-          <button type="button" class="text-sm font-semibold text-brand-electric flex items-center gap-1 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded-lg px-1">
+          <button type="button" id="join-dropdown-btn" data-dropdown aria-haspopup="true" aria-expanded="false" aria-controls="join-dropdown" class="text-sm font-semibold text-brand-electric flex items-center gap-1 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-electric rounded-lg px-1">
             Join Cruise'N'Pass
             <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
           </button>
-          <div class="absolute top-full left-0 mt-1 w-72 bg-white border border-slate-100 rounded-2xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div id="join-dropdown" class="absolute top-full left-0 mt-1 w-72 bg-white border border-slate-100 rounded-2xl shadow-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
             <a href="join-cruisenpass.html" class="block p-3 rounded-xl hover:bg-brand-surface transition-colors">
               <div class="font-heading font-bold text-brand-dark text-sm">Becoming a Driving Instructor</div>
               <div class="text-xs text-slate-500 mt-1">Learn more about a lucrative, flexible opportunity!</div>
@@ -236,7 +232,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
+  <section id="main" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
     <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-indigo-100/60 blur-[130px] pointer-events-none"></div>
     <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[550px] h-[550px] rounded-full bg-emerald-100/50 blur-[140px] pointer-events-none"></div>
     <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -262,7 +258,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white text-left">
             <p class="text-xs uppercase tracking-widest font-heading text-brand-active font-bold">Passed first time!</p>
-            <h4 class="text-lg font-bold">"Confidence is key"</h4>
+            <p class="text-lg font-bold">"Confidence is key"</p>
           </div>
         </div>
         <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
@@ -291,81 +287,81 @@
 
         <div class="overflow-hidden -mx-2 px-2 py-2">
           <div id="ig-track" class="flex transition-transform duration-300 ease-in-out gap-5">
-            <a href="https://www.instagram.com/p/DN1EmDA2BRl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DN1EmDA2BRl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DN1EmDA2BRl.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DN1EmDA2BRl.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DQrN7iwDPsQ/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DQrN7iwDPsQ/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DQrN7iwDPsQ.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DQrN7iwDPsQ.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DRxY6ypDAIc/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DRxY6ypDAIc/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DRxY6ypDAIc.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DRxY6ypDAIc.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/reel/DTYdYqEjFDy/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/reel/DTYdYqEjFDy/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View reel on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; background:#fff;">
-                  <img src="assets/ig/DTYdYqEjFDy.jpg" alt="Instagram reel" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DTYdYqEjFDy.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                   <div class="absolute inset-0 flex items-center justify-center pointer-events-none"><i class="fa-solid fa-play text-white text-3xl drop-shadow-lg"></i></div>
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DVetRkdjLgH/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DVetRkdjLgH/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DVetRkdjLgH.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DVetRkdjLgH.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DZaU9BYMm2H/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DZaU9BYMm2H/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DZaU9BYMm2H.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DZaU9BYMm2H.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DZxTjpYMbo0/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DZxTjpYMbo0/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DZxTjpYMbo0.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DZxTjpYMbo0.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DCouUKIMov-/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DCouUKIMov-/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DCouUKIMov-.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DCouUKIMov-.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DDzbscfsOvf/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DDzbscfsOvf/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DDzbscfsOvf.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DDzbscfsOvf.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DE99V_vMmcr/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DE99V_vMmcr/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DE99V_vMmcr.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DE99V_vMmcr.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
-            <a href="https://www.instagram.com/p/DHtYK5gMYVu/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group">
+            <a href="https://www.instagram.com/p/DHtYK5gMYVu/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
-                  <img src="assets/ig/DHtYK5gMYVu.jpg" alt="Instagram post" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
+                  <img src="assets/ig/DHtYK5gMYVu.jpg" alt="" style="width:100%; height:100%; object-fit:contain; object-position:center;" loading="lazy">
                 </div>
               </div>
             </a>
@@ -407,16 +403,29 @@
         function maxIndex() {
           return Math.max(0, cards.length - visibleCount());
         }
+        function isDesktop() {
+          return window.innerWidth >= 768;
+        }
         function update() {
           var offset = slideIndex * getCardWidth();
           track.style.transform = 'translateX(-' + offset + 'px)';
           if (prevBtn) {
-            prevBtn.style.display = slideIndex > 0 ? 'flex' : 'none';
-            prevBtn.disabled = slideIndex <= 0;
+            if (isDesktop()) {
+              prevBtn.style.display = slideIndex > 0 ? 'flex' : 'none';
+              prevBtn.disabled = slideIndex <= 0;
+            } else {
+              prevBtn.style.display = '';
+              prevBtn.disabled = false;
+            }
           }
           if (nextBtn) {
-            nextBtn.style.display = slideIndex < maxIndex() ? 'flex' : 'none';
-            nextBtn.disabled = slideIndex >= maxIndex();
+            if (isDesktop()) {
+              nextBtn.style.display = slideIndex < maxIndex() ? 'flex' : 'none';
+              nextBtn.disabled = slideIndex >= maxIndex();
+            } else {
+              nextBtn.style.display = '';
+              nextBtn.disabled = false;
+            }
           }
           if (dotsWrap) {
             dotsWrap.innerHTML = '';
@@ -436,6 +445,22 @@
         if (prevBtn) prevBtn.addEventListener('click', function () { if (slideIndex > 0) { slideIndex--; update(); } });
         if (nextBtn) nextBtn.addEventListener('click', function () { if (slideIndex < maxIndex()) { slideIndex++; update(); } });
         window.addEventListener('resize', update);
+
+        // Mobile swipe support (dots remain the primary mobile control)
+        var touchStartX = null;
+        track.addEventListener('touchstart', function (e) {
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        track.addEventListener('touchend', function (e) {
+          if (touchStartX === null) return;
+          var dx = e.changedTouches[0].clientX - touchStartX;
+          touchStartX = null;
+          if (Math.abs(dx) > 40) {
+            if (dx < 0 && slideIndex < maxIndex()) { slideIndex++; update(); }
+            if (dx > 0 && slideIndex > 0) { slideIndex--; update(); }
+          }
+        }, { passive: true });
+
         update();
       })();
     </script>
@@ -616,26 +641,8 @@
     </div>
   </footer>
 
+  <script src="assets/js/site.js"></script>
   <script>
-    var menuBtn = document.getElementById('mobile-menu-btn');
-    var menuPanel = document.getElementById('mobile-menu');
-    if (menuBtn && menuPanel) {
-      menuBtn.addEventListener('click', function () {
-        var isHidden = menuPanel.classList.contains('hidden');
-        menuPanel.classList.toggle('hidden');
-        menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-        menuBtn.innerHTML = isHidden ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-      });
-      var mobileLinks = menuPanel.querySelectorAll('a');
-      mobileLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          menuPanel.classList.add('hidden');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        });
-      });
-    }
-
     (function() {
       var track = document.getElementById('reviews-track');
       var prevBtn = document.getElementById('reviews-prev');
@@ -707,6 +714,5 @@
       setTimeout(attachReadMoreToggles, 500);
     })();
   </script>
-  <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

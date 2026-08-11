@@ -14,6 +14,7 @@ const rootFiles = [
   "learn-now.html",
   "join-cruisenpass.html",
   "privacy.html",
+  "404.html",
   "styles.css",
   "og-image.jpg.webp",
   "logo.png",
