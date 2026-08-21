@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Self-hosted fonts (variable, latin subset) — replaces Google Fonts CDN. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/assets/vendor/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('/assets/vendor/fonts/space-grotesk-latin.woff2') format('woff2');
+}
+
 /* line-clamp-* utilities ship natively with Tailwind 3.3+, so no custom CSS is needed. */
 
 /* Offset in-page anchor targets (skip links, #prices, #faq, ...) below the fixed header. */
