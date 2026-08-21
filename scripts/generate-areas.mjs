@@ -64,7 +64,7 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, 
 function page(a) {
   const title = `Driving Lessons in ${a.name} | Cruise'N'Pass — From £35/hr`;
   const desc = `Driving lessons in ${a.name} with DVSA-approved instructors. 90%+ first-time pass rate, flexible pick-ups across ${a.name} and packages from £320. Book today.`;
-  const url = `${DOMAIN}/driving-lessons-${a.slug}.html`;
+  const url = `${DOMAIN}/driving-lessons-${a.slug}`;
   return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -108,11 +108,11 @@ function page(a) {
 
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-dark"><span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span> Cruise'N'Pass</a>
+      <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-dark"><span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span> Cruise'N'Pass</a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold" aria-label="Main">
         <a href="index.html#prices" class="text-slate-600 hover:text-brand-electric transition-colors">Prices</a>
-        <a href="learn-now.html" class="text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
-        <a href="join-cruisenpass.html" class="text-slate-600 hover:text-brand-electric transition-colors">Join Us</a>
+        <a href="/learn-now" class="text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
+        <a href="/join-cruisenpass" class="text-slate-600 hover:text-brand-electric transition-colors">Join Us</a>
         <a href="index.html#contacts" class="bg-brand-electric text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity">Book Now</a>
       </nav>
       <a href="tel:07916155054" class="md:hidden bg-brand-electric text-white p-3 rounded-xl" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
@@ -174,10 +174,10 @@ function page(a) {
   <footer class="bg-brand-dark text-slate-300 py-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <nav class="order-3 md:order-1 w-full md:w-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm" aria-label="Footer">
-        <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Driving Lessons</a>
-        <a href="learn-now.html" class="text-slate-400 hover:text-white transition-colors">Free Tutorials</a>
-        <a href="join-cruisenpass.html" class="text-slate-400 hover:text-white transition-colors">Instructor Careers</a>
-        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/" class="text-slate-400 hover:text-white transition-colors">Driving Lessons</a>
+        <a href="/learn-now" class="text-slate-400 hover:text-white transition-colors">Free Tutorials</a>
+        <a href="/join-cruisenpass" class="text-slate-400 hover:text-white transition-colors">Instructor Careers</a>
+        <a href="/privacy" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
       </nav>
       <p class="text-sm text-slate-400 text-center order-2">© <span id="footer-year">2025</span> Cruise'N'Pass. DVSA-approved driving lessons across Greater Manchester.</p>
       <div class="flex items-center gap-2 order-1 md:order-3">
@@ -197,7 +197,7 @@ function page(a) {
 // ---------------------------------------------------------------------------
 let created = 0;
 for (const a of AREAS) {
-  const file = `driving-lessons-${a.slug}.html`;
+  const file = `driving-lessons-${a.slug}`;
   writeFileSync(file, page(a));
   created++;
 }
@@ -206,7 +206,7 @@ console.log(`generate-areas: wrote ${created} landing page(s)`);
 // ---- sitemap.xml ----
 let sitemap = readFileSync("sitemap.xml", "utf8");
 for (const a of AREAS) {
-  const url = `${DOMAIN}/driving-lessons-${a.slug}.html`;
+  const url = `${DOMAIN}/driving-lessons-${a.slug}`;
   const entry = `  <url><loc>${url}</loc><lastmod>${TODAY}</lastmod></url>\n`;
   if (!sitemap.includes(url)) sitemap += entry;
 }
@@ -218,7 +218,7 @@ const index = readFileSync("index.html", "utf8");
 const START = "<!-- AREAS:START -->";
 const END = "<!-- AREAS:END -->";
 const links = AREAS.map(
-  (a) => `<a href="driving-lessons-${a.slug}.html" class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 hover:text-brand-electric hover:border-brand-electric font-semibold text-sm flex items-center gap-2 transition-colors"><i class="fa-solid fa-location-dot text-brand-active"></i>${esc(a.name)}</a>`
+  (a) => `<a href="driving-lessons-${a.slug}" class="px-5 py-2.5 rounded-full bg-brand-surface border border-slate-200 text-slate-700 hover:text-brand-electric hover:border-brand-electric font-semibold text-sm flex items-center gap-2 transition-colors"><i class="fa-solid fa-location-dot text-brand-active"></i>${esc(a.name)}</a>`
 ).join("\n          ");
 const block = `${START}
           ${links}

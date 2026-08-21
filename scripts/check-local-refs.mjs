@@ -22,11 +22,13 @@ for (const file of files) {
     if (skipProtocol.test(raw)) continue;
     if (skipScheme.test(raw)) continue;
     const hashIndex = raw.indexOf('#');
-    const pathPart = (hashIndex === -1 ? raw : raw.slice(0, hashIndex)).split('?')[0];
+    let pathPart = (hashIndex === -1 ? raw : raw.slice(0, hashIndex)).split('?')[0];
     if (!pathPart) continue;
-    const resolved = join(baseDir, pathPart);
-    if (!existsSync(resolved)) {
-      issues.push(`${file}: missing local asset "${raw}" (resolved to ${resolved})`);
+    // Clean URLs (Vercel cleanUrls): "/learn-now" is served from learn-now.html
+    const resolved = join(baseDir, pathPart.replace(/^\//, ''));
+    const candidates = /\.[a-z0-9]+$/i.test(resolved) ? [resolved] : [resolved + '.html', resolved];
+    if (!candidates.some((c) => existsSync(c))) {
+      issues.push(`${file}: missing local asset "${raw}"`);
     }
   }
 }

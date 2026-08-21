@@ -67,7 +67,7 @@ for (const [file, patterns] of Object.entries(required)) {
 }
 
 const sitemap = readFileSync('sitemap.xml', 'utf8');
-for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now.html', 'https://cruisenpass.com/join-cruisenpass.html', 'https://cruisenpass.com/privacy.html']) {
+for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now', 'https://cruisenpass.com/join-cruisenpass', 'https://cruisenpass.com/privacy']) {
   if (!sitemap.includes(url)) {
     issues.push(`sitemap.xml: missing ${url}`);
   }
