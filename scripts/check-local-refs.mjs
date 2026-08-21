@@ -21,7 +21,7 @@ for (const file of files) {
     if (skipProtocol.test(raw)) continue;
     if (skipScheme.test(raw)) continue;
     const hashIndex = raw.indexOf('#');
-    const pathPart = hashIndex === -1 ? raw : raw.slice(0, hashIndex);
+    const pathPart = (hashIndex === -1 ? raw : raw.slice(0, hashIndex)).split('?')[0];
     if (!pathPart) continue;
     const resolved = join(baseDir, pathPart);
     if (!existsSync(resolved)) {

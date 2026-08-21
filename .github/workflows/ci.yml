@@ -32,9 +32,6 @@ jobs:
       - name: Build deployable site
         run: npm run build
 
-      - name: Install validators
-        run: npm install --no-save html-validate
-
       - name: HTML validation
         run: |
           for f in index.html learn-now.html join-cruisenpass.html privacy.html; do
@@ -65,15 +62,3 @@ jobs:
       - name: External link check (best effort)
         continue-on-error: true
         run: node scripts/check-external-links.mjs
-  status:
-    name: Status check
-    if: always()
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fail if validate failed
-        run: |
-          if [ "${{ needs.validate.result }}" != "success" ]; then
-            echo "Validation failed."
-            exit 1
-          fi
