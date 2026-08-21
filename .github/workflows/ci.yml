@@ -34,7 +34,7 @@ jobs:
 
       - name: HTML validation
         run: |
-          for f in index.html learn-now.html join-cruisenpass.html privacy.html; do
+          for f in index.html learn-now.html join-cruisenpass.html privacy.html driving-lessons-*.html; do
             echo "::group::$f"
             npx html-validate "$f"
             echo "::endgroup::"

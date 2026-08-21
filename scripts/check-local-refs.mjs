@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html'];
+const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html',
+  ...readdirSync('.').filter((f) => /^driving-lessons-.+\.html$/.test(f))];
 const issues = [];
 
 const skipProtocol = /^(https?:)?\/\//;

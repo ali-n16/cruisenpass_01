@@ -4,8 +4,7 @@
 // place so local preview and the root-level CI checks keep working unchanged.
 import {
   rmSync, mkdirSync, copyFileSync, existsSync, readdirSync, statSync,
-} from "node:fs";
-import { join } from "node:path";
+} from "node:fs";import { join } from "node:path";
 
 const OUT = "public";
 
@@ -21,6 +20,14 @@ const rootFiles = [
   "robots.txt",
   "sitemap.xml",
 ];
+
+// Generated local SEO landing pages (scripts/generate-areas.mjs)
+const generatedPages = readdirSync(".").filter(
+  (f) => /^driving-lessons-.+\.html$/.test(f)
+);
+if (generatedPages.length === 0) {
+  throw new Error("assemble: no driving-lessons-*.html pages found — run scripts/generate-areas.mjs");
+}
 
 const dirs = ["assets"];
 
@@ -38,7 +45,7 @@ function copyDir(src, dest) {
 }
 
 let copied = 0;
-for (const f of rootFiles) {
+for (const f of [...rootFiles, ...generatedPages]) {
   if (existsSync(f)) {
     copyFileSync(f, join(OUT, f));
     copied++;

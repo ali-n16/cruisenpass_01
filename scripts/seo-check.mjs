@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
 const required = {
   'index.html': [
@@ -34,6 +34,18 @@ const required = {
   ],
 };
 
+// Generated area landing pages: lighter required set.
+const areaRequired = [
+  /<title>.*<\/title>/,
+  /<meta\s+name="description"/,
+  /<link\s+rel="canonical"/,
+  /"@type"\s*:\s*"Service"/,
+  /"@type"\s*:\s*"BreadcrumbList"/,
+];
+for (const file of readdirSync('.').filter((f) => /^driving-lessons-.+\.html$/.test(f))) {
+  required[file] = areaRequired;
+}
+
 const issues = [];
 
 for (const [file, patterns] of Object.entries(required)) {
@@ -65,6 +77,16 @@ for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-no
 for (const match of sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)) {
   if (new Date(match[1]) > new Date()) {
     issues.push(`sitemap.xml: lastmod ${match[1]} is in the future`);
+  }
+}
+
+// Every area page must be listed in the sitemap.
+for (const file of readdirSync('.').filter((f) => /^driving-lessons-.+\.html$/.test(f))) {
+  const canonical = readFileSync(file, 'utf8').match(/<link\s+rel="canonical" href="([^"]+)"/);
+  if (!canonical) {
+    issues.push(`${file}: missing canonical link`);
+  } else if (!sitemap.includes(canonical[1])) {
+    issues.push(`sitemap.xml: missing ${canonical[1]} (from ${file})`);
   }
 }
 
