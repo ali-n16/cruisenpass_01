@@ -19,6 +19,7 @@ const required = {
     /<link\s+rel="canonical"/,
     /"@type"\s*:\s*"WebSite"/,
     /"@type"\s*:\s*"BreadcrumbList"/,
+    /"@type"\s*:\s*"VideoObject"/,
   ],
   'join-cruisenpass.html': [
     /<title>.*<\/title>/,
@@ -57,6 +58,13 @@ const sitemap = readFileSync('sitemap.xml', 'utf8');
 for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now.html', 'https://cruisenpass.com/join-cruisenpass.html', 'https://cruisenpass.com/privacy.html']) {
   if (!sitemap.includes(url)) {
     issues.push(`sitemap.xml: missing ${url}`);
+  }
+}
+
+// lastmod dates must not be in the future — Google ignores/distrusts them.
+for (const match of sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)) {
+  if (new Date(match[1]) > new Date()) {
+    issues.push(`sitemap.xml: lastmod ${match[1]} is in the future`);
   }
 }
 
