@@ -16,7 +16,7 @@ const rootFiles = [
   "privacy.html",
   "404.html",
   "styles.css",
-  "og-image.jpg.webp",
+  "og-image.webp",
   "logo.png",
   "robots.txt",
   "sitemap.xml",
