@@ -670,7 +670,7 @@
       var reviews = [];
       try { reviews = JSON.parse(dataEl.textContent); } catch (e) { console.error('Could not parse reviews data', e); return; }
       var CARD_WIDTH = 320; var CARD_WIDTH_MOBILE = 280; var GAP = 16; var currentIndex = 0; var resizeTimer = null;
-      function escapeHtml(str) { return String(str).replace(/[&<>"']/g, function(ch) { return { '&': '&', '<': '<', '>': '>', '"': '"', "'": ''' }[ch]; }); }
+      function escapeHtml(str) { var map = { '&': '&' + 'amp;', '<': '&' + 'lt;', '>': '&' + 'gt;', '"': '&' + 'quot;', "'": '&' + '#39;' }; return String(str).replace(/[&<>"']/g, function(ch) { return map[ch] || ch; }); }
       function cardWidth() { return window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH; }
       function getVisibleCount() { return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
       function maxSlideIndex() { return Math.max(0, reviews.length - getVisibleCount()); }
