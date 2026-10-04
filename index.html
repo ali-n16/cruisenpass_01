@@ -55,25 +55,36 @@
     gtag('js', new Date());
     gtag('config', 'AW-18494089817');
 
+    /* TODO (Google Ads): paste your conversion labels below.
+       Google Ads → Goals → Conversions → Summary → click each conversion → Tag setup.
+       Replace REPLACE_WITH_PHONE_LABEL and REPLACE_WITH_BOOKING_LABEL, then redeploy. */
+    var GOOGLE_ADS_PHONE_LABEL = 'REPLACE_WITH_PHONE_LABEL';
+    var GOOGLE_ADS_BOOKING_LABEL = 'REPLACE_WITH_BOOKING_LABEL';
+
     /* Conversion 1: phone number tapped */
     document.addEventListener('click', function (e) {
       var el = e.target;
       while (el && el.tagName !== 'A') { el = el.parentElement; }
       if (el && el.getAttribute('href') && el.getAttribute('href').indexOf('tel:') === 0) {
+        if (typeof gtag !== 'function') return;
+        if (!GOOGLE_ADS_PHONE_LABEL || GOOGLE_ADS_PHONE_LABEL.indexOf('REPLACE_WITH') === 0) return;
         gtag('event', 'conversion', {
-          'send_to': 'AW-18494089817/REPLACE_WITH_PHONE_LABEL'
+          'send_to': 'AW-18494089817/' + GOOGLE_ADS_PHONE_LABEL
         });
       }
     });
 
-    /* Conversion 2: booking form submitted */
+    /* Conversion 2: booking form submitted — called from the form success handler below */
     function gtag_report_booking(){
+      if (typeof gtag !== 'function') return;
+      if (!GOOGLE_ADS_BOOKING_LABEL || GOOGLE_ADS_BOOKING_LABEL.indexOf('REPLACE_WITH') === 0) return;
       gtag('event', 'conversion', {
-        'send_to': 'AW-18494089817/REPLACE_WITH_BOOKING_LABEL',
+        'send_to': 'AW-18494089817/' + GOOGLE_ADS_BOOKING_LABEL,
         'value': 1.0,
         'currency': 'GBP'
       });
     }
+    window.gtag_report_booking = gtag_report_booking;
   </script>
 
   <link rel="stylesheet" href="styles.css?v=2">
@@ -793,6 +804,9 @@
               successEl.classList.remove('hidden');
             }
             form.reset();
+            if (typeof window.gtag_report_booking === 'function') {
+              try { window.gtag_report_booking(); } catch (err) { /* no-op: tracking must never break the form */ }
+            }
           })
           .catch(function () {
             if (errorEl) {
