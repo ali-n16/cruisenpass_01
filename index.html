@@ -47,6 +47,35 @@
 
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
 
+  <!-- Google tag (gtag.js) - Google Ads conversion tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18494089817"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18494089817');
+
+    /* Conversion 1: phone number tapped */
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') { el = el.parentElement; }
+      if (el && el.getAttribute('href') && el.getAttribute('href').indexOf('tel:') === 0) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18494089817/REPLACE_WITH_PHONE_LABEL'
+        });
+      }
+    });
+
+    /* Conversion 2: booking form submitted */
+    function gtag_report_booking(){
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18494089817/REPLACE_WITH_BOOKING_LABEL',
+        'value': 1.0,
+        'currency': 'GBP'
+      });
+    }
+  </script>
+
   <link rel="stylesheet" href="styles.css?v=2">
 
   <!-- Google Fonts: Space Grotesk (Heading) & Inter (Body) -->
