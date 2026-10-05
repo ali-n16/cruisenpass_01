@@ -208,7 +208,7 @@ let sitemap = readFileSync("sitemap.xml", "utf8");
 for (const a of AREAS) {
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
   const entry = `  <url><loc>${url}</loc><lastmod>${TODAY}</lastmod></url>\n`;
-  if (!sitemap.includes(url)) sitemap += entry;
+  if (!sitemap.includes(url)) sitemap = sitemap.replace("</urlset>", entry + "</urlset>");
 }
 writeFileSync("sitemap.xml", sitemap);
 console.log("generate-areas: sitemap.xml updated");
