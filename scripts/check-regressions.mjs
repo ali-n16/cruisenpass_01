@@ -33,10 +33,10 @@ async function check() {
       execFileSync(process.execPath, ['generate-areas.mjs'], { cwd: tempDir });
     }
 
-    // Assert 34 area HTML files with .html extension exist
+    // Assert 35 area HTML files with .html extension exist
     const files = await fs.readdir(tempDir);
     const areaFiles = files.filter(f => f.startsWith('driving-lessons-') && f.endsWith('.html'));
-    assert.strictEqual(areaFiles.length, 34, 'Expected 34 area .html files');
+    assert.strictEqual(areaFiles.length, 35, 'Expected 35 area .html files');
 
     // Assert no extensionless files
     const extlessFiles = files.filter(f => !path.extname(f));
@@ -70,11 +70,11 @@ async function check() {
     // Extract locs inside urlset
     const locs = Array.from(sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g), m => m[1]);
 
-    // All 38 locs check
-    assert.strictEqual(locs.length, 38, 'Expected 38 <loc> URLs in sitemap');
+    // All 39 locs check
+    assert.strictEqual(locs.length, 39, 'Expected 39 <loc> URLs in sitemap');
 
     // All locs unique
-    assert.strictEqual(new Set(locs).size, 38, 'Duplicate <loc> URLs in sitemap');
+    assert.strictEqual(new Set(locs).size, 39, 'Duplicate <loc> URLs in sitemap');
 
     // No lastmod tags anywhere
     assert(!sitemapContent.includes('<lastmod>'), '<lastmod> tags found in sitemap');

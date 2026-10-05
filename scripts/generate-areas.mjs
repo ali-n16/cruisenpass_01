@@ -22,6 +22,7 @@ const AREAS = [
   { name: "Harwood", slug: "harwood", blurb: "Harwood's suburban roads and nearby country lanes towards Edgworth offer calm spaces to build core skills, with busier Bolton routes added as you progress." },
   { name: "Bury", slug: "bury", blurb: "Learn around Bury's market-town traffic, the A58 and the Metrolink-crossed junctions learners are routinely tested on. The Bury test centre is well known to our instructors, right down to its trickiest roundabouts." },
   { name: "Old Trafford", slug: "old-trafford", blurb: "Match-day traffic aside, Old Trafford is a fantastic training ground: the A56, Trafford Bar junctions and Wharf Road loop all feature in local test routes towards the Sale and West Didsbury centres." },
+  { name: "Rochdale", slug: "rochdale", blurb: "Rochdale lessons mix the A58 and A627(M) corridors with the town-centre one-way system and quieter routes towards Littleborough. The Rochdale test centre sits right on the training ground — instructor Hassan Iqbal has guided learners to passes here, including a pass with zero minors.", passes: [{"name":"Mary-Ann Addo-Mensah","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."}] },
   { name: "Stretford", slug: "stretford", blurb: "Stretford learners practise on the A5145 and around the Trafford Centre interchange — one of the busiest roundabout systems in Greater Manchester and a genuine test of lane discipline." },
   { name: "Sale", slug: "sale", blurb: "With the Sale test centre on your doorstep, lessons here can mirror real test conditions from day one: the A56 crossroads, Sale Water Park routes and the residential grid off Norris Road." },
   { name: "Chorlton-Cum-Hardy", slug: "chorlton-cum-hardy", blurb: "Chorlton's mix of cycle-heavy streets, the A5103 corridor and quiet Barlow Moor Road side roads makes it perfect for staged learning — quiet starts, busy finishes — with West Didsbury test centre close by." },
@@ -37,7 +38,7 @@ const AREAS = [
   { name: "Cheetham Hill", slug: "cheetham-hill", blurb: "Cheetham Hill Road is a test-route staple. Learning here means daily practice on the exact roads used by the Cheetham Hill (Aldergrove Road) test centre." },
   { name: "Crumpsall", slug: "crumpsall", blurb: "Crumpsall learners work on the A6010 ring road and the quieter streets off Crumpsall Lane before progressing to Cheetham Hill test routes just down the road." },
   { name: "Blackley", slug: "blackley", blurb: "Blackley's mix of the A6010, Victoria Avenue East and residential estates offers a calm start and a demanding finish — a natural progression route for new learners." },
-  { name: "Chadderton", slug: "chadderton", blurb: "Chadderton sits between Oldham and Manchester with the A627(M) and Broadway corridor on the doorstep — and the Chadderton test centre nearby means realistic test-route practice." },
+  { name: "Chadderton", slug: "chadderton", blurb: "Chadderton sits between Oldham and Manchester with the A627(M) and Broadway corridor on the doorstep — and the Chadderton test centre nearby means realistic test-route practice.", passes: [{"name":"Amalu Jose","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},{"name":"Aghabiomon Oladeru","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},{"name":"Maya G Nair","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."}] },
   { name: "Stockport", slug: "stockport", blurb: "Stockport's iconic pyramid roundabout and the A6 corridor are legendary among local learners. Conquer Stockport's road system and you are ready to pass anywhere in Greater Manchester." },
   { name: "Cheadle", slug: "cheadle", blurb: "Lessons around Cheadle Village, the A34 and Kingsway junctions build the multi-lane confidence examiners reward, with Stockport test routes close at hand." },
   { name: "Cheadle Hulme", slug: "cheadle-hulme", blurb: "Cheadle Hulme's station junctions and residential boulevards are a gentle introduction before tackling the A34 and the famous Stockport roundabouts." },
@@ -45,7 +46,7 @@ const AREAS = [
   { name: "Hazel Grove", slug: "hazel-grove", blurb: "The A6 through Hazel Grove is a proper test of lane discipline and anticipation — and a staple of local test routes. Learn it with instructors who drive it every day." },
   { name: "Heald Green", slug: "heald-green", blurb: "Heald Green offers quiet residential starts and quick access to the A538 and M56 junctions — ideal for learners who want motorway-roundabout experience before their test." },
   { name: "Romiley", slug: "romiley", blurb: "Romiley's Compsteyn Bridge roads and the B6104 towards Marple give learners country-road experience rare in Greater Manchester, balanced with Stockport test routes nearby." },
-  { name: "Bredbury", slug: "bredbury", blurb: "Bredbury learners master the A560 and the busy Bredbury interchange before progressing towards Stockport — solid preparation for any test centre in the area." },
+  { name: "Bredbury", slug: "bredbury", blurb: "Bredbury learners master the A560 and the busy Bredbury interchange before progressing towards Stockport — solid preparation for any test centre in the area.", passes: [{"name":"Suba Penmetsa","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."}] },
   { name: "Atherton", slug: "atherton", blurb: "Atherton's A577 and A579 corridors plus quieter streets towards Hag Fold make a well-rounded training ground, with Bolton and Wigan test centres within easy reach." },
 ];
 
@@ -109,10 +110,10 @@ function page(a) {
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-dark"><span class="bg-brand-electric p-2 rounded-xl text-white">🚗</span> Cruise'N'Pass</a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold" aria-label="Main">
-        <a href="index.html#prices" class="text-slate-600 hover:text-brand-electric transition-colors">Prices</a>
+        <a href="/#prices" class="text-slate-600 hover:text-brand-electric transition-colors">Prices</a>
         <a href="/learn-now" class="text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
         <a href="/join-cruisenpass" class="text-slate-600 hover:text-brand-electric transition-colors">Join Us</a>
-        <a href="index.html#contacts" class="bg-brand-electric text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity">Book Now</a>
+        <a href="/#contacts" class="bg-brand-electric text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity">Book Now</a>
       </nav>
       <a href="tel:07916155054" class="md:hidden bg-brand-electric text-white p-3 rounded-xl" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
     </div>
@@ -125,7 +126,7 @@ function page(a) {
         <h1 class="font-heading text-4xl md:text-6xl font-extrabold text-brand-dark tracking-tight mb-6 leading-tight">Driving Lessons in ${esc(a.name)} from £35 an Hour</h1>
         <p class="text-lg text-slate-600 leading-relaxed mb-8">${esc(a.blurb)}</p>
         <div class="flex flex-col sm:flex-row items-center gap-4 mb-10">
-          <a href="index.html#contacts" class="w-full sm:w-auto text-center bg-brand-electric text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book a Lesson in ${esc(a.name)}</a>
+          <a href="/#contacts" class="w-full sm:w-auto text-center bg-brand-electric text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book a Lesson in ${esc(a.name)}</a>
           <a href="tel:07916155054" class="w-full sm:w-auto text-center bg-white border border-slate-200 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all"><i class="fa-solid fa-phone mr-2"></i>Call 07916 155054</a>
         </div>
         <div class="grid grid-cols-3 gap-4 max-w-lg">
@@ -146,9 +147,24 @@ function page(a) {
             <p class="font-heading font-extrabold text-xl text-brand-electric whitespace-nowrap">${p.price}</p>
           </div>`).join("")}
         </div>
-        <p class="text-sm text-slate-500 mt-4">Full details on our <a href="index.html#prices" class="text-brand-electric hover:underline">prices page</a>.</p>
+        <p class="text-sm text-slate-500 mt-4">Full details on our <a href="/#prices" class="text-brand-electric hover:underline">prices page</a>.</p>
+      </div>
+    </section>${a.passes ? `
+
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight mb-8">Recent passes near ${esc(a.name)}</h2>
+        <div class="space-y-3">
+          ${a.passes.map((p) => `
+          <div class="p-5 bg-white border border-slate-100 rounded-2xl">
+            <p class="text-slate-600 leading-relaxed mb-3">${esc(p.text)}</p>
+            <p class="text-sm font-semibold text-slate-700">— ${esc(p.name)}, Google review</p>
+          </div>`).join("")}
+        </div>
+        <p class="mt-4 text-sm text-slate-500"><a href="https://www.google.com/search?q=Cruise%27N%27Pass+driving+school+Manchester+reviews" target="_blank" rel="noopener noreferrer" class="text-brand-electric hover:underline">Read more Google reviews</a></p>
       </div>
     </section>
+` : ``}
 
     <section class="py-16 bg-brand-surface">
       <div class="max-w-4xl mx-auto px-6">
@@ -165,7 +181,7 @@ function page(a) {
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">Ready to Start in ${esc(a.name)}?</h2>
         <p class="text-slate-600 text-lg mb-8">Message us on WhatsApp or call <a href="tel:07916155054" class="text-brand-electric font-semibold hover:underline">07916 155054</a> — we usually reply within the hour.</p>
-        <a href="index.html#contacts" class="inline-block bg-brand-electric text-white font-bold px-10 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book Your First Lesson</a>
+        <a href="/#contacts" class="inline-block bg-brand-electric text-white font-bold px-10 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book Your First Lesson</a>
       </div>
     </section>
   </main>
