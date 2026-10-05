@@ -97,9 +97,7 @@ function faqJsonLd(a) {
 
 function page(a, index) {
   const isManchesterPillar = a.slug === "manchester";
-  const title = isManchesterPillar
-    ? `Driving Lessons in Manchester | DVSA-Approved Instructors from £35/hr`
-    : `Driving Lessons in ${a.name} | DVSA-Approved Instructors from £35/hr`;
+  const title = `Driving Lessons in ${a.name} | Cruise'N'Pass`;
   const desc = `Driving lessons in ${a.name} with DVSA-approved instructors. Test-route training around ${a.testCentre}, 100+ five-star reviews, flexible pick-ups and packages from £320. Book today.`;
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
   const nearby = nearbyAreas(index);
