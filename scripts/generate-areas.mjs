@@ -7,7 +7,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const DOMAIN = "https://cruisenpass.com";
-const TODAY = new Date().toISOString().slice(0, 10);
 
 // ---------------------------------------------------------------------------
 // Area data. `blurb` is hand-written local context; keep it factual and
@@ -197,7 +196,7 @@ function page(a) {
 // ---------------------------------------------------------------------------
 let created = 0;
 for (const a of AREAS) {
-  const file = `driving-lessons-${a.slug}`;
+  const file = `driving-lessons-${a.slug}.html`;
   writeFileSync(file, page(a));
   created++;
 }
@@ -207,7 +206,7 @@ console.log(`generate-areas: wrote ${created} landing page(s)`);
 let sitemap = readFileSync("sitemap.xml", "utf8");
 for (const a of AREAS) {
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
-  const entry = `  <url><loc>${url}</loc><lastmod>${TODAY}</lastmod></url>\n`;
+  const entry = `  <url><loc>${url}</loc></url>\n`;
   if (!sitemap.includes(url)) sitemap = sitemap.replace("</urlset>", entry + "</urlset>");
 }
 writeFileSync("sitemap.xml", sitemap);

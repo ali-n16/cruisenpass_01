@@ -57,7 +57,7 @@ jobs:
           node scripts/check-anchor-refs.mjs
 
       - name: SEO sanity
-        run: node scripts/check-jsonld.mjs && node scripts/seo-check.mjs
+        run: node scripts/check-jsonld.mjs && node scripts/seo-check.mjs && node scripts/check-regressions.mjs
 
       - name: External link check (best effort)
         continue-on-error: true
