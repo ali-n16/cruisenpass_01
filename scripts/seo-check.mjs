@@ -32,6 +32,46 @@ const required = {
     /<meta\s+name="description"/,
     /<link\s+rel="canonical"/,
   ],
+  'driving-lesson-prices.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'driving-faq.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'reviews.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'intensive-driving-course.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'blog.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'how-many-driving-lessons.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'driving-test-centres-manchester.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
+  'manual-vs-automatic.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+  ],
 };
 
 // Generated area landing pages: lighter required set.

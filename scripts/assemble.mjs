@@ -19,6 +19,14 @@ const rootFiles = [
   "logo.png",
   "robots.txt",
   "sitemap.xml",
+  "driving-lesson-prices.html",
+  "driving-faq.html",
+  "reviews.html",
+  "intensive-driving-course.html",
+  "blog.html",
+  "how-many-driving-lessons.html",
+  "driving-test-centres-manchester.html",
+  "manual-vs-automatic.html",
 ];
 
 // Generated local SEO landing pages (scripts/generate-areas.mjs)
