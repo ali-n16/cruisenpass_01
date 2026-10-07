@@ -27,6 +27,8 @@ const rootFiles = [
   "how-many-driving-lessons.html",
   "driving-test-centres-manchester.html",
   "manual-vs-automatic.html",
+  // IndexNow key file (scripts/indexnow.mjs)
+  "78c5830c683a82c2bf2c5626fedb9c1e.txt",
 ];
 
 // Generated local SEO landing pages (scripts/generate-areas.mjs)
