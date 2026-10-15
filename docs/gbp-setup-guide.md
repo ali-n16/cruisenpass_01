@@ -1,33 +1,35 @@
-# GBP Setup Guide — Do This With Your Google Account (≈3 hours)
+# GBP Optimization Guide — Do This With Your Google Account (≈3 hours)
 
 Companion to `gbp-setup-bundle.md` (which holds all the copy-paste text).
+Your listing is already live and claimed (5.0, 115 reviews as of Oct 2026) — this is optimization, not setup.
 Work through sessions 1–6 in order. Tick as you go.
 
 ---
 
 ## Before you start (5 min)
 
+- [x] Listing live and claimed — verified Oct 2026 (Cruise'N'Pass, 5.0, 115 reviews). Skip claiming.
 - [ ] Log into the **Google account that manages your listing** (the one you use to reply to reviews).
 - [ ] Go to **business.google.com** — you should land on the Cruise'N'Pass dashboard.
-      If you see "someone else manages this profile" → *Request access*.
-      If you see nothing → open Google Maps, search "Cruise'N'Pass Manchester", click *Claim this business*.
 - [ ] Check for **duplicate listings** (search Maps for your own name). One listing only — duplicates split your reviews and can suspend both.
 
 ## Session 1 — Core info (30 min)
 Dashboard → **Edit profile → Business information**
+Verified live Oct 2026: name, `Driving school` category, phone `07916 155054`. Still fix the rest:
 
-- [ ] **Name:** `Cruise'N'Pass` — exactly. ⚠️ Never add keywords ("Cruise'N'Pass Driving Lessons Manchester") — suspension risk.
-- [ ] **Primary category:** `Driving school`. **Secondary:** `Driving instructor`.
-- [ ] **Phone:** `07916 155054`
+- [x] **Name:** `Cruise'N'Pass` — exactly. ⚠️ Never add keywords ("Cruise'N'Pass Driving Lessons Manchester") — suspension risk.
+- [x] **Primary category:** `Driving school`. **Secondary:** `Driving instructor`.
+- [x] **Phone:** `07916 155054`
 - [ ] **Website:** `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp`
-- [ ] **Hours:** Mon–Sun 07:00–20:00 (add bank-holiday hours when relevant)
-- [ ] **Service areas:** paste the 20-area list from bundle §1
+- [ ] **Hours:** Mon–Sun 07:00–20:00 — check now, listing showed "Closed · Opens 7am Fri", which suggests a weekday gap
+- [ ] **Service areas + map pin (high priority):** paste the 20-area list from bundle §1; pin must sit in Manchester — your public map thumbnail was zoomed to Europe/Middle East, which hurts proximity ranking
 - [ ] **Booking link:** `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_booking#contacts`
 - [ ] **Attributes** (More section): Messaging ON · languages · "Women-owned" only if accurate
 
 ⚠️ Only add a physical address if customers can genuinely visit you — it triggers re-verification, and a hidden-address (service-area) listing is the correct setup for a mobile school.
 
 ## Session 2 — Description, Services, Products (45 min)
+Your live "From Cruise'N'Pass" text is the old copy — replace it:
 
 - [ ] **Description:** paste the 750-char text from bundle §1 (Edit profile → Description)
 - [ ] **Services:** add all 8 rows from bundle §2 (name, description, price)
@@ -74,7 +76,7 @@ Dashboard → **Edit profile → Business information**
 - **Week 1–2:** GBP Insights → interactions (calls, website clicks) start moving
 - **Week 2–4:** search "driving school near me" on your phone *while out in your coverage area* — you should start appearing in the Map Pack near your base
 - **Monthly:** geo-grid tracker (template in `seo-tracking-template.md`) — % of grid points where you're top-3
-- **The metric that predicts Map Pack rank:** new reviews per week. Keep it at 8+/week.
+- **The metric that predicts Map Pack rank:** new reviews per week. Baseline Oct 2026: 115. Keep it at 8+/week toward 500+.
 
 ## Expectation ladder
 
