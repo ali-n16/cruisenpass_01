@@ -1,13 +1,10 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://cruisenpass.com/sitemap.xml
 
-# Block AI training crawlers if you do not want your content used for training.
-User-agent: GPTBot
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
+# AI search visibility is a business goal (Google AI Overviews, ChatGPT search,
+# Perplexity, Claude search), so AI crawlers are intentionally allowed.
+# To re-block AI *training* crawlers while keeping AI search visibility, use
+# OAI-SearchBot (ChatGPT search), PerplexityBot and ClaudeBot (search) and only
+# block GPTBot / CCBot. For now, everything is allowed.
