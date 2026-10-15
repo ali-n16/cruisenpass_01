@@ -27,6 +27,10 @@ const rootFiles = [
   "how-many-driving-lessons.html",
   "driving-test-centres-manchester.html",
   "manual-vs-automatic.html",
+  "automatic-driving-lessons-manchester.html",
+  "female-driving-instructor-manchester.html",
+  "driving-lesson-costs-manchester.html",
+  "cheetham-hill-driving-test-centre.html",
   // IndexNow key file (scripts/indexnow.mjs)
   "78c5830c683a82c2bf2c5626fedb9c1e.txt",
 ];

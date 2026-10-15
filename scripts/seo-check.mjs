@@ -10,7 +10,7 @@ const required = {
     /<meta\s+property="og:image"/,
     /<meta\s+name="twitter:card"/,
     /<link\s+rel="canonical"/,
-    /"@type"\s*:\s*"DrivingSchool"/,
+    /"@type":\s*\["LocalBusiness",\s*"AutomotiveBusiness"\]/,
     /"@type"\s*:\s*"FAQPage"/,
   ],
   'learn-now.html': [
@@ -71,6 +71,34 @@ const required = {
     /<title>.*<\/title>/,
     /<meta\s+name="description"/,
     /<link\s+rel="canonical"/,
+  ],
+  'automatic-driving-lessons-manchester.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"Service"/,
+    /"@type"\s*:\s*"FAQPage"/,
+  ],
+  'female-driving-instructor-manchester.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"Service"/,
+    /"@type"\s*:\s*"FAQPage"/,
+  ],
+  'driving-lesson-costs-manchester.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"BlogPosting"/,
+    /"@type"\s*:\s*"BreadcrumbList"/,
+  ],
+  'cheetham-hill-driving-test-centre.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"BlogPosting"/,
+    /"@type"\s*:\s*"BreadcrumbList"/,
   ],
 };
 

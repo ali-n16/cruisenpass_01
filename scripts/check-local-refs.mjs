@@ -3,6 +3,9 @@ import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html',
+  'blog.html', 'manual-vs-automatic.html', 'driving-lesson-prices.html', 'intensive-driving-course.html',
+  'automatic-driving-lessons-manchester.html', 'female-driving-instructor-manchester.html',
+  'driving-lesson-costs-manchester.html', 'cheetham-hill-driving-test-centre.html',
   ...readdirSync('.').filter((f) => /^driving-lessons-.+\.html$/.test(f))];
 const issues = [];
 
