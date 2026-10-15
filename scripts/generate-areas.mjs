@@ -127,8 +127,7 @@ function page(a, index) {
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
   <link rel="stylesheet" href="styles.css?v=2">
   <link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css"></noscript></noscript>
+  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css"></noscript>
 
   <script type="application/ld+json">
   {
