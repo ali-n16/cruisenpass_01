@@ -20,6 +20,14 @@
 
 /* line-clamp-* utilities ship natively with Tailwind 3.3+, so no custom CSS is needed. */
 
+/* Visible keyboard focus: never remove (WCAG 2.4.7). Tailwind ring utilities
+   add a glow, but automated checkers and some browsers key off `outline`,
+   so enforce a real outline here. It wins over `focus:outline-none` utilities. */
+:focus-visible {
+  outline: 3px solid #4F46E5 !important;
+  outline-offset: 2px;
+}
+
 /* Offset in-page anchor targets (skip links, #prices, #faq, ...) below the fixed header. */
 [id] {
   scroll-margin-top: 5rem;

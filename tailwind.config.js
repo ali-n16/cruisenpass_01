@@ -19,7 +19,7 @@ module.exports = {
           dark: '#0B0F19',
           lightBg: '#FFFFFF',
           surface: '#F8FAFC',
-          accent: '#FF007A',
+          accent: '#BE185D',
         }
       }
     }
