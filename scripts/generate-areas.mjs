@@ -98,7 +98,7 @@ function faqJsonLd(a) {
 function page(a, index) {
   const isManchesterPillar = a.slug === "manchester";
   const title = `Driving Lessons in ${a.name} | Cruise'N'Pass`;
-  const desc = `Driving lessons in ${a.name} with DVSA-approved instructors. Test-route training around ${a.testCentre}, 100+ five-star reviews, flexible pick-ups and packages from £320. Book today.`;
+  const desc = `Driving lessons in ${a.name} with DVSA-approved instructors. ${a.testCentre} test routes, £35/hr, free pick-up. Book today.`;
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
   const nearby = nearbyAreas(index);
   return `<!DOCTYPE html>
@@ -126,7 +126,9 @@ function page(a, index) {
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
   <link rel="stylesheet" href="styles.css?v=2">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css"></noscript></noscript>
 
   <script type="application/ld+json">
   {
