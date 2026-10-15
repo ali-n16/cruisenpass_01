@@ -11,7 +11,6 @@ const required = {
     /<meta\s+name="twitter:card"/,
     /<link\s+rel="canonical"/,
     /"@type":\s*\["LocalBusiness",\s*"AutomotiveBusiness"\]/,
-    /"@type"\s*:\s*"FAQPage"/,
   ],
   'learn-now.html': [
     /<title>.*<\/title>/,
@@ -41,6 +40,7 @@ const required = {
     /<title>.*<\/title>/,
     /<meta\s+name="description"/,
     /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"FAQPage"/,
   ],
   'reviews.html': [
     /<title>.*<\/title>/,
