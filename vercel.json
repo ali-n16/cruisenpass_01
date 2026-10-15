@@ -1,6 +1,14 @@
 {
   "outputDirectory": "public",
   "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/:slug.html", "destination": "/:slug", "permanent": true },
+    { "source": "/:slug.php", "destination": "/:slug", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
