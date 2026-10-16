@@ -39,13 +39,13 @@
 - [ ] **Service areas:** GBP allows **up to 20** — you cover 30+. Priority 20: Manchester, Salford, Stockport, Bolton, Bury, Didsbury, Chorlton, Cheetham Hill, Sale, Old Trafford, Cheadle, Chadderton, Rochdale, Withington, Levenshulme, Longsight, Hulme, Stretford, Crumpsall, Bramhall. (Rest are covered by your area pages + proximity.)
 - [ ] **Phone:** `07916 155054` (primary = real number, matches website exactly). If you use call tracking, add it as a *secondary* number only — never replace the primary.
 - [ ] **Website:** `https://cruisenpass.com/` — append UTM: `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` (also tag the GBP "booking" link `utm_campaign=gbp_booking`).
-- [ ] **Hours:** Mon–Sun 07:00–20:00, matching the site's openingHoursSpecification. Add special hours for bank holidays.
+- [ ] **Hours:** Mon–Sun 08:00–20:00, matching the site's openingHoursSpecification. Add special hours for bank holidays.
 - [ ] **GBP description** (750 chars max — use this):
 
-> Cruise'N'Pass is a DVSA-approved driving school in Greater Manchester offering manual and automatic driving lessons from £35 per hour. We cover 30+ areas including Manchester city centre, Salford, Stockport, Bolton, Bury, Didsbury, Chorlton, Cheetham Hill, Sale and Old Trafford, and we train around eight local test centres: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport and Rochdale. Pay-as-you-go lessons (2-hour minimum) or discounted block packages from £320 for 10 hours, plus 30-hour intensive courses for learners who want to pass quickly. Free pick-up from home, work or university, 7 days a week, 7am–8pm. 100+ five-star Google reviews.
+> Cruise'N'Pass is a DVSA-approved driving school in Greater Manchester offering manual and automatic driving lessons from £35 per hour. We cover 30+ areas including Manchester city centre, Salford, Stockport, Bolton, Bury, Didsbury, Chorlton, Cheetham Hill, Sale and Old Trafford, and we train around eight local test centres: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport and Rochdale. Pay-as-you-go lessons (2-hour minimum) or discounted block packages from £320 for 10 hours, plus 30-hour intensive courses for learners who want to pass quickly. Free pick-up from home, work or university, 7 days a week, 8am–8pm. 100+ five-star Google reviews.
 
 - [ ] **Attributes:** "Onsite services" / "Online appointments" as applicable, "Women-owned" if true, languages spoken (English + any others your instructors teach in), wheelchair access if applicable.
-- [ ] **Messaging:** enable, and set the expectation of replies within 1 hour during 7am–8pm (responsiveness is visible to searchers).
+- [ ] **Messaging:** enable, and set the expectation of replies within 1 hour during 8am–8pm (responsiveness is visible to searchers).
 
 ### 1.2 Services & Products (Week 1 — 1 hour)
 
@@ -186,7 +186,7 @@ Add one new H2 + 60–80 words above the prices section (see 3.4) — the homepa
 
 ### 3.4 Intro copy (hero paragraph — replace the current `<p>` under the H1)
 
-> **Driving lessons in Manchester that get you test-ready — not just lesson-ready.** Cruise'N'Pass is a DVSA-approved driving school teaching manual and automatic learners across 30+ Greater Manchester neighbourhoods, from £35 an hour. Lessons are one-to-one in a dual-controlled car, seven days a week (7am–8pm), with free pick-up from home, work or university — and a structured plan built around the test centre you'll actually sit at: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport or Rochdale. Just browsing? See [how many lessons you'll need](/how-many-driving-lessons) or compare [manual vs automatic](/manual-vs-automatic).
+> **Driving lessons in Manchester that get you test-ready — not just lesson-ready.** Cruise'N'Pass is a DVSA-approved driving school teaching manual and automatic learners across 30+ Greater Manchester neighbourhoods, from £35 an hour. Lessons are one-to-one in a dual-controlled car, seven days a week (8am–8pm), with free pick-up from home, work or university — and a structured plan built around the test centre you'll actually sit at: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport or Rochdale. Just browsing? See [how many lessons you'll need](/how-many-driving-lessons) or compare [manual vs automatic](/manual-vs-automatic).
 
 **New body section (insert before "Driving Lesson Prices in Manchester"), H2: "Why Manchester Learners Choose Cruise'N'Pass"** — 80–100 words: DVSA-approved instructors (Hassan, Farhan, Ali and team), transparent pricing with no hidden fees, honest hours estimates ("most learners need 20–40 hours — we'll tell you when you're ready, not sell you extra hours"), 100+ five-star reviews, and free pick-up anywhere in the coverage area. Natural internal links to `/reviews`, `/driving-lesson-prices`, `/driving-test-centres-manchester`.
 
@@ -222,7 +222,7 @@ What changes: `DrivingSchool` (invalid) → `["LocalBusiness","AutomotiveBusines
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "07:00", "closes": "20:00"
+    "opens": "08:00", "closes": "20:00"
   }],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -280,7 +280,7 @@ Breadcrumb: Home › Areas › Driving lessons in [Area]           (BreadcrumbLi
 Eyebrow: [Area], Greater Manchester
 H1: Driving Lessons in [Area] from £35 an Hour
   → Intro ¶1 (60–80 words): what learners practise here + which test centre   [UNIQUE]
-  → Intro ¶2: 1-to-1 lessons, DVSA-approved, free pick-up, 7 days 7am–8pm, honest hours estimate  [semi-unique]
+  → Intro ¶2: 1-to-1 lessons, DVSA-approved, free pick-up, 7 days 8am–8pm, honest hours estimate  [semi-unique]
   → CTAs: "Book a lesson in [Area]" + tel link + trust strip (reviews, DVSA, £35)
 H2: What Your Lessons in [Area] Cover
   → skill progression with named local roads/junctions                        [UNIQUE]

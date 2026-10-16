@@ -21,7 +21,7 @@ Verified live Oct 2026: name, `Driving school` category, phone `07916 155054`. S
 - [x] **Primary category:** `Driving school`. **Secondary:** `Driving instructor`.
 - [x] **Phone:** `07916 155054`
 - [ ] **Website:** `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp`
-- [ ] **Hours:** Mon–Sun 07:00–20:00 — check now, listing showed "Closed · Opens 7am Fri", which suggests a weekday gap
+- [ ] **Hours:** Mon–Sun 08:00–20:00 — check now, listing showed "Closed · Opens 7am Fri", which suggests a weekday gap
 - [ ] **Service areas + map pin (high priority):** paste the 20-area list from bundle §1; pin must sit in Manchester — your public map thumbnail was zoomed to Europe/Middle East, which hurts proximity ranking
 - [ ] **Booking link:** `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_booking#contacts`
 - [ ] **Attributes** (More section): Messaging ON · languages · "Women-owned" only if accurate
@@ -60,7 +60,7 @@ Your live "From Cruise'N'Pass" text is the old copy — replace it:
 
 ## Session 6 — Q&A + Messaging (20 min)
 
-- [ ] Messaging ON (reply within 1 hour 7am–8pm)
+- [ ] Messaging ON (reply within 1 hour 8am–8pm)
 - [ ] Call history ON (if offered)
 - [ ] Seed the 8 questions from bundle §4 — **from real customer phones**, never your own account; answer each from the dashboard within 48h
 

@@ -16,11 +16,11 @@ Total time: ~3 hours for sections 1–6, then 30 min/week ongoing.
 | Phone | `07916 155054` (primary; tracking numbers only as secondary) |
 | Website | `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` |
 | Booking link | `https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_booking#contacts` |
-| Hours | Mon–Sun 07:00–20:00 (+ bank-holiday special hours when relevant) |
+| Hours | Mon–Sun 08:00–20:00 (+ bank-holiday special hours when relevant) |
 
 **Business description (750 char limit — paste as-is):**
 
-> Cruise'N'Pass is a DVSA-approved driving school in Greater Manchester offering manual and automatic driving lessons from £35 per hour. We cover 30+ areas including Manchester city centre, Salford, Stockport, Bolton, Bury, Didsbury, Chorlton, Cheetham Hill, Sale and Old Trafford, and we train around eight local test centres: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport and Rochdale. Pay-as-you-go lessons (2-hour minimum) or discounted block packages from £320 for 10 hours, plus 30-hour intensive courses for learners who want to pass quickly. Free pick-up from home, work or university, 7 days a week, 7am–8pm. 100+ five-star Google reviews.
+> Cruise'N'Pass is a DVSA-approved driving school in Greater Manchester offering manual and automatic driving lessons from £35 per hour. We cover 30+ areas including Manchester city centre, Salford, Stockport, Bolton, Bury, Didsbury, Chorlton, Cheetham Hill, Sale and Old Trafford, and we train around eight local test centres: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport and Rochdale. Pay-as-you-go lessons (2-hour minimum) or discounted block packages from £320 for 10 hours, plus 30-hour intensive courses for learners who want to pass quickly. Free pick-up from home, work or university, 7 days a week, 8am–8pm. 100+ five-star Google reviews.
 
 **Service areas (GBP allows 20 — paste in this order):**
 Manchester · Salford · Stockport · Bolton · Bury · Didsbury · Chorlton · Cheetham Hill · Sale · Old Trafford · Cheadle · Chadderton · Rochdale · Withington · Levenshulme · Longsight · Hulme · Stretford · Crumpsall · Bramhall
@@ -51,7 +51,7 @@ then show directly on the listing.
 
 **Week 1 — Offer post · CTA button: "Book"**
 > 🎓 **10-hour Beginner Boot — £320 (save £30)**
-> New to driving? Start with a proper foundation. Our 10-hour beginner package covers everything from clutch control to confident city driving, one-to-one with a DVSA-approved instructor in a dual-controlled car. Free pick-up from home, work or university anywhere across Greater Manchester — manual or automatic. Most learners start here, then decide if they want more hours. Honest estimates, no upselling. Book today — lessons 7 days a week, 7am–8pm.
+> New to driving? Start with a proper foundation. Our 10-hour beginner package covers everything from clutch control to confident city driving, one-to-one with a DVSA-approved instructor in a dual-controlled car. Free pick-up from home, work or university anywhere across Greater Manchester — manual or automatic. Most learners start here, then decide if they want more hours. Honest estimates, no upselling. Book today — lessons 7 days a week, 8am–8pm.
 > 🔗 https://cruisenpass.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_post_w1#prices
 
 **Week 2 — What's New post · CTA button: "Learn more"**
@@ -84,7 +84,7 @@ account, never fake accounts), then answer from the business dashboard within 48
 | How much are driving lessons in Manchester? | £35 per hour pay-as-you-go (2-hour minimum), or discounted block packages from £320 for 10 hours. Same price for manual and automatic. Full prices: cruisenpass.com/driving-lesson-prices |
 | Do you offer automatic lessons? | Yes — automatic driving lessons across Greater Manchester from £35/hr, in a dual-controlled car. Details: cruisenpass.com/automatic-driving-lessons-manchester |
 | Which test centre do you train around in Stockport? | Most Stockport learners use the Stockport test centre; we also train around Chadderton, Bolton, Bury, Sale, West Didsbury, Cheetham Hill and Rochdale depending on where you live. |
-| Can you pick me up from the University of Manchester? | Yes — free pick-up from home, work, college or university anywhere in our coverage area, 7 days a week from 7am to 8pm. |
+| Can you pick me up from the University of Manchester? | Yes — free pick-up from home, work, college or university anywhere in our coverage area, 7 days a week from 8am to 8pm. |
 | Do you do intensive courses before a test date? | Yes — the Fast Track Pass (30 hours, £990) and Zero to Hero (40 hours, £1,320). Tell us your test date and we'll be honest about whether an intensive suits you. |
 | Is there a discount for block bookings? | Yes — block packages work out cheaper per hour: 10 hours £320 (vs £350 pay-as-you-go), 20 hours £660, 30 hours £990. |
 | Do you teach nervous drivers? | Absolutely — our instructors specialise in nervous beginners. Lessons go at your pace, one-to-one, and we never book a test until you're genuinely ready. |
