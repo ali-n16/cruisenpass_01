@@ -32,13 +32,10 @@ jobs:
       - name: Build deployable site
         run: npm run build
 
-      - name: HTML validation
-        run: |
-          for f in index.html learn-now.html join-cruisenpass.html privacy.html driving-lessons-*.html; do
-            echo "::group::$f"
-            npx html-validate "$f"
-            echo "::endgroup::"
-          done
+      # Single source of truth for validation: html-validate (all pages),
+      # local refs, anchors, JSON-LD, CSP, SEO checks, generator regressions.
+      - name: Validate
+        run: npm run check
 
       - name: Required files
         run: |
@@ -47,18 +44,6 @@ jobs:
           done
           echo "All required files present."
 
-      - name: Check that referenced files exist
-        run: |
-          node scripts/check-local-refs.mjs
-
-      - name: Internal link check (local only)
-        run: |
-          node scripts/check-local-refs.mjs
-          node scripts/check-anchor-refs.mjs
-
-      - name: SEO sanity
-        run: node scripts/check-jsonld.mjs && node scripts/seo-check.mjs && node scripts/check-regressions.mjs
-
       - name: External link check (best effort)
         continue-on-error: true
-        run: node scripts/check-external-links.mjs
+        run: npm run check:links

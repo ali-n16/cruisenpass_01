@@ -76,8 +76,16 @@ async function check() {
     // All locs unique
     assert.strictEqual(new Set(locs).size, 39, 'Duplicate <loc> URLs in sitemap');
 
-    // No lastmod tags anywhere
-    assert(!sitemapContent.includes('<lastmod>'), '<lastmod> tags found in sitemap');
+    // Every <url> carries a valid <lastmod> (date format, not in the future)
+    const urlBlocks = Array.from(sitemapContent.matchAll(/<url>[\s\S]*?<\/url>/g), m => m[0]);
+    assert.strictEqual(urlBlocks.length, 39, 'Expected 39 <url> blocks in sitemap');
+    for (const block of urlBlocks) {
+      const lm = block.match(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/);
+      assert.ok(lm, `<lastmod> missing or malformed: ${block}`);
+      const d = new Date(lm[1]);
+      assert(!isNaN(d.getTime()), `Invalid <lastmod> date: ${lm[1]}`);
+      assert(d <= new Date(), `<lastmod> ${lm[1]} is in the future`);
+    }
 
     // Locs set equals 4 core + 34 generated canonicals
     const expectedLocs = new Set(coreUrls);

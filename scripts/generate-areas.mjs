@@ -5,6 +5,8 @@
 //
 // Usage: node scripts/generate-areas.mjs
 import { readFileSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { statSync } from "node:fs";
 
 const DOMAIN = "https://cruisenpass.com";
 
@@ -12,43 +14,45 @@ const DOMAIN = "https://cruisenpass.com";
 // Area data. `blurb` is hand-written local context; keep it factual and
 // specific — thin/templated copy is a doorway-page risk.
 // `testCentre` is the nearest DVSA test centre we train around for this area.
+// `nearby` is a hand-curated list of geographically adjacent covered areas —
+// used for the "Nearby Areas We Also Cover" block instead of array order.
 // ---------------------------------------------------------------------------
 const AREAS = [
-  { name: "Manchester", slug: "manchester", testCentre: "Cheetham Hill and West Didsbury", blurb: "From the city-centre one-way systems and tram-heavy junctions to the residential streets of Moss Side and Longsight, learning to drive in Manchester proper prepares you for anything the UK road network can throw at you. Our instructors know the Cheetham Hill and West Didsbury test routes inside out." },
-  { name: "Manchester City Centre", slug: "manchester-city-centre", testCentre: "Cheetham Hill", blurb: "City-centre driving is its own skill: bus lanes, box junctions, multi-lane roundabouts and constant pedestrians. Lessons around the A57(M) and inner ring road build the confidence to drive anywhere — and the Cheetham Hill test centre is minutes away." },
-  { name: "Salford", slug: "salford", testCentre: "Cheetham Hill", blurb: "Salford's mix of dual carriageways (A6, A580 East Lancs Road) and regenerated quays roads makes it a great place to learn. We cover Salford, Salford Quays and Broughton with pick-up from home, work or college." },
-  { name: "Broughton", slug: "broughton", testCentre: "Cheetham Hill", blurb: "Lessons around Broughton's terraced streets and the busy A56 Great Clowes Street corridor give you real-world practice close to home, with quick access to test routes towards Salford and Cheetham Hill." },
-  { name: "Bolton", slug: "bolton", testCentre: "Bolton", blurb: "Bolton learners get the best of both worlds: town-centre traffic around the A666 and quieter residential routes in Burnden and Harwood. The Bolton test centre area is our instructors' home turf." },
-  { name: "Burnden", slug: "burnden", testCentre: "Bolton", blurb: "Based around Burnden and the A58, lessons here mix steep residential streets with the busy Manchester–Bolton corridor — ideal preparation for independent driving and sat-nav routes." },
-  { name: "Harwood", slug: "harwood", testCentre: "Bolton", blurb: "Harwood's suburban roads and nearby country lanes towards Edgworth offer calm spaces to build core skills, with busier Bolton routes added as you progress." },
-  { name: "Bury", slug: "bury", testCentre: "Bury", blurb: "Learn around Bury's market-town traffic, the A58 and the Metrolink-crossed junctions learners are routinely tested on. The Bury test centre is well known to our instructors, right down to its trickiest roundabouts." },
-  { name: "Old Trafford", slug: "old-trafford", testCentre: "Sale", blurb: "Match-day traffic aside, Old Trafford is a fantastic training ground: the A56, Trafford Bar junctions and Wharf Road loop all feature in local test routes towards the Sale and West Didsbury centres." },
-  { name: "Rochdale", slug: "rochdale", testCentre: "Rochdale", blurb: "Rochdale lessons mix the A58 and A627(M) corridors with the town-centre one-way system and quieter routes towards Littleborough. The Rochdale test centre sits right on the training ground — instructor Hassan Iqbal has guided learners to passes here, including a pass with zero minors.", passes: [{"name":"Mary-Ann Addo-Mensah","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."}] },
-  { name: "Stretford", slug: "stretford", testCentre: "Sale", blurb: "Stretford learners practise on the A5145 and around the Trafford Centre interchange — one of the busiest roundabout systems in Greater Manchester and a genuine test of lane discipline." },
-  { name: "Sale", slug: "sale", testCentre: "Sale", blurb: "With the Sale test centre on your doorstep, lessons here can mirror real test conditions from day one: the A56 crossroads, Sale Water Park routes and the residential grid off Norris Road." },
-  { name: "Chorlton-Cum-Hardy", slug: "chorlton-cum-hardy", testCentre: "West Didsbury", blurb: "Chorlton's mix of cycle-heavy streets, the A5103 corridor and quiet Barlow Moor Road side roads makes it perfect for staged learning — quiet starts, busy finishes — with West Didsbury test centre close by." },
-  { name: "Withington", slug: "withington", testCentre: "West Didsbury", blurb: "Lessons around Withington's busy Burton Road and the student-dense side streets teach observation and anticipation fast. West Didsbury and West Didsbury (Mauldeth Road) test routes are regular practice ground." },
-  { name: "Didsbury", slug: "didsbury", testCentre: "West Didsbury", blurb: "Didsbury learners train on the A5145 Kingsway, around Didsbury Village and along the Mersey routes — with the West Didsbury test centre practically on the doorstep." },
-  { name: "West Didsbury", slug: "west-didsbury", testCentre: "West Didsbury", blurb: "Home to one of Manchester's busiest test centres, West Didsbury is where many local tests start and end. Learning here means practising the actual roads your test will use." },
-  { name: "Burnage", slug: "burnage", testCentre: "West Didsbury", blurb: "Burnage's long straight residential roads are ideal for mastering clutch control and mirror routines early, before progressing to the A34 Kingsway and nearby test routes." },
-  { name: "Levenshulme", slug: "levenshulme", testCentre: "West Didsbury", blurb: "Levenshulme's A6 Stockport Road is one of South Manchester's most demanding learner corridors — master it here and test-day traffic holds no fears." },
-  { name: "Longsight", slug: "longsight", testCentre: "West Didsbury", blurb: "Lessons around Longsight build city driving skills quickly: the A6, busy Five Ways junction and dense residential parking all sharpen the skills examiners look for." },
-  { name: "Rusholme", slug: "rusholme", testCentre: "West Didsbury", blurb: "The Curry Mile teaches more observation per mile than almost anywhere in Manchester. Rusholme learners graduate to the A34 and towards test routes with genuine confidence." },
-  { name: "Hulme", slug: "hulme", testCentre: "Cheetham Hill", blurb: "Hulme's grid streets and the Princess Parkway (A5103) junctions offer a compact but complete training ground minutes from the city centre and Cheetham Hill test centre." },
-  { name: "Ancoats", slug: "ancoats", testCentre: "Cheetham Hill", blurb: "Ancoats and the New Islington area add tram junctions, 20mph zones and city-centre complexity to your lessons — ideal for learners aiming to drive professionally in town." },
-  { name: "Cheetham Hill", slug: "cheetham-hill", testCentre: "Cheetham Hill", blurb: "Cheetham Hill Road is a test-route staple. Learning here means daily practice on the exact roads used by the Cheetham Hill (Alderglen Road) test centre." },
-  { name: "Crumpsall", slug: "crumpsall", testCentre: "Cheetham Hill", blurb: "Crumpsall learners work on the A6010 ring road and the quieter streets off Crumpsall Lane before progressing to Cheetham Hill test routes just down the road." },
-  { name: "Blackley", slug: "blackley", testCentre: "Cheetham Hill", blurb: "Blackley's mix of the A6010, Victoria Avenue East and residential estates offers a calm start and a demanding finish — a natural progression route for new learners." },
-  { name: "Chadderton", slug: "chadderton", testCentre: "Chadderton", blurb: "Chadderton sits between Oldham and Manchester with the A627(M) and Broadway corridor on the doorstep — and the Chadderton test centre nearby means realistic test-route practice.", passes: [{"name":"Amalu Jose","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},{"name":"Aghabiomon Oladeru","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},{"name":"Maya G Nair","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."}] },
-  { name: "Stockport", slug: "stockport", testCentre: "Stockport", blurb: "Stockport's iconic pyramid roundabout and the A6 corridor are legendary among local learners. Conquer Stockport's road system and you are ready to pass anywhere in Greater Manchester." },
-  { name: "Cheadle", slug: "cheadle", testCentre: "Stockport", blurb: "Lessons around Cheadle Village, the A34 and Kingsway junctions build the multi-lane confidence examiners reward, with Stockport test routes close at hand." },
-  { name: "Cheadle Hulme", slug: "cheadle-hulme", testCentre: "Stockport", blurb: "Cheadle Hulme's station junctions and residential boulevards are a gentle introduction before tackling the A34 and the famous Stockport roundabouts." },
-  { name: "Bramhall", slug: "bramhall", testCentre: "Stockport", blurb: "Bramhall learners progress from quiet village streets to the A555 and A6 corridors, building towards Stockport and Hazel Grove test routes at their own pace." },
-  { name: "Hazel Grove", slug: "hazel-grove", testCentre: "Stockport", blurb: "The A6 through Hazel Grove is a proper test of lane discipline and anticipation — and a staple of local test routes. Learn it with instructors who drive it every day." },
-  { name: "Heald Green", slug: "heald-green", testCentre: "Stockport", blurb: "Heald Green offers quiet residential starts and quick access to the A538 and M56 junctions — ideal for learners who want motorway-roundabout experience before their test." },
-  { name: "Romiley", slug: "romiley", testCentre: "Stockport", blurb: "Romiley's Compsteyn Bridge roads and the B6104 towards Marple give learners country-road experience rare in Greater Manchester, balanced with Stockport test routes nearby." },
-  { name: "Bredbury", slug: "bredbury", testCentre: "Bredbury", blurb: "Bredbury learners master the A560 and the busy Bredbury interchange before progressing towards Stockport — solid preparation for any test centre in the area.", passes: [{"name":"Suba Penmetsa","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."}] },
-  { name: "Atherton", slug: "atherton", testCentre: "Bolton", blurb: "Atherton's A577 and A579 corridors plus quieter streets towards Hag Fold make a well-rounded training ground, with Bolton and Wigan test centres within easy reach." },
+  { name: "Manchester", slug: "manchester", testCentre: "Cheetham Hill and West Didsbury", nearby: ["manchester-city-centre", "hulme", "longsight"], blurb: "From the city-centre one-way systems and tram-heavy junctions to the residential streets of Moss Side and Longsight, learning to drive in Manchester proper prepares you for anything the UK road network can throw at you. Our instructors know the Cheetham Hill and West Didsbury test routes inside out." },
+  { name: "Manchester City Centre", slug: "manchester-city-centre", testCentre: "Cheetham Hill", nearby: ["ancoats", "hulme", "cheetham-hill"], blurb: "City-centre driving is its own skill: bus lanes, box junctions, multi-lane roundabouts and constant pedestrians. Lessons around the A57(M) and inner ring road build the confidence to drive anywhere — and the Cheetham Hill test centre is minutes away." },
+  { name: "Salford", slug: "salford", testCentre: "Cheetham Hill", nearby: ["broughton", "cheetham-hill", "old-trafford"], blurb: "Salford's mix of dual carriageways (A6, A580 East Lancs Road) and regenerated quays roads makes it a great place to learn. We cover Salford, Salford Quays and Broughton with pick-up from home, work or college." },
+  { name: "Broughton", slug: "broughton", testCentre: "Cheetham Hill", nearby: ["salford", "cheetham-hill", "crumpsall"], blurb: "Lessons around Broughton's terraced streets and the busy A56 Great Clowes Street corridor give you real-world practice close to home, with quick access to test routes towards Salford and Cheetham Hill." },
+  { name: "Bolton", slug: "bolton", testCentre: "Bolton", nearby: ["burnden", "harwood", "atherton"], blurb: "Bolton learners get the best of both worlds: town-centre traffic around the A666 and quieter residential routes in Burnden and Harwood. The Bolton test centre area is our instructors' home turf." },
+  { name: "Burnden", slug: "burnden", testCentre: "Bolton", nearby: ["bolton", "harwood", "bury"], blurb: "Based around Burnden and the A58, lessons here mix steep residential streets with the busy Manchester–Bolton corridor — ideal preparation for independent driving and sat-nav routes." },
+  { name: "Harwood", slug: "harwood", testCentre: "Bolton", nearby: ["bolton", "burnden", "bury"], blurb: "Harwood's suburban roads and nearby country lanes towards Edgworth offer calm spaces to build core skills, with busier Bolton routes added as you progress." },
+  { name: "Bury", slug: "bury", testCentre: "Bury", nearby: ["burnden", "rochdale", "bolton"], blurb: "Learn around Bury's market-town traffic, the A58 and the Metrolink-crossed junctions learners are routinely tested on. The Bury test centre is well known to our instructors, right down to its trickiest roundabouts." },
+  { name: "Old Trafford", slug: "old-trafford", testCentre: "Sale", nearby: ["stretford", "salford", "chorlton-cum-hardy"], blurb: "Match-day traffic aside, Old Trafford is a fantastic training ground: the A56, Trafford Bar junctions and Wharf Road loop all feature in local test routes towards the Sale and West Didsbury centres." },
+  { name: "Rochdale", slug: "rochdale", testCentre: "Rochdale", nearby: ["blackley", "crumpsall", "bury"], blurb: "Rochdale lessons mix the A58 and A627(M) corridors with the town-centre one-way system and quieter routes towards Littleborough. The Rochdale test centre sits right on the training ground — instructor Hassan Iqbal has guided learners to passes here, including a pass with zero minors.", passes: [{"name":"Mary-Ann Addo-Mensah","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."}] },
+  { name: "Stretford", slug: "stretford", testCentre: "Sale", nearby: ["old-trafford", "sale", "chorlton-cum-hardy"], blurb: "Stretford learners practise on the A5145 and around the Trafford Centre interchange — one of the busiest roundabout systems in Greater Manchester and a genuine test of lane discipline." },
+  { name: "Sale", slug: "sale", testCentre: "Sale", nearby: ["stretford", "old-trafford", "salford"], blurb: "With the Sale test centre on your doorstep, lessons here can mirror real test conditions from day one: the A56 crossroads, Sale Water Park routes and the residential grid off Norris Road." },
+  { name: "Chorlton-Cum-Hardy", slug: "chorlton-cum-hardy", testCentre: "West Didsbury", nearby: ["old-trafford", "stretford", "withington"], blurb: "Chorlton's mix of cycle-heavy streets, the A5103 corridor and quiet Barlow Moor Road side roads makes it perfect for staged learning — quiet starts, busy finishes — with West Didsbury test centre close by." },
+  { name: "Withington", slug: "withington", testCentre: "West Didsbury", nearby: ["chorlton-cum-hardy", "didsbury", "burnage"], blurb: "Lessons around Withington's busy Burton Road and the student-dense side streets teach observation and anticipation fast. West Didsbury and West Didsbury (Mauldeth Road) test routes are regular practice ground." },
+  { name: "Didsbury", slug: "didsbury", testCentre: "West Didsbury", nearby: ["west-didsbury", "withington", "cheadle"], blurb: "Didsbury learners train on the A5145 Kingsway, around Didsbury Village and along the Mersey routes — with the West Didsbury test centre practically on the doorstep." },
+  { name: "West Didsbury", slug: "west-didsbury", testCentre: "West Didsbury", nearby: ["didsbury", "withington", "chorlton-cum-hardy"], blurb: "Home to one of Manchester's busiest test centres, West Didsbury is where many local tests start and end. Learning here means practising the actual roads your test will use." },
+  { name: "Burnage", slug: "burnage", testCentre: "West Didsbury", nearby: ["levenshulme", "withington", "heald-green"], blurb: "Burnage's long straight residential roads are ideal for mastering clutch control and mirror routines early, before progressing to the A34 Kingsway and nearby test routes." },
+  { name: "Levenshulme", slug: "levenshulme", testCentre: "West Didsbury", nearby: ["longsight", "burnage", "rusholme"], blurb: "Levenshulme's A6 Stockport Road is one of South Manchester's most demanding learner corridors — master it here and test-day traffic holds no fears." },
+  { name: "Longsight", slug: "longsight", testCentre: "West Didsbury", nearby: ["rusholme", "levenshulme", "burnage"], blurb: "Lessons around Longsight build city driving skills quickly: the A6, busy Five Ways junction and dense residential parking all sharpen the skills examiners look for." },
+  { name: "Rusholme", slug: "rusholme", testCentre: "West Didsbury", nearby: ["longsight", "levenshulme", "withington"], blurb: "The Curry Mile teaches more observation per mile than almost anywhere in Manchester. Rusholme learners graduate to the A34 and towards test routes with genuine confidence." },
+  { name: "Hulme", slug: "hulme", testCentre: "Cheetham Hill", nearby: ["manchester-city-centre", "rusholme", "old-trafford"], blurb: "Hulme's grid streets and the Princess Parkway (A5103) junctions offer a compact but complete training ground minutes from the city centre and Cheetham Hill test centre." },
+  { name: "Ancoats", slug: "ancoats", testCentre: "Cheetham Hill", nearby: ["manchester-city-centre", "cheetham-hill", "hulme"], blurb: "Ancoats and the New Islington area add tram junctions, 20mph zones and city-centre complexity to your lessons — ideal for learners aiming to drive professionally in town." },
+  { name: "Cheetham Hill", slug: "cheetham-hill", testCentre: "Cheetham Hill", nearby: ["broughton", "crumpsall", "manchester-city-centre"], blurb: "Cheetham Hill Road is a test-route staple. Learning here means daily practice on the exact roads used by the Cheetham Hill (Alderglen Road) test centre." },
+  { name: "Crumpsall", slug: "crumpsall", testCentre: "Cheetham Hill", nearby: ["blackley", "cheetham-hill", "broughton"], blurb: "Crumpsall learners work on the A6010 ring road and the quieter streets off Crumpsall Lane before progressing to Cheetham Hill test routes just down the road." },
+  { name: "Blackley", slug: "blackley", testCentre: "Cheetham Hill", nearby: ["crumpsall", "rochdale", "cheetham-hill"], blurb: "Blackley's mix of the A6010, Victoria Avenue East and residential estates offers a calm start and a demanding finish — a natural progression route for new learners." },
+  { name: "Chadderton", slug: "chadderton", testCentre: "Chadderton", nearby: ["blackley", "manchester-city-centre", "cheetham-hill"], blurb: "Chadderton sits between Oldham and Manchester with the A627(M) and Broadway corridor on the doorstep — and the Chadderton test centre nearby means realistic test-route practice.", passes: [{"name":"Amalu Jose","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},{"name":"Aghabiomon Oladeru","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},{"name":"Maya G Nair","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."}] },
+  { name: "Stockport", slug: "stockport", testCentre: "Stockport", nearby: ["cheadle", "cheadle-hulme", "hazel-grove"], blurb: "Stockport's iconic pyramid roundabout and the A6 corridor are legendary among local learners. Conquer Stockport's road system and you are ready to pass anywhere in Greater Manchester." },
+  { name: "Cheadle", slug: "cheadle", testCentre: "Stockport", nearby: ["stockport", "cheadle-hulme", "didsbury"], blurb: "Lessons around Cheadle Village, the A34 and Kingsway junctions build the multi-lane confidence examiners reward, with Stockport test routes close at hand." },
+  { name: "Cheadle Hulme", slug: "cheadle-hulme", testCentre: "Stockport", nearby: ["bramhall", "cheadle", "stockport"], blurb: "Cheadle Hulme's station junctions and residential boulevards are a gentle introduction before tackling the A34 and the famous Stockport roundabouts." },
+  { name: "Bramhall", slug: "bramhall", testCentre: "Stockport", nearby: ["cheadle-hulme", "hazel-grove", "romiley"], blurb: "Bramhall learners progress from quiet village streets to the A555 and A6 corridors, building towards Stockport and Hazel Grove test routes at their own pace." },
+  { name: "Hazel Grove", slug: "hazel-grove", testCentre: "Stockport", nearby: ["stockport", "bramhall", "romiley"], blurb: "The A6 through Hazel Grove is a proper test of lane discipline and anticipation — and a staple of local test routes. Learn it with instructors who drive it every day." },
+  { name: "Heald Green", slug: "heald-green", testCentre: "Stockport", nearby: ["cheadle", "cheadle-hulme", "stockport"], blurb: "Heald Green offers quiet residential starts and quick access to the A538 and M56 junctions — ideal for learners who want motorway-roundabout experience before their test." },
+  { name: "Romiley", slug: "romiley", testCentre: "Stockport", nearby: ["bredbury", "hazel-grove", "bramhall"], blurb: "Romiley's Compsteyn Bridge roads and the B6104 towards Marple give learners country-road experience rare in Greater Manchester, balanced with Stockport test routes nearby." },
+  { name: "Bredbury", slug: "bredbury", testCentre: "Bredbury", nearby: ["romiley", "stockport", "hazel-grove"], blurb: "Bredbury learners master the A560 and the busy Bredbury interchange before progressing towards Stockport — solid preparation for any test centre in the area.", passes: [{"name":"Suba Penmetsa","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."}] },
+  { name: "Atherton", slug: "atherton", testCentre: "Bolton", nearby: ["bolton", "burnden", "bury"], blurb: "Atherton's A577 and A579 corridors plus quieter streets towards Hag Fold make a well-rounded training ground, with Bolton and Wigan test centres within easy reach." },
 ];
 
 // ---------------------------------------------------------------------------
@@ -62,15 +66,48 @@ const PACKAGES = [
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-function nearbyAreas(index) {
+function nearbyAreas(a) {
+  const bySlug = new Map(AREAS.map((x) => [x.slug, x]));
   const out = [];
+  // Hand-curated geographic neighbours first…
+  for (const slug of a.nearby || []) {
+    const n = bySlug.get(slug);
+    if (n && n.slug !== a.slug && !out.includes(n)) out.push(n);
+    if (out.length === 3) return out;
+  }
+  // …then fall back to array positions for any area without a full list.
+  const index = AREAS.indexOf(a);
   const n = AREAS.length;
   for (const off of [-1, 1, 2]) {
-    const j = (index + off + n) % n;
-    if (j !== index) out.push(AREAS[j]);
     if (out.length === 3) break;
+    const j = (index + off + n) % n;
+    if (j !== index && !out.includes(AREAS[j])) out.push(AREAS[j]);
   }
   return out;
+}
+
+function lastmodFor(url) {
+  let file = "";
+  try {
+    const path = new URL(url).pathname;
+    file = path.endsWith("/") ? path.replace(/\/$/, "") || "index.html" : path.replace(/^\//, "");
+  } catch {
+    return null;
+  }
+  if (file === "") file = "index.html";
+  if (!/\.[a-z0-9]+$/i.test(file)) file += ".html";
+  // Prefer the file's last git commit date (the build regenerates area pages,
+  // so mtimes always look "fresh"); fall back to mtime outside a git repo.
+  try {
+    const res = spawnSync("git", ["log", "-1", "--format=%ad", "--date=short", "--", file], { encoding: "utf8" });
+    const date = res.status === 0 ? (res.stdout || "").trim() : "";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+  } catch { /* fall through to mtime */ }
+  try {
+    return statSync(file).mtime.toISOString().slice(0, 10);
+  } catch {
+    return null;
+  }
 }
 
 function faqJsonLd(a) {
@@ -95,12 +132,60 @@ function faqJsonLd(a) {
   );
 }
 
+function pillarHub() {
+  const allLinks = AREAS.filter((x) => x.slug !== "manchester").map((x) => `<a href="/driving-lessons-${x.slug}" class="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-brand-electric hover:border-brand-electric font-semibold text-sm transition-colors">Driving lessons in ${esc(x.name)}</a>`).join("\n          ");
+  return `
+        <div class="bg-brand-surface border border-slate-100 rounded-2xl p-6 mt-6">
+          <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">City centre vs suburbs: where will you learn?</h3>
+          <p class="text-slate-600 leading-relaxed mb-3">Manchester is two tests in one. Central lessons cover bus lanes, tram-shared junctions around St Peter's Square, box junctions and multi-lane roundabouts on the inner ring road — see our dedicated <a href="/driving-lessons-manchester-city-centre" class="text-brand-electric underline underline-offset-2">driving lessons in Manchester City Centre</a> page. Suburban lessons in Moss Side, Longsight, Levenshulme and Didsbury build residential observation, parked-car meets and independent sat-nav driving. Your instructor blends both so test day holds no surprises, whether you test at Cheetham Hill or West Didsbury.</p>
+          <p class="text-slate-600 leading-relaxed">Already passed the basics? Practise with our <a href="/learn-now" class="text-brand-electric underline underline-offset-2">free driving tutorials</a> and check <a href="/driving-lesson-prices" class="text-brand-electric underline underline-offset-2">lesson prices</a> before you book.</p>
+        </div>
+        <div class="bg-white border border-slate-100 rounded-2xl p-6 mt-6">
+          <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Postcode districts we pick up from</h3>
+          <p class="text-slate-600 leading-relaxed mb-3">Free pick-up from home, work, college or university across Greater Manchester — 7 days a week, 7am to 8pm. Example postcode districts include:</p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-600 leading-relaxed mb-3">
+            <li>City centre and inner areas: M1, M2, M3, M4, M15</li>
+            <li>North Manchester: M8 (Cheetham Hill, Crumpsall), M9 (Blackley, Harpurhey), M40 (Collyhurst, Miles Platting)</li>
+            <li>South Manchester: M14 (Fallowfield, Rusholme), M19 (Levenshulme, Burnage), M20–M21 (Didsbury, Withington, Chorlton)</li>
+            <li>Salford and Trafford: M5–M7, M16–M17, M32–M33 (Sale, Stretford, Old Trafford)</li>
+            <li>Bolton, Bury and Rochdale: BL1–BL4, BL8–BL9, OL11–OL12</li>
+            <li>Stockport: SK1–SK7 (Stockport, Cheadle, Bramhall, Hazel Grove, Romiley, Bredbury)</li>
+          </ul>
+          <p class="text-slate-600 leading-relaxed">Outside these districts? <a href="tel:+447916155054" class="text-brand-electric underline underline-offset-2">Call 07916 155054</a> — if you are in Greater Manchester we can usually cover you.</p>
+        </div>
+        <div class="bg-white border border-slate-100 rounded-2xl p-6 mt-6">
+          <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Test centres we train around</h3>
+          <p class="text-slate-600 leading-relaxed mb-3">We train on real test routes from early on and only book you in when mock tests show you are ready: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Stockport and Rochdale. Full addresses, route notes and waiting-time advice in our <a href="/driving-test-centres-manchester" class="text-brand-electric underline underline-offset-2">Manchester driving test centres guide</a>.</p>
+        </div>
+        <div class="mt-8">
+          <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Browse every Manchester area we cover</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Choose your neighbourhood for local route notes, your nearest test centre and area FAQs:</p>
+          <div class="flex flex-wrap gap-3">
+          ${allLinks}
+          </div>
+        </div>`;
+}
+
 function page(a, index) {
   const isManchesterPillar = a.slug === "manchester";
-  const title = `Driving Lessons in ${a.name} | Cruise'N'Pass`;
-  const desc = `Driving lessons in ${a.name} with DVSA-approved instructors. ${a.testCentre} test routes, £35/hr, free pick-up. Book today.`;
+  // Pillar is the local guide/hub — homepage (/) is the primary transactional
+  // target for "driving lessons Manchester", so the pillar uses guide intent
+  // to avoid keyword cannibalization.
+  const title = isManchesterPillar
+    ? `Manchester Driving Lessons Guide | Cruise'N'Pass`
+    : `Driving Lessons in ${a.name} | Cruise'N'Pass`;
+  const desc = isManchesterPillar
+    ? `Manchester driving lessons guide: areas covered, Cheetham Hill & West Didsbury test centres, £35/hr prices and FAQs.`
+    : `Driving lessons in ${a.name} with DVSA-approved instructors. ${a.testCentre} test routes, £35/hr, free pick-up. Book today.`;
+  const ogTitle = isManchesterPillar ? title : `Driving Lessons in ${esc(a.name)} | Cruise'N'Pass`;
+  const h1 = isManchesterPillar
+    ? `Driving Lessons in Manchester: The Complete Local Guide`
+    : `Driving Lessons in ${esc(a.name)} from £35 an Hour`;
+  const introLinks = isManchesterPillar
+    ? `Most learners need 20–40 hours — your instructor gives you an honest estimate after your first lesson. Ready to start? <a href="/#contacts" class="text-brand-electric font-semibold underline underline-offset-2">Book driving lessons in Manchester</a> or read <a href="/how-many-driving-lessons" class="text-brand-electric underline underline-offset-2">how many lessons you need</a>.`
+    : `Most learners need 20–40 hours — your instructor gives you an honest estimate after your first lesson. New to driving? Start with our <a href="/driving-lessons-manchester" class="text-brand-electric font-semibold underline underline-offset-2">driving lessons in Manchester</a> hub or read <a href="/how-many-driving-lessons" class="text-brand-electric underline underline-offset-2">how many lessons you need</a>.`;
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
-  const nearby = nearbyAreas(index);
+  const nearby = nearbyAreas(a);
   return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -113,12 +198,14 @@ function page(a, index) {
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="${url}">
-  <meta property="og:title" content="Driving Lessons in ${esc(a.name)} | Cruise'N'Pass">
+  <meta property="og:title" content="${ogTitle}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:image" content="${DOMAIN}/og-image.webp">
+  <meta property="og:image:alt" content="Cruise'N'Pass — DVSA-approved driving lessons in Manchester from £35/hr">
   <meta property="og:site_name" content="Cruise'N'Pass">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="${DOMAIN}/og-image.webp">
 
   <meta name="theme-color" content="#00D1A0">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png">
@@ -134,6 +221,7 @@ function page(a, index) {
     "@context": "https://schema.org",
     "@graph": [
       {"@type": "WebPage","@id": "${url}#webpage","url": "${url}","name": ${JSON.stringify(title)},"description": ${JSON.stringify(desc)},"inLanguage": "en-GB","isPartOf": {"@id": "${DOMAIN}/#website"}},
+      {"@type": "LocalBusiness","@id": "${DOMAIN}/#organization","name": "Cruise'N'Pass","url": "${DOMAIN}","telephone": "+447916155054","email": "cruisenpass@gmail.com","image": "${DOMAIN}/og-image.webp","logo": "${DOMAIN}/logo.png"},
       {"@type": "Service","@id": "${url}#service","serviceType": "Driving lessons","provider": {"@id": "${DOMAIN}/#organization"},"areaServed": {"@type": "Place","name": ${JSON.stringify(a.name)}},"offers": {"@type": "Offer","price": "35","priceCurrency": "GBP","description": "Pay-as-you-go driving lessons in ${esc(a.name)} from £35 per hour"},"url": "${url}"},
       {"@type": "BreadcrumbList","itemListElement": [
         {"@type": "ListItem","position": 1,"name": "Home","item": "${DOMAIN}/"},
@@ -147,6 +235,7 @@ ${faqJsonLd(a)}
   </script>
 </head>
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-electric focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:shadow-lg">Skip to content</a>
 
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -161,14 +250,14 @@ ${faqJsonLd(a)}
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="py-16 md:py-24 bg-gradient-to-b from-brand-surface to-white">
       <div class="max-w-4xl mx-auto px-6">
         <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-4"><a href="/" class="hover:text-brand-electric underline underline-offset-2">Home</a> <span aria-hidden="true">›</span> <a href="/#areas" class="hover:text-brand-electric underline underline-offset-2">Areas</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-slate-700 font-semibold">Driving lessons in ${esc(a.name)}</span></nav>
         <p class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-3"><i aria-hidden="true" class="fa-solid fa-location-dot mr-1"></i> ${esc(a.name)}, Greater Manchester</p>
-        <h1 class="font-heading text-4xl md:text-6xl font-extrabold text-brand-dark tracking-tight mb-6 leading-tight">Driving Lessons in ${esc(a.name)} from £35 an Hour</h1>
+        <h1 class="font-heading text-4xl md:text-6xl font-extrabold text-brand-dark tracking-tight mb-6 leading-tight">${h1}</h1>
         <p class="text-lg text-slate-600 leading-relaxed mb-4">${esc(a.blurb)}</p>
-        <p class="text-slate-600 leading-relaxed mb-8">Lessons are 1-to-1 with a DVSA-approved instructor in a dual-controlled car, with pick-up from home, work, college or university anywhere in ${esc(a.name)} and nearby — 7 days a week, 7am to 8pm. Beginners start on quiet local roads; as you progress you train on ${esc(a.testCentre)} test routes, covering roundabouts, dual carriageways, independent driving and manoeuvres. Most learners need 20–40 hours — your instructor gives you an honest estimate after your first lesson. New to driving? Start with our <a href="/driving-lessons-manchester" class="text-brand-electric font-semibold underline underline-offset-2">driving lessons in Manchester</a> hub or read <a href="/how-many-driving-lessons" class="text-brand-electric underline underline-offset-2">how many lessons you need</a>.</p>
+        <p class="text-slate-600 leading-relaxed mb-8">Lessons are 1-to-1 with a DVSA-approved instructor in a dual-controlled car, with pick-up from home, work, college or university anywhere in ${esc(a.name)} and nearby — 7 days a week, 7am to 8pm. Beginners start on quiet local roads; as you progress you train on ${esc(a.testCentre)} test routes, covering roundabouts, dual carriageways, independent driving and manoeuvres. ${introLinks}</p>
         <div class="flex flex-col sm:flex-row items-center gap-4 mb-10">
           <a href="/#contacts" class="w-full sm:w-auto text-center bg-brand-electric text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book a Lesson in ${esc(a.name)}</a>
           <a href="tel:+447916155054" class="w-full sm:w-auto text-center bg-white border border-slate-200 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all"><i aria-hidden="true" class="fa-solid fa-phone mr-2"></i>Call 07916 155054</a>
@@ -184,12 +273,7 @@ ${faqJsonLd(a)}
     <section class="py-16">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">What Your Lessons in ${esc(a.name)} Cover</h2>
-        <p class="text-slate-600 leading-relaxed mb-6">A structured plan from first clutch control to test standard: quiet-road starts in ${esc(a.name)}, then busier junctions, the ${esc(a.testCentre)} test-route network, night and wet-weather driving, and mock tests under exam conditions. Prefer an intensive route? See our <a href="/intensive-driving-course" class="text-brand-electric underline underline-offset-2">intensive driving courses in Manchester</a> or compare <a href="/manual-vs-automatic" class="text-brand-electric underline underline-offset-2">manual vs automatic</a>.</p>${isManchesterPillar ? `
-        <div class="bg-brand-surface border border-slate-100 rounded-2xl p-6 mt-6">
-          <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">City centre vs suburbs: where will you learn?</h3>
-          <p class="text-slate-600 leading-relaxed mb-3">Manchester is two tests in one. Central lessons cover bus lanes, tram-shared junctions around St Peter's Square, box junctions and multi-lane roundabouts on the inner ring road — see our dedicated <a href="/driving-lessons-manchester-city-centre" class="text-brand-electric underline underline-offset-2">driving lessons in Manchester City Centre</a> page. Suburban lessons in Moss Side, Longsight, Levenshulme and Didsbury build residential observation, parked-car meets and independent sat-nav driving. Your instructor blends both so test day holds no surprises, whether you test at Cheetham Hill or West Didsbury.</p>
-          <p class="text-slate-600 leading-relaxed">Already passed the basics? Practise with our <a href="/learn-now" class="text-brand-electric underline underline-offset-2">free driving tutorials</a> and check <a href="/driving-lesson-prices" class="text-brand-electric underline underline-offset-2">lesson prices</a> before you book.</p>
-        </div>` : ``}
+        <p class="text-slate-600 leading-relaxed mb-6">A structured plan from first clutch control to test standard: quiet-road starts in ${esc(a.name)}, then busier junctions, the ${esc(a.testCentre)} test-route network, night and wet-weather driving, and mock tests under exam conditions. Prefer an intensive route? See our <a href="/intensive-driving-course" class="text-brand-electric underline underline-offset-2">intensive driving courses in Manchester</a> or compare <a href="/manual-vs-automatic" class="text-brand-electric underline underline-offset-2">manual vs automatic</a>.</p>${isManchesterPillar ? pillarHub() : ``}
         <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight mb-8">Lesson Packages &amp; Prices</h2>
         <div class="space-y-3">
           ${PACKAGES.map((p) => `
@@ -240,7 +324,7 @@ ${faqJsonLd(a)}
         </div>
         <div class="text-center">
           <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">Ready to Start in ${esc(a.name)}?</h2>
-          <p class="text-slate-600 text-lg mb-4">Message us on WhatsApp or call <a href="tel:+447916155054" class="text-brand-electric font-semibold underline underline-offset-2">07916 155054</a> — we usually reply within the hour.</p>
+          <p class="text-slate-600 text-lg mb-4">Message us on <a href="https://wa.me/447916155054" target="_blank" rel="noopener noreferrer" class="text-brand-electric font-semibold underline underline-offset-2" title="Opens in new tab">WhatsApp</a> or call <a href="tel:+447916155054" class="text-brand-electric font-semibold underline underline-offset-2">07916 155054</a> — we usually reply within the hour.</p>
           <address class="not-italic text-sm text-slate-500 mb-8">Cruise'N'Pass · ${esc(a.name)}, Greater Manchester · <a href="tel:+447916155054" class="text-brand-electric underline underline-offset-2">07916 155054</a> · <a href="mailto:cruisenpass@gmail.com" class="text-brand-electric underline underline-offset-2">cruisenpass@gmail.com</a> · Open 7 days, 7am–8pm</address>
           <a href="/#contacts" class="inline-block bg-brand-electric text-white font-bold px-10 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-brand-electric/20">Book Your First Lesson</a>
         </div>
@@ -286,14 +370,24 @@ for (const [i, a] of AREAS.entries()) {
 console.log(`generate-areas: wrote ${created} landing page(s)`);
 
 // ---- sitemap.xml ----
+const today = () => new Date().toISOString().slice(0, 10);
 let sitemap = readFileSync("sitemap.xml", "utf8");
 for (const a of AREAS) {
   const url = `${DOMAIN}/driving-lessons-${a.slug}`;
-  const entry = `  <url><loc>${url}</loc></url>\n`;
-  if (!sitemap.includes(url)) sitemap = sitemap.replace("</urlset>", entry + "</urlset>");
+  if (!sitemap.includes(url)) {
+    sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc><lastmod>${lastmodFor(url) || today()}</lastmod></url>\n</urlset>`);
+  }
 }
+
+// Refresh <lastmod> on every sitemap entry from the page file's last git
+// commit date (mtime fallback), so the sitemap never drifts out of date.
+sitemap = sitemap.replace(/<url>[\s\S]*?<\/url>/g, (m) => {
+  const loc = m.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  if (!loc) return m;
+  return `<url><loc>${loc}</loc><lastmod>${lastmodFor(loc) || today()}</lastmod></url>`;
+});
 writeFileSync("sitemap.xml", sitemap);
-console.log("generate-areas: sitemap.xml updated");
+console.log("generate-areas: sitemap.xml updated (lastmod refreshed from git)");
 
 // ---- index.html areas grid ----
 const index = readFileSync("index.html", "utf8");

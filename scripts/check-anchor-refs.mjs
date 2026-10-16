@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
-const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html'];
+const files = readdirSync('.').filter((f) => f.endsWith('.html'));
 const issues = [];
 
 const idSet = new Map();

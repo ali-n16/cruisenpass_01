@@ -20,19 +20,34 @@
     if (!menuBtn || !menuPanel) return;
     menuPanel.classList.add('hidden');
     menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open menu');
     setMenuIcon(false);
+  }
+
+  function openMobileMenu() {
+    if (!menuBtn || !menuPanel) return;
+    menuPanel.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.setAttribute('aria-label', 'Close menu');
+    setMenuIcon(true);
   }
 
   if (menuBtn && menuPanel) {
     menuBtn.addEventListener('click', function () {
       var isHidden = menuPanel.classList.contains('hidden');
-      menuPanel.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-      setMenuIcon(isHidden);
+      if (isHidden) { openMobileMenu(); } else { closeMobileMenu(); }
+    });
+    // Escape closes the menu and returns focus to the toggle.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menuPanel.classList.contains('hidden')) {
+        menuBtn.focus();
+        closeMobileMenu();
+      }
     });
     menuPanel.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeMobileMenu);
     });
+    setMenuIcon(false);
   }
 
   // ---- "Join Cruise'N'Pass" dropdown: click + keyboard + aria state ----

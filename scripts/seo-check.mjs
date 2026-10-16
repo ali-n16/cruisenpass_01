@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 
 const required = {
   'index.html': [
@@ -141,10 +141,42 @@ for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-no
   }
 }
 
+// No duplicate <loc> entries.
+const locs = Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g), m => m[1]);
+if (new Set(locs).size !== locs.length) {
+  const seen = new Set();
+  for (const loc of locs) {
+    if (seen.has(loc)) issues.push(`sitemap.xml: duplicate <loc> ${loc}`);
+    seen.add(loc);
+  }
+}
+
+// Every <loc> must resolve to an existing page file.
+for (const loc of locs) {
+  let path;
+  try { path = new URL(loc).pathname; } catch { issues.push(`sitemap.xml: not a valid URL: ${loc}`); continue; }
+  const file = path === '/' ? 'index.html' : path.replace(/^\//, '').replace(/\/$/, '') + '.html';
+  if (!existsSync(file)) {
+    issues.push(`sitemap.xml: ${loc} has no corresponding file (${file})`);
+  }
+}
+
 // lastmod dates must not be in the future — Google ignores/distrusts them.
 for (const match of sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)) {
   if (new Date(match[1]) > new Date()) {
     issues.push(`sitemap.xml: lastmod ${match[1]} is in the future`);
+  }
+}
+
+// Every indexable page (has a canonical tag) must be listed in the sitemap,
+// so hand-added pages can never be forgotten.
+for (const file of readdirSync('.').filter((f) => f.endsWith('.html'))) {
+  if (file === '404.html') continue; // noindex by design
+  const html = readFileSync(file, 'utf8');
+  const canonical = html.match(/<link\s+rel="canonical" href="([^"]+)"/);
+  if (!canonical) continue; // covered by per-page checks above
+  if (!sitemap.includes(canonical[1])) {
+    issues.push(`sitemap.xml: missing ${canonical[1]} (from ${file})`);
   }
 }
 

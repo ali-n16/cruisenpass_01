@@ -57,9 +57,6 @@
     gtag('js', new Date());
     gtag('config', 'AW-18494089817');
 
-    /* TODO (Google Ads): paste your conversion labels below.
-       Google Ads → Goals → Conversions → Summary → click each conversion → Tag setup.
-       Replace REPLACE_WITH_PHONE_LABEL and REPLACE_WITH_BOOKING_LABEL, then redeploy. */
     var GOOGLE_ADS_PHONE_LABEL = 'dN1DCLT4_ZAdENnU1fJE';
     var GOOGLE_ADS_BOOKING_LABEL = 'eZ_ECK--_pAdENnU1fJE';
 
@@ -91,7 +88,6 @@
 
   <link rel="stylesheet" href="styles.css?v=2">
 
-  <!-- Google Fonts: Space Grotesk (Heading) & Inter (Body) -->
     <link rel="preload" as="image" href="assets/img/hero-index.webp" fetchpriority="high">
 
 
@@ -169,10 +165,12 @@
       {"@type": "City", "name": "Manchester"},
       {"@type": "City", "name": "Manchester City Centre"},
       {"@type": "City", "name": "Old Trafford"},
+      {"@type": "City", "name": "Rochdale"},
       {"@type": "City", "name": "Romiley"},
       {"@type": "City", "name": "Rusholme"},
       {"@type": "City", "name": "Salford"},
       {"@type": "City", "name": "Sale"},
+      {"@type": "City", "name": "Stretford"},
       {"@type": "City", "name": "Stockport"},
       {"@type": "City", "name": "Withington"},
       {"@type": "City", "name": "West Didsbury"}
@@ -315,7 +313,7 @@
         <button type="button" id="ig-prev" class="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-accent hover:border-brand-accent transition-all shadow-md" aria-label="Previous posts"><i aria-hidden="true" class="fa-solid fa-chevron-left"></i></button>
 
         <div class="overflow-hidden -mx-2 px-2 py-2">
-          <div id="ig-track" class="flex transition-transform duration-300 ease-in-out gap-5">
+          <div id="ig-track" class="flex transition-transform duration-300 ease-in-out gap-5" tabindex="0" aria-label="Instagram posts carousel">
             <a href="https://www.instagram.com/p/DN1EmDA2BRl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[280px] md:w-[340px] group" aria-label="View post on Instagram (opens in new tab)" title="Opens in new tab">
               <div class="rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                 <div style="aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff;">
@@ -473,6 +471,11 @@
         }
         if (prevBtn) prevBtn.addEventListener('click', function () { if (slideIndex > 0) { slideIndex--; update(); } });
         if (nextBtn) nextBtn.addEventListener('click', function () { if (slideIndex < maxIndex()) { slideIndex++; update(); } });
+        // Keyboard support: arrows page the carousel (mirrors the reviews track).
+        track.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); if (prevBtn) prevBtn.click(); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); if (nextBtn) nextBtn.click(); }
+        });
         window.addEventListener('resize', update);
 
         // Mobile swipe support (dots remain the primary mobile control)
@@ -514,7 +517,204 @@
         <div class="lg:col-span-9 relative">
           <div class="flex items-center gap-4">
             <button type="button" id="reviews-prev" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Previous review"><i aria-hidden="true" class="fa-solid fa-chevron-left"></i></button>
-            <div class="overflow-hidden flex-grow"><div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews" aria-live="polite" tabindex="0"></div></div>
+            <div class="overflow-hidden flex-grow"><div id="reviews-track" class="flex transition-transform duration-300 ease-in-out gap-4" role="list" aria-label="Google reviews" aria-live="polite" tabindex="0">
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">A</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Amalu Jose</div>
+                    <div class="text-xs text-slate-500">a month ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">N</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Nazia Munawar</div>
+                    <div class="text-xs text-slate-500">4 weeks ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I passed my driving test today and I couldn't have done it without Hassan's excellent instruction. He was patient, professional, and explained everything clearly, which helped build my confidence. His teaching methods made learning enjoyable and stress-free.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">A</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Aghabiomon Oladeru</div>
+                    <div class="text-xs text-slate-500">8 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">M</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">M Chebet</div>
+                    <div class="text-xs text-slate-500">4 weeks ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">Early morning pass. Syed Ali is the guy to go to! He has been very instrumental in getting this pass even with few classes. Highly recommended instructor.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">C</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Cecilia Akpan</div>
+                    <div class="text-xs text-slate-500">8 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">💃💃💃💃💃💃💃💃💃💃 I just passed my Driving test at Chadderton test centre, Manchester. So happy and grateful for the support from Cruise'N'Pass!</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">S</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Suba Penmetsa</div>
+                    <div class="text-xs text-slate-500">a month ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">G</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">G A</div>
+                    <div class="text-xs text-slate-500">2 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I have been doing my lessons with Mr. Ali from Cruise'N'Pass, and passed my driving test today with a couple of minor faults. Ali has been amazing since the beginning, patient and very thorough with the lessons. I'm very grateful to Ali and Cruise'N'Pass for their efforts.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">M</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Mary-Ann Addo-Mensah</div>
+                    <div class="text-xs text-slate-500">2 weeks ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">M</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Maya G Nair</div>
+                    <div class="text-xs text-slate-500">9 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">C</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Christopher Nwatuzor</div>
+                    <div class="text-xs text-slate-500">a month ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I was trained by Hassan. I can confirm he is a great instructor and he was committed to making sure I passed. I learnt a lot from him beyond what the test requires. I can recommend Hassan 100% to anyone going for exam.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">Q</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Qaddafi Azad</div>
+                    <div class="text-xs text-slate-500">2 weeks ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I'm very happy to say that today I passed my driving test! A big thank you to Mr. Farhan for his patience, professional guidance, and excellent teaching throughout my lessons. His clear instructions and encouragement gave me the confidence to succeed. I highly recommend Mr. Farhan.</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">S</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Saidur Rahman</div>
+                    <div class="text-xs text-slate-500">a month ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">Alhamdulillah, today I passed my driving test. Thank you so much, Farhan Sir. You are truly brilliant and very helpful. Because of your guidance and support, I passed my driving test. I will pray that Allah blesses you, helps you at all times, and rewards you for your kindness. Thank you again!</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">S</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Sala Phix</div>
+                    <div class="text-xs text-slate-500">4 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I passed my driving test today in Chadderton with Cruise'n'Pass! I'm very happy with the whole driving experience. A big thank you to my instructor, Farhan. Thanks very much!</p>
+            </div>
+            <div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">U</div>
+                  <div>
+                    <div class="font-bold text-brand-dark text-sm">Umair Ali</div>
+                    <div class="text-xs text-slate-500">3 months ago</div>
+                  </div>
+                </div>
+                <i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i>
+              </div>
+              <div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div>
+              <p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">I had an amazing experience learning with Cruise'n'Pass Driving School, especially with my instructor Sir Farhan. He is very professional, patient, and explains everything clearly, which really helped build my confidence on the road.</p>
+            </div>
+          </div></div>
             <button type="button" id="reviews-next" class="hidden md:flex w-10 h-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:text-brand-electric hover:border-brand-electric transition-all flex-shrink-0" aria-label="Next review"><i aria-hidden="true" class="fa-solid fa-chevron-right"></i></button>
           </div>
           <div class="flex md:hidden justify-center gap-2 mt-4" id="reviews-dots"></div>
@@ -523,25 +723,6 @@
       </div>
     </div>
   </section>
-
-  <script type="application/json" id="reviews-data">
-[
-  {"name":"Amalu Jose","initial":"A","color":"bg-indigo-500","time":"a month ago","text":"I am really happy that I passed my driving test in Chadderton today. A special thanks to my instructor, Mr Farhan, who built my confidence throughout my driving lessons and supported me in passing my test. I really appreciate his patience and guidance."},
-  {"name":"Nazia Munawar","initial":"N","color":"bg-pink-500","time":"4 weeks ago","text":"I passed my driving test today and I couldn't have done it without Hassan's excellent instruction. He was patient, professional, and explained everything clearly, which helped build my confidence. His teaching methods made learning enjoyable and stress-free."},
-  {"name":"Aghabiomon Oladeru","initial":"A","color":"bg-emerald-500","time":"8 months ago","text":"I'm so so excited right now! It was an early morning first time pass for me today at Chadderton test centre. My driving instructor Mr Ali was so so patient and helpful on this journey. I recommend him 100%."},
-  {"name":"M Chebet","initial":"M","color":"bg-orange-500","time":"4 weeks ago","text":"Early morning pass. Syed Ali is the guy to go to! He has been very instrumental in getting this pass even with few classes. Highly recommended instructor."},
-  {"name":"Cecilia Akpan","initial":"C","color":"bg-purple-500","time":"8 months ago","text":"💃💃💃💃💃💃💃💃💃💃 I just passed my Driving test at Chadderton test centre, Manchester. So happy and grateful for the support from Cruise'N'Pass!"},
-  {"name":"Suba Penmetsa","initial":"S","color":"bg-teal-500","time":"a month ago","text":"I passed my driving test in Bredbury today, and I would like to sincerely thank my instructor, Mr. Hassan Iqbal, for his excellent guidance and support throughout my learning journey. Couldn't have done it without him."},
-  {"name":"G A","initial":"G","color":"bg-blue-500","time":"2 months ago","text":"I have been doing my lessons with Mr. Ali from Cruise'N'Pass, and passed my driving test today with a couple of minor faults. Ali has been amazing since the beginning, patient and very thorough with the lessons. I'm very grateful to Ali and Cruise'N'Pass for their efforts."},
-  {"name":"Mary-Ann Addo-Mensah","initial":"M","color":"bg-rose-500","time":"2 weeks ago","text":"I passed my test with no minors in Rochdale yesterday and I couldn't have done it without Mr Hassan Iqbal's expertise! I had an extremely limited time to prepare for this test but he was very patient and knowledgeable, explained things clearly, and gave me the confidence I needed."},
-  {"name":"Maya G Nair","initial":"M","color":"bg-amber-500","time":"9 months ago","text":"I passed my driving test in Chadderton test centre today. I do not have words to say thank you to my instructor Mr. Ali. He is one of the best teachers with lots of patience and trust in you. I will highly recommend him for your driving journey."},
-  {"name":"Christopher Nwatuzor","initial":"C","color":"bg-cyan-500","time":"a month ago","text":"I was trained by Hassan. I can confirm he is a great instructor and he was committed to making sure I passed. I learnt a lot from him beyond what the test requires. I can recommend Hassan 100% to anyone going for exam."},
-  {"name":"Qaddafi Azad","initial":"Q","color":"bg-lime-600","time":"2 weeks ago","text":"I'm very happy to say that today I passed my driving test! A big thank you to Mr. Farhan for his patience, professional guidance, and excellent teaching throughout my lessons. His clear instructions and encouragement gave me the confidence to succeed. I highly recommend Mr. Farhan to anyone looking for a great driving instructor."},
-  {"name":"Saidur Rahman","initial":"S","color":"bg-violet-500","time":"a month ago","text":"Alhamdulillah, today I passed my driving test. Thank you so much, Farhan Sir. You are truly brilliant and very helpful. Because of your guidance and support, I passed my driving test. I will pray that Allah blesses you, helps you at all times, and rewards you for your kindness. Thank you again!"},
-  {"name":"Sala Phix","initial":"S","color":"bg-fuchsia-500","time":"4 months ago","text":"I passed my driving test today in Chadderton with Cruise'n'Pass! I'm very happy with the whole driving experience. A big thank you to my instructor, Farhan. Thanks very much!"},
-  {"name":"Umair Ali","initial":"U","color":"bg-sky-500","time":"3 months ago","text":"I had an amazing experience learning with Cruise'n'Pass Driving School, especially with my instructor Sir Farhan. He is very professional, patient, and explains everything clearly, which really helped build my confidence on the road."}
-]
-  </script>
 
   <!-- Prices & Plans Section -->
   <section id="prices" class="py-20 bg-brand-surface">
@@ -568,7 +749,7 @@
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">Greater Manchester & Beyond</span>
         <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">Areas We Cover Across Greater Manchester</h2>
-        <p class="text-slate-500 text-lg leading-relaxed">Our instructors pick up learners from these areas across Greater Manchester.</p>
+        <p class="text-slate-500 text-lg leading-relaxed">Our instructors pick up learners from these areas across Greater Manchester. New here? Start with our <a href="/driving-lessons-manchester" class="text-brand-electric font-semibold underline underline-offset-2">Manchester driving lessons guide</a>.</p>
       </div>
       <div class="flex flex-wrap justify-center gap-3">
         <!-- AREAS:START -->
@@ -715,7 +896,6 @@
         <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
         <a href="https://www.youtube.com/@cruisenpass" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-red-500 hover:text-white text-slate-300 transition-all" aria-label="YouTube (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-youtube"></i></a>
-        <a href="/privacy" class="text-xs text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
         <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white hover:text-black text-slate-300 transition-all" aria-label="TikTok (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -728,20 +908,14 @@
       var prevBtn = document.getElementById('reviews-prev');
       var nextBtn = document.getElementById('reviews-next');
       var dotsWrap = document.getElementById('reviews-dots');
-      var dataEl = document.getElementById('reviews-data');
-      if (!track || !dataEl) return;
-      var reviews = [];
-      try { reviews = JSON.parse(dataEl.textContent); } catch (e) { console.error('Could not parse reviews data', e); return; }
+      // Cards are prerendered in the HTML (crawlable + no-JS safe); the JS
+      // below only adds paging, keyboard, swipe and read-more behaviour.
+      if (!track || track.children.length === 0) return;
+      var cardCount = track.children.length;
       var CARD_WIDTH = 320; var CARD_WIDTH_MOBILE = 280; var GAP = 16; var currentIndex = 0; var resizeTimer = null;
-      function escapeHtml(str) { var map = { '&': '&' + 'amp;', '<': '&' + 'lt;', '>': '&' + 'gt;', '"': '&' + 'quot;', "'": '&' + '#39;' }; return String(str).replace(/[&<>"']/g, function(ch) { return map[ch] || ch; }); }
       function cardWidth() { return window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH; }
       function getVisibleCount() { return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
-      function maxSlideIndex() { return Math.max(0, reviews.length - getVisibleCount()); }
-      function renderCards() {
-        track.innerHTML = reviews.map(function(r) {
-          return '<div class="review-card min-w-[280px] md:min-w-[320px] w-[280px] md:w-[320px] bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex-shrink-0" role="listitem"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-sm">' + escapeHtml(r.initial) + '</div><div><div class="font-bold text-brand-dark text-sm">' + escapeHtml(r.name) + '</div><div class="text-xs text-slate-500">' + escapeHtml(r.time) + '</div></div></div><i aria-hidden="true" class="fa-brands fa-google text-slate-400 text-lg"></i></div><div class="flex text-yellow-400 text-xs gap-0.5 mb-2"><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-star"></i><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-500 ml-1 text-xs"></i></div><p class="review-text text-slate-500 text-sm leading-relaxed line-clamp-4">' + escapeHtml(r.text) + '</p></div>';
-        }).join('');
-      }
+      function maxSlideIndex() { return Math.max(0, cardCount - getVisibleCount()); }
       function renderDots() {
         if (!dotsWrap) return;
         var totalDots = maxSlideIndex() + 1;
@@ -789,7 +963,7 @@
       track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
       track.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; const swipeThreshold = 50; if (touchEndX < touchStartX - swipeThreshold) { if (nextBtn) nextBtn.click(); } if (touchEndX > touchStartX + swipeThreshold) { if (prevBtn) prevBtn.click(); } }, { passive: true });
       window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(updatePosition, 150); });
-      renderCards(); renderDots(); updatePosition();
+      renderDots(); updatePosition();
       if (document.fonts && document.fonts.ready) { document.fonts.ready.then(attachReadMoreToggles); } else { window.addEventListener('load', attachReadMoreToggles); }      setTimeout(attachReadMoreToggles, 500);
     })();
   </script>

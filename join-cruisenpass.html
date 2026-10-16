@@ -55,9 +55,13 @@
       "value": "instructor-001"
     },
     "hiringOrganization": {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "AutomotiveBusiness"],
       "@id": "https://cruisenpass.com/#organization",
       "name": "Cruise'N'Pass",
+      "url": "https://cruisenpass.com",
+      "telephone": "+447916155054",
+      "email": "cruisenpass@gmail.com",
+      "image": "https://cruisenpass.com/og-image.webp",
       "sameAs": "https://cruisenpass.com",
       "logo": "https://cruisenpass.com/logo.png"
     },
@@ -287,7 +291,7 @@
               <i aria-hidden="true" class="fa-solid fa-check text-sm"></i>
             </div>
             <div>
-              <h4 class="font-bold text-brand-dark">DVSA Approved Driving Instructor (ADI)</h4>
+              <h3 class="font-bold text-brand-dark text-lg">DVSA Approved Driving Instructor (ADI)</h3>
               <p class="text-slate-500 text-sm">Fully qualified with a current green badge, or a trainee pink badge with appropriate supervision.</p>
             </div>
           </li>
@@ -296,7 +300,7 @@
               <i aria-hidden="true" class="fa-solid fa-check text-sm"></i>
             </div>
             <div>
-              <h4 class="font-bold text-brand-dark">Dual-Controlled Vehicle</h4>
+              <h3 class="font-bold text-brand-dark text-lg">Dual-Controlled Vehicle</h3>
               <p class="text-slate-500 text-sm">A modern, well-maintained car with dual controls and valid business insurance.</p>
             </div>
           </li>
@@ -305,7 +309,7 @@
               <i aria-hidden="true" class="fa-solid fa-check text-sm"></i>
             </div>
             <div>
-              <h4 class="font-bold text-brand-dark">Professional & Patient Attitude</h4>
+              <h3 class="font-bold text-brand-dark text-lg">Professional & Patient Attitude</h3>
               <p class="text-slate-500 text-sm">Great communication skills and a genuine desire to help nervous learners build confidence.</p>
             </div>
           </li>
@@ -314,7 +318,7 @@
               <i aria-hidden="true" class="fa-solid fa-check text-sm"></i>
             </div>
             <div>
-              <h4 class="font-bold text-brand-dark">Available Across Greater Manchester</h4>
+              <h3 class="font-bold text-brand-dark text-lg">Available Across Greater Manchester</h3>
               <p class="text-slate-500 text-sm">Willing to cover one or more of our service areas in and around Manchester.</p>
             </div>
           </li>
@@ -322,7 +326,7 @@
       </div>
 
       <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
-        <h3 class="font-heading font-bold text-2xl text-brand-dark mb-4">Not Yet Qualified?</h3>
+        <h2 class="font-heading font-bold text-2xl text-brand-dark mb-4">Not Yet Qualified?</h2>
         <p class="text-slate-500 leading-relaxed mb-6">If you're thinking about becoming an ADI, we can point you toward reputable training providers and discuss future opportunities with Cruise'N'Pass once you're qualified.</p>
         <a href="#apply" class="inline-block bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-2.5 rounded-xl transition-all">
           Register Your Interest
@@ -340,7 +344,9 @@
         <p class="text-slate-500 text-lg leading-relaxed">Tell us about yourself and we'll be in touch within 48 hours to discuss the next steps.</p>
       </div>
 
-      <form id="application-form" class="bg-brand-surface border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+      <form id="application-form" action="https://formspree.io/f/xpqvogbl" method="POST" class="bg-brand-surface border border-slate-100 rounded-3xl p-8 shadow-sm space-y-5">
+        <input type="hidden" name="_subject" value="Instructor application — cruisenpass.com">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label for="first-name" class="block text-sm font-semibold text-brand-dark mb-2">First Name</label>
@@ -391,7 +397,7 @@
             <i class="fa-solid fa-check text-lg" aria-hidden="true"></i>
           </div>
           <div>
-            <p class="font-heading font-bold text-brand-dark">Email opened</p>
+            <p class="font-heading font-bold text-brand-dark">Application sent!</p>
             <p data-msg class="text-sm text-emerald-800 mt-1 leading-relaxed"></p>
           </div>
         </div>
@@ -462,7 +468,6 @@
         <a href="https://m.facebook.com/CruiseNPass-211956475539908/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-electric hover:text-white text-slate-300 transition-all" aria-label="Facebook (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/cruisenpass/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-brand-accent hover:text-white text-slate-300 transition-all" aria-label="Instagram (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
         <a href="https://www.youtube.com/@cruisenpass" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-red-500 hover:text-white text-slate-300 transition-all" aria-label="YouTube (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-youtube"></i></a>
-        <a href="/privacy" class="text-xs text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
         <a href="https://www.tiktok.com/@cruisenpassdriving" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white hover:text-black text-slate-300 transition-all" aria-label="TikTok (opens in new tab)" title="Opens in new tab"><i aria-hidden="true" class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -476,7 +481,10 @@
     // Formspree endpoint). Fallback (endpoint empty or request fails): open the
     // visitor's email app pre-filled via mailto:, as before.
     (function () {
-      var FORM_ENDPOINT = ''; // e.g. 'https://formspree.io/f/xxxxxxx'
+      // Uses the same Formspree endpoint as the booking form; the form also
+      // has action/method so it still works with JavaScript disabled.
+      // Fallback if the endpoint is unreachable: mailto: pre-fill.
+      var FORM_ENDPOINT = 'https://formspree.io/f/xpqvogbl';
       var form = document.getElementById('application-form');
       if (!form) return;
       var successEl = document.getElementById('application-success');
@@ -486,9 +494,17 @@
         return el ? el.value.trim() : '';
       }
 
+      function showSuccess(text) {
+        if (!successEl) return;
+        var msg = successEl.querySelector('[data-msg]');
+        if (msg) msg.textContent = text;
+        successEl.classList.remove('hidden');
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (field('_gotcha')) { showSuccess('Thank you — your application has been sent.'); return; } // honey-pot: silently drop bots
         if (successEl) successEl.classList.add('hidden');
 
         var firstName = field('first-name');
@@ -510,15 +526,8 @@
           .map(function (pair) { return pair[0] + ': ' + pair[1]; })
           .join('\n');
 
-        function showSuccess(text) {
-          if (!successEl) return;
-          var msg = successEl.querySelector('[data-msg]');
-          if (msg) msg.textContent = text;
-          successEl.classList.remove('hidden');
-        }
-
         function submitViaEndpoint() {
-          var data = {};
+          var data = { _subject: subject };
           lines.forEach(function (pair) { if (pair[1] !== '') data[pair[0]] = pair[1]; });
           return fetch(FORM_ENDPOINT, {
             method: 'POST',
@@ -533,7 +542,7 @@
 
         function submitViaMailto() {
           window.location.href = 'mailto:cruisenpass@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          showSuccess('Your email app should now open with your application pre-filled — just press send. If nothing opened, email us directly at cruisenpass@gmail.com.');
+          showSuccess('Your email app should now open with your application pre-filled — just press send. We\u2019ll be in touch soon.');
         }
 
         if (FORM_ENDPOINT) {

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
-const files = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html'];
+// Every page: any hand-edited JSON-LD on any page must parse.
+const files = readdirSync('.').filter((f) => f.endsWith('.html'));
 const issues = [];
 
 for (const file of files) {
