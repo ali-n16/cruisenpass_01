@@ -12,6 +12,15 @@ const required = {
     /<link\s+rel="canonical"/,
     /"@type":\s*\["LocalBusiness",\s*"AutomotiveBusiness"\]/,
   ],
+  'about.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<meta\s+property="og:title"/,
+    /<meta\s+property="og:description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"AboutPage"/,
+    /"@type"\s*:\s*"BreadcrumbList"/,
+  ],
   'learn-now.html': [
     /<title>.*<\/title>/,
     /<meta\s+name="description"/,
@@ -116,6 +125,11 @@ for (const file of readdirSync('.').filter((f) => /^driving-lessons-.+\.html$/.t
 
 const issues = [];
 
+const homepage = readFileSync('index.html', 'utf8');
+if (/"aggregateRating"/.test(homepage)) {
+  issues.push('index.html: aggregateRating is not used for third-party Google reviews');
+}
+
 for (const [file, patterns] of Object.entries(required)) {
   const html = readFileSync(file, 'utf8');
   for (const re of patterns) {
@@ -135,7 +149,7 @@ for (const [file, patterns] of Object.entries(required)) {
 }
 
 const sitemap = readFileSync('sitemap.xml', 'utf8');
-for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/learn-now', 'https://cruisenpass.com/join-cruisenpass', 'https://cruisenpass.com/privacy']) {
+for (const url of ['https://cruisenpass.com/', 'https://cruisenpass.com/about', 'https://cruisenpass.com/learn-now', 'https://cruisenpass.com/join-cruisenpass', 'https://cruisenpass.com/privacy']) {
   if (!sitemap.includes(url)) {
     issues.push(`sitemap.xml: missing ${url}`);
   }
