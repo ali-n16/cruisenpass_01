@@ -385,6 +385,7 @@ This section was added after implementation, so the review above remains a recor
 - **About page:** `/about` added with the school's approach, coverage, review proof, team note, pricing/test-centre links and `AboutPage` schema. Linked from the homepage, area pages and every standard footer; added to the sitemap, build manifest and SEO checks.
 - **Area pages:** priority areas (Didsbury, West Didsbury, Chorlton, Sale, Stockport, Cheetham Hill, Manchester City Centre) now have a unique local-driving note and two area-specific FAQs. All area pages now show official test-centre data and link to the guide.
 - **Metadata:** Manchester hub title differentiated to `Driving Lessons in Manchester Guide (2026)`; costs page retitled and H1 changed to remove the "Prices" overlap; privacy description shortened; relative review dates replaced with "Google review" and a sync date.
+- **"Driving school in Manchester" targeting:** homepage title, H1 and opening copy now use the exact phrase; added a "Why learners choose Cruise'N'Pass" section; About page title/H1 now target the same phrase; footer link text and hub intro reinforced it. This is on-page work, not a ranking guarantee.
 - **Regression checks:** `scripts/seo-check.mjs` now requires the About page, asserts it is in the sitemap and blocks `aggregateRating` returning to the homepage.
 
 ### Still outstanding
@@ -395,6 +396,7 @@ This section was added after implementation, so the review above remains a recor
 - **Original local photography.** No new images were added; the existing Instagram imagery remains the only visual proof. Area pages still have no local photo.
 - **First-party review collection / schema.** Google reviews are visible but no longer marked up. If review rich results are wanted, collect first-party reviews on the site and mark those up.
 - **Link building and GBP execution.** The local SEO action plan's review-growth, GBP posting and citation work is outside this PR.
+- **Search Console and Google Business Profile verification.** Without verified access, index status and Map Pack visibility cannot be confirmed or fixed from the codebase. The user must verify the property, submit the sitemap, request indexing and confirm the GBP category/website/service areas.
 
 ### Verification
 
