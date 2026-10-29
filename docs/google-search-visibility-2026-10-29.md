@@ -6,6 +6,51 @@
 
 ---
 
+## 0. Check results — 29 October 2026
+
+### Live site
+
+- Homepage title is live as `Driving School in Manchester | Lessons from £35/hr`.
+- The "Why learners choose Cruise'N'Pass" section, `/about` page and sitewide "Driving school in Manchester" footer link are live.
+- Sitemap returns 52 URLs; IndexNow accepted 52 URLs.
+- DNS has a `google-site-verification` TXT record, so the Search Console domain property has been verified at some point. I cannot see the index report or sitemap status without account access.
+
+### Google Maps / Google Business Profile — the important finding
+
+Searching Google Maps for `Cruise'N'Pass Manchester` returns **two listings for the same business**:
+
+| | Listing A | Listing B |
+|---|---|---|
+| Name | `Cruise'N'Pass` | `cruisenpass driving school` |
+| Rating | 5.0 | No reviews |
+| Category | Driving school | Driving school |
+| Website | cruisenpass.com | cruisenpass.com |
+| Phone | 07916 155054 | 07916 155054 |
+| Address shown | None | 81 Broadway, Manchester M40 3PD |
+| Hours | Closes 6pm | Closes 8pm |
+| Map pin | **47.73855, 12.5088275** — Unterwössen, Bavaria, Germany | 53.5179374, -2.1679703 — Manchester |
+
+Place IDs:
+
+- Listing A: `ChIJMRHz3_Cqqa4R8hXOlAsZokI`
+- Listing B: `ChIJ89cmFTONLCgRFSzRjfjzIEQ`
+
+A Maps search for `driving school in Manchester` returned six results in the limited view, and **neither listing appeared**. The top results were other driving schools and sponsored listings.
+
+**Diagnosis:** this is a Google Business Profile problem, not a website-content problem. The listing with the 5.0 rating and the business's website/phone is pinned in Bavaria, and a second Manchester listing at 81 Broadway has no reviews. Google is being asked to rank a mislocated listing and a duplicate listing; that is very likely why the business is absent from the Manchester Map Pack. The duplicate also splits reviews and authority, and the 6pm/8pm hours conflict.
+
+### What to do about the listings
+
+1. Sign in at [business.google.com](https://business.google.com) and check which of the two listings you actually manage/own. If you do not recognise one, it may be an old or third-party-created duplicate.
+2. **Fix Listing A's location first.** If Cruise'N'Pass is a service-area business, remove any physical address, set the service areas to Manchester and the covered areas, and make sure the map pin is in Greater Manchester — not Bavaria. If you have a real customer-facing address, use only that address.
+3. **Merge or remove Listing B.** Do not delete the listing with the reviews until Google confirms the reviews will move. Use "Suggest an edit" → "Close or remove" → "Duplicate", or contact Google Business Profile support and ask them to merge the duplicate into the verified listing.
+4. **Do not create a third listing.** That makes the duplicate problem worse.
+5. Set both listings to the same hours (the site says 8am–8pm; Listing A says 6pm), category **Driving school**, website and phone.
+6. After the merge/fix, ask Google support for the case ID, then monitor Maps for 2–4 weeks. Review counts and rankings can take time to settle.
+7. If the 5.0 listing is not yours and cannot be claimed, report it as a fake/duplicate listing using the Business Profile redress form.
+
+---
+
 ## 1. What has been changed on the website
 
 The homepage previously targeted "driving lessons in Manchester" everywhere; "driving school in Manchester" appeared mainly in image alt text and a review. That is a relevance gap for the exact query. The following changes are in the PR branch:
