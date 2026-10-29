@@ -10,6 +10,7 @@ const OUT = "public";
 
 const rootFiles = [
   "index.html",
+  "about.html",
   "learn-now.html",
   "join-cruisenpass.html",
   "privacy.html",

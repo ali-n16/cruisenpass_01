@@ -3,7 +3,7 @@
 **Site:** [cruisenpass.com](https://cruisenpass.com)  
 **Reviewed:** 29 October 2026  
 **Scope:** 52 HTML pages (51 indexable + the 404), live `robots.txt`/`sitemap.xml`, metadata, headings, body copy, internal links, local accuracy, structured data and E-E-A-T signals.  
-**Method:** parsed the local build; measured `<main>` word counts; compared the 35 area pages using 5-gram Jaccard similarity and exact-sentence overlap; checked all titles, descriptions, H1s, canonicals and schema; cross-checked test-centre claims against DVSA's published data. No changes were made to the site.
+**Method:** parsed the local build; measured `<main>` word counts; compared the 35 area pages using 5-gram Jaccard similarity and exact-sentence overlap; checked all titles, descriptions, H1s, canonicals and schema; cross-checked test-centre claims against DVSA's published data. The audit was completed before implementation; section 13 lists the fixes applied in this PR.
 
 ---
 
@@ -370,6 +370,38 @@ That structure is repeatable, but the content inside it is not. That is the diff
 
 ---
 
+## 13. Fixes applied in this PR (29 October 2026)
+
+This section was added after implementation, so the review above remains a record of the original state.
+
+### Fixed
+
+- **Local accuracy:** Didsbury now uses the A34 Kingsway and the A5145 as Wilmslow Road / Parrs Wood Lane / Barlow Moor Road; Atherton uses the Atherton (Manchester) centre and mentions Bolton; the Stockport cluster uses Bredbury (Manchester) and states that there is no separate Stockport centre; Withington no longer refers to a "Mauldeth Road" centre.
+- **Route claims:** "exact/actual test routes" replaced with "the roads and junctions local tests commonly use" across the site. The Cheetham Hill article's disclaimer is now consistent with the rest of the site.
+- **Trust claims:** "DVSA-approved driving school" corrected to "DVSA-approved instructors"; "Top Rated" replaced with the verifiable 100+ Google reviews; "five-star" claims removed; reply-time promises standardised to 24 hours.
+- **Structured data:** `aggregateRating` removed from the homepage `LocalBusiness`; the third-party `Review` ItemList removed from the reviews page; area-page `WebSite` node added; `Service` price made numeric; `sameAs` added to the area organisation node.
+- **Official data:** DVSA September 2026 waits and 2025/26 first-attempt pass rates added to the test-centres page, the Cheetham Hill article and the area-page test-centre sections, with source and date.
+- **Centre list:** corrected to the nine centres used: Cheetham Hill, West Didsbury, Sale, Bury, Chadderton, Bolton, Bredbury, Rochdale and Atherton. Stockport is treated as served by Bredbury, not as a separate centre.
+- **About page:** `/about` added with the school's approach, coverage, review proof, team note, pricing/test-centre links and `AboutPage` schema. Linked from the homepage, area pages and every standard footer; added to the sitemap, build manifest and SEO checks.
+- **Area pages:** priority areas (Didsbury, West Didsbury, Chorlton, Sale, Stockport, Cheetham Hill, Manchester City Centre) now have a unique local-driving note and two area-specific FAQs. All area pages now show official test-centre data and link to the guide.
+- **Metadata:** Manchester hub title differentiated to `Driving Lessons in Manchester Guide (2026)`; costs page retitled and H1 changed to remove the "Prices" overlap; privacy description shortened; relative review dates replaced with "Google review" and a sync date.
+- **Regression checks:** `scripts/seo-check.mjs` now requires the About page, asserts it is in the sitemap and blocks `aggregateRating` returning to the homepage.
+
+### Still outstanding
+
+- **Full area-page rewrite.** The seven priority pages are materially better, but most area pages still share the package block, generic FAQs and template sections. Tier B/C pages still need 500+ words of genuinely unique local content, or consolidation.
+- **Individual test-centre pages.** The guide now has the data and nine centre summaries, but only Cheetham Hill has a dedicated page. West Didsbury, Bury, Sale and Bredbury are the next four.
+- **Named instructor bios.** The About page names the instructors mentioned in reviews, but there are no photos, ADI numbers, specialisms or area coverage per instructor. These need real business input.
+- **Original local photography.** No new images were added; the existing Instagram imagery remains the only visual proof. Area pages still have no local photo.
+- **First-party review collection / schema.** Google reviews are visible but no longer marked up. If review rich results are wanted, collect first-party reviews on the site and mark those up.
+- **Link building and GBP execution.** The local SEO action plan's review-growth, GBP posting and citation work is outside this PR.
+
+### Verification
+
+`npm run build` and `npm run check` both pass, including HTML validation, local reference checks, anchor checks, JSON-LD, CSP, SEO checks and regression checks.
+
+---
+
 ## Appendix: method and sources
 
 - Parsed 52 local HTML files; extracted `<main>` text and counted words after removing scripts, styles, header and footer.
@@ -385,4 +417,4 @@ That structure is repeatable, but the content inside it is not. That is the diff
   - [Scaled content abuse](https://developers.google.com/search/docs/essentials/spam-policies#scaled-content)
   - [Review snippet guidelines](https://developers.google.com/search/docs/appearance/structured-data/review-snippet)
 - No access to Search Console, Analytics or Google Business Profile insights, so this review does not include traffic, ranking or revenue data. Recommendations are based on the content, structure and published data, not measured performance.
-- No files in the site repository were changed.
+- The audit was completed before implementation; section 13 records the fixes applied in this PR and what remains.
