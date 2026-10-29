@@ -396,7 +396,7 @@ This section was added after implementation, so the review above remains a recor
 - **Original local photography.** No new images were added; the existing Instagram imagery remains the only visual proof. Area pages still have no local photo.
 - **First-party review collection / schema.** Google reviews are visible but no longer marked up. If review rich results are wanted, collect first-party reviews on the site and mark those up.
 - **Link building and GBP execution.** The local SEO action plan's review-growth, GBP posting and citation work is outside this PR.
-- **Search Console and Google Business Profile verification.** Without verified access, index status and Map Pack visibility cannot be confirmed or fixed from the codebase. The user must verify the property, submit the sitemap, request indexing and confirm the GBP category/website/service areas.
+- **Search Console and Google Business Profile verification.** Without verified access, index status and Map Pack visibility cannot be confirmed or fixed from the codebase. The user must verify the property, submit the sitemap, request indexing and confirm the GBP category/website/service areas. See `docs/google-search-visibility-2026-10-29.md` for the step-by-step plan.
 
 ### Verification
 
