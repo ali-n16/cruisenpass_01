@@ -88,6 +88,13 @@ const required = {
     /"@type"\s*:\s*"Service"/,
     /"@type"\s*:\s*"FAQPage"/,
   ],
+  'learn-to-drive-manchester.html': [
+    /<title>.*<\/title>/,
+    /<meta\s+name="description"/,
+    /<link\s+rel="canonical"/,
+    /"@type"\s*:\s*"Service"/,
+    /"@type"\s*:\s*"FAQPage"/,
+  ],
   'female-driving-instructor-manchester.html': [
     /<title>.*<\/title>/,
     /<meta\s+name="description"/,

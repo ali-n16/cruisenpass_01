@@ -29,6 +29,7 @@ const rootFiles = [
   "driving-test-centres-manchester.html",
   "manual-vs-automatic.html",
   "automatic-driving-lessons-manchester.html",
+  "learn-to-drive-manchester.html",
   "female-driving-instructor-manchester.html",
   "driving-lesson-costs-manchester.html",
   "cheetham-hill-driving-test-centre.html",
