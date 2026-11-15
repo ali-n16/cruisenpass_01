@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
   <!-- Local compiled Tailwind CSS (replaces Play CDN) -->
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
     
   <!-- Plausible Analytics — privacy-first, no cookie banner needed -->
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
@@ -34,15 +34,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Privacy Policy",
-    "publisher": {
-      "@type": ["LocalBusiness", "AutomotiveBusiness"],
-      "@id": "https://cruisenpass.com/#organization",
-      "name": "Cruise'N'Pass",
-      "url": "https://cruisenpass.com"
-    },
-    "url": "https://cruisenpass.com/privacy"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cruisenpass.com/privacy#webpage",
+        "name": "Privacy Policy",
+        "inLanguage": "en-GB",
+        "publisher": {
+          "@type": ["LocalBusiness", "AutomotiveBusiness"],
+          "@id": "https://cruisenpass.com/#organization",
+          "name": "Cruise'N'Pass",
+          "url": "https://cruisenpass.com"
+        },
+        "url": "https://cruisenpass.com/privacy"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem","position": 1,"name": "Home","item": "https://cruisenpass.com/"},
+          {"@type": "ListItem","position": 2,"name": "Privacy Policy","item": "https://cruisenpass.com/privacy"}
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -53,7 +66,7 @@
   <header class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="font-heading font-extrabold text-brand-dark text-xl tracking-tight">Cruise<span class="text-brand-active">'</span>N<span class="text-brand-active">'</span>Pass</a>
-      <nav class="flex items-center gap-5">
+      <nav class="flex items-center gap-5" aria-label="Main">
         <a href="/" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Home</a>
         <a href="/learn-now" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Learn Now</a>
         <a href="/join-cruisenpass" class="text-sm font-semibold text-slate-600 hover:text-brand-electric transition-colors">Join</a>
@@ -63,6 +76,7 @@
 
   <!-- Main content -->
   <main id="content" class="max-w-3xl mx-auto px-6 py-16">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-4"><a href="/" class="hover:text-brand-electric underline underline-offset-2">Home</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-slate-700 font-semibold">Privacy Policy</span></nav>
     <h1 class="font-heading text-4xl font-extrabold text-brand-dark tracking-tight mb-6">Privacy Policy</h1>
 
     <p class="text-slate-600 leading-relaxed mb-4">Cruise'N'Pass keeps tracking to a minimum: our analytics are privacy-first and cookie-free, the contact forms are handled by a form processor, and the only cookies on this site are small advertising-measurement cookies described below. There is no consent banner on this website — if you prefer, you can block or delete these cookies at any time in your browser settings.

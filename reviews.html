@@ -24,20 +24,20 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "AutomotiveBusiness"],
-    "@id": "https://cruisenpass.com/#organization",
-    "name": "Cruise'N'Pass",
-    "url": "https://cruisenpass.com",
-    "telephone": "+447916155054",
-    "email": "cruisenpass@gmail.com",
-    "image": "https://cruisenpass.com/og-image.webp",
-    "logo": "https://cruisenpass.com/logo.png"
+    "@graph": [
+      {"@type": "WebPage","@id": "https://cruisenpass.com/reviews#webpage","url": "https://cruisenpass.com/reviews","name": "Cruise'N'Pass Reviews | What Manchester Learners Say","inLanguage": "en-GB","isPartOf": {"@id": "https://cruisenpass.com/#website"}},
+      {"@type": ["LocalBusiness", "AutomotiveBusiness"],"@id": "https://cruisenpass.com/#organization","name": "Cruise'N'Pass","url": "https://cruisenpass.com","telephone": "+447916155054","email": "cruisenpass@gmail.com","image": "https://cruisenpass.com/og-image.webp","logo": "https://cruisenpass.com/logo.png"},
+      {"@type": "BreadcrumbList","itemListElement": [
+        {"@type": "ListItem","position": 1,"name": "Home","item": "https://cruisenpass.com/"},
+        {"@type": "ListItem","position": 2,"name": "Reviews","item": "https://cruisenpass.com/reviews"}
+      ]}
+    ]
   }
   </script>
 </head>
@@ -60,6 +60,7 @@
     <section class="py-20 bg-brand-surface">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-12">
+          <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-4"><a href="/" class="hover:text-brand-electric underline underline-offset-2">Home</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-slate-700 font-semibold">Reviews</span></nav>
           <span class="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3 block">100+ Google Reviews</span>
           <h1 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">What Manchester Learners Say</h1>
         <p class="text-slate-500 mt-4">Real Google reviews from learners across Greater Manchester. Last synced October 2026.</p>

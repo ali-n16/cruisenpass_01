@@ -40,7 +40,7 @@
   <!-- Plausible Analytics — privacy-first, no cookie banner needed (no cross-site cookies, anonymised IP, no personal data). -->
   <script defer data-domain="cruisenpass.com" src="https://plausible.io/js/script.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
       <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
     <link rel="stylesheet" href="assets/vendor/fontawesome/all.min.css" media="print" onload="this.media='all'">
@@ -55,6 +55,7 @@
     "name": "Cruise'N'Pass Driving Tutorial Videos",
     "description": "Free driving lesson tutorials from Cruise'N'Pass — DVSA-approved instructors covering driving test tips, roundabout guides and more for learners in Greater Manchester.",
     "thumbnailUrl": ["https://i.ytimg.com/vi/6vCVDjyq4dU/hqdefault.jpg", "https://cruisenpass.com/og-image.webp"],
+    "uploadDate": "2026-07-07T09:00:00+01:00",
     "embedUrl": "https://www.youtube-nocookie.com/embed/videoseries?list=PLUMEmKborQSJJX20FJOvROiMrJ3fufjYV",
     "url": "https://cruisenpass.com/learn-now",
     "isFamilyFriendly": true,
@@ -223,10 +224,109 @@
         </a>
       </div>
 
-      <!-- Playlist grid (real Cruise'N'Pass playlists, rendered without an API key) -->
+      <!-- Playlist grid (prerendered for search crawlers and no-JS; JS only fills if empty) -->
       <div id="playlists-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards injected by JS -->
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSJJX20FJOvROiMrJ3fufjYV" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/6vCVDjyq4dU/hqdefault.jpg" alt="Tutorial Videos playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">72 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Tutorial Videos</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Step-by-step driving tutorials covering the skills you need to pass.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSKxjLvw-hfY29l1tugvSxcF" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/DUlwdlpRifY/hqdefault.jpg" alt="Failed Test commentary playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">39 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Failed Test</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Real failed driving tests with commentary on what went wrong and how to avoid it.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSIsX_4mcUyOyRmR3RGmZ-Fj" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/xftwsUlmzTc/hqdefault.jpg" alt="Roundabout Guide playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">5 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Roundabout Guide</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Master roundabouts of every shape and size with these guided lessons.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSLLUHA6aBydJhi8QCS2nTdQ" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/FHQ--n6vYhY/hqdefault.jpg" alt="Parking Manoeuvres Guide playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">4 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Parking Manoeuvres Guide</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Bay, parallel and reverse parking manoeuvres explained and demonstrated.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSIU9uGsZzbSS0IgMrf_NwdB" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/hmaNAHQmGEM/hqdefault.jpg" alt="Atherton Test Route playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">10 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Atherton Test Route</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Drive around the Atherton test centre area with a DVSA-approved instructor.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSKIeUpf9WZGYK_jjq9RqkX1" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/_2czRMSlF-Q/hqdefault.jpg" alt="Sale Test Route playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">11 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Sale Test Route</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Sale test centre area walkthroughs and driving tips.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSIrQAH7ZNEVP4Zj7pHyQD4C" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/U4bwEDtJQgM/hqdefault.jpg" alt="Bury Test Route playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">8 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Bury Test Route</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Bury driving test area guidance from Cruise'N'Pass.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSLjcywoRgN6J52ErU1VHQh8" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/L8e1Nor_5Wk/hqdefault.jpg" alt="Hyde Test Route playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">33 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Hyde Test Route</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Hyde test area videos and what examiners look for.</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLUMEmKborQSIBwcjDShh9fgUThAyFSW9K" target="_blank" rel="noopener noreferrer" class="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="relative aspect-video overflow-hidden bg-slate-100">
+            <img src="https://i.ytimg.com/vi/81z4X2xP5J4/hqdefault.jpg" alt="Bolton (1) Test Route playlist thumbnail" width="480" height="360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center"><div class="w-12 h-12 rounded-full bg-white/90 text-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i aria-hidden="true" class="fa-solid fa-play ml-1"></i></div></div>
+            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md">11 videos</div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg text-brand-dark mb-2 line-clamp-2 group-hover:text-brand-electric transition-colors">Bolton (1) Test Route</h3>
+            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">Bolton test area drive-throughs and key junctions.</p>
+          </div>
+        </a>
       </div>
+      <p class="text-sm text-slate-500 text-center mt-10">Want to put these tips into practice? See <a href="/driving-lessons-manchester" class="text-brand-electric font-semibold underline underline-offset-2">driving lessons in Manchester</a>, read our <a href="/driving-test-centres-manchester" class="text-brand-electric font-semibold underline underline-offset-2">Manchester driving test centres guide</a>, or explore <a href="/blog" class="text-brand-electric font-semibold underline underline-offset-2">written driving guides</a>.</p>
     </div>
   </section>
 
@@ -410,6 +510,7 @@
       }
 
       if (!gridEl) return;
+      if (gridEl.children.length > 0) return;
 
       if (!PLAYLISTS || PLAYLISTS.length === 0) {
         if (errorEl) errorEl.classList.remove('hidden');

@@ -50,8 +50,7 @@ function requireSource(directive, source, why) {
 }
 
 // External resources referenced by the site's own pages.
-const pages = ['index.html', 'learn-now.html', 'join-cruisenpass.html', 'privacy.html', '404.html',
-  ...readdirSync('.').filter((f) => /^driving-lessons-\w[\w-]*\.html$/.test(f))];
+const pages = readdirSync('.').filter((f) => f.endsWith('.html'));
 
 const refs = new Map();
 for (const page of pages) {

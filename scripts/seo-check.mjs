@@ -192,8 +192,40 @@ for (const match of sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)
 // Every indexable page (has a canonical tag) must be listed in the sitemap,
 // so hand-added pages can never be forgotten.
 for (const file of readdirSync('.').filter((f) => f.endsWith('.html'))) {
-  if (file === '404.html') continue; // noindex by design
   const html = readFileSync(file, 'utf8');
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/);
+  if (titleMatch && titleMatch[1].length > 60) {
+    issues.push(`${file}: <title> exceeds 60 chars (${titleMatch[1].length})`);
+  }
+  const descMatch = html.match(/<meta\s+name="description"\s+content="([^"]+)"/);
+  if (descMatch && descMatch[1].length > 160) {
+    issues.push(`${file}: meta description exceeds 160 chars (${descMatch[1].length})`);
+  }
+  const h1Count = (html.match(/<h1\b/gi) || []).length;
+  if (h1Count !== 1) {
+    issues.push(`${file}: expected exactly 1 <h1>, found ${h1Count}`);
+  }
+  for (const m of html.matchAll(/<[a-z0-9]+\b[^>]*class="[^"]*\bsr-only\b[^"]*"[^>]*>([\s\S]*?)<\/[a-z0-9]+>/gi)) {
+    const words = m[1].replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean);
+    if (words.length > 15) {
+      issues.push(`${file}: large sr-only text block (${words.length} words) risks hidden-text spam`);
+    }
+  }
+  for (const m of html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
+    let data;
+    try { data = JSON.parse(m[1]); } catch { continue; }
+    const nodes = Array.isArray(data['@graph']) ? data['@graph'] : [data];
+    for (const node of nodes) {
+      if (node['@type'] === 'VideoObject' && !node.uploadDate) {
+        issues.push(`${file}: VideoObject JSON-LD missing uploadDate`);
+      }
+      if (node['@type'] === 'BlogPosting') {
+        if (!node.image) issues.push(`${file}: BlogPosting JSON-LD missing image`);
+        if (!node.dateModified) issues.push(`${file}: BlogPosting JSON-LD missing dateModified`);
+      }
+    }
+  }
+  if (file === '404.html') continue; // noindex by design
   const canonical = html.match(/<link\s+rel="canonical" href="([^"]+)"/);
   if (!canonical) continue; // covered by per-page checks above
   if (!sitemap.includes(canonical[1])) {
